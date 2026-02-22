@@ -19,7 +19,13 @@
         background: #1a1a1a;
         color: #e0e0e0;
         min-height: 100vh;
-        padding: 2rem;
+        padding: 1rem;
+      }
+
+      @media (min-width: 600px) {
+        body {
+          padding: 2rem;
+        }
       }
 
       h1 {
@@ -37,9 +43,16 @@
 
       .layout {
         display: grid;
-        grid-template-columns: 380px 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         max-width: 1100px;
+      }
+
+      @media (min-width: 800px) {
+        .layout {
+          grid-template-columns: 380px 1fr;
+          gap: 2rem;
+        }
       }
 
       .panel {
@@ -86,10 +99,16 @@
 
       .chain-entry {
         display: grid;
-        grid-template-columns: 1fr 1fr 80px 32px;
-        gap: 0.5rem;
+        grid-template-columns: 1fr 1fr 70px 32px;
+        gap: 0.4rem;
         align-items: end;
         margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 420px) {
+        .chain-entry {
+          grid-template-columns: 1fr 1fr 60px 32px;
+        }
       }
 
       .chain-entry label {
@@ -301,6 +320,11 @@
       .pricing-section {
         max-width: 1100px;
         margin-top: 2rem;
+      }
+
+      #pricing-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .pricing-section h2 {
