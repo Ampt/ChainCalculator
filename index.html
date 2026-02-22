@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chainsaw Chain Roll Optimizer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #f5a623;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 2rem;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 2rem;
+        max-width: 1100px;
+      }
+
+      .panel {
+        background: #252525;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.25rem;
+      }
+
+      .panel h2 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #888;
+        margin-bottom: 1rem;
+      }
+
+      label {
+        display: block;
+        font-size: 0.82rem;
+        color: #aaa;
+        margin-bottom: 0.3rem;
+      }
+
+      select,
+      input[type="number"],
+      input[type="text"] {
+        width: 100%;
+        background: #1a1a1a;
+        border: 1px solid #444;
+        border-radius: 5px;
+        color: #e0e0e0;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        outline: none;
+      }
+
+      select:focus,
+      input:focus {
+        border-color: #f5a623;
+      }
+
+      .chain-entry {
+        display: grid;
+        grid-template-columns: 1fr 1fr 80px 32px;
+        gap: 0.5rem;
+        align-items: end;
+        margin-bottom: 0.5rem;
+      }
+
+      .chain-entry label {
+        margin-bottom: 0.25rem;
+      }
+
+      .chain-entry select,
+      .chain-entry input {
+        margin-bottom: 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: opacity 0.15s;
+      }
+
+      .btn:hover {
+        opacity: 0.85;
+      }
+
+      .btn-primary {
+        background: #f5a623;
+        color: #1a1a1a;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.65rem;
+        font-size: 0.95rem;
+      }
+
+      .btn-add {
+        background: #2e2e2e;
+        color: #aaa;
+        border: 1px solid #444;
+        width: 100%;
+        margin-top: 0.5rem;
+        font-size: 0.82rem;
+      }
+
+      .btn-remove {
+        background: #3a1a1a;
+        color: #c0392b;
+        border: 1px solid #4a2020;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        font-size: 1rem;
+      }
+
+      .driver-preview {
+        font-size: 0.75rem;
+        color: #666;
+        margin-top: -0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Results */
+      .results-empty {
+        color: #555;
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .roll-result {
+        border: 1px solid #333;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      .roll-header {
+        background: #2e2e2e;
+        padding: 0.65rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+      }
+
+      .roll-header .roll-id {
+        font-weight: 600;
+        color: #f5a623;
+      }
+
+      .roll-header .roll-waste {
+        font-size: 0.8rem;
+        color: #aaa;
+      }
+
+      .waste-good {
+        color: #27ae60;
+      }
+      .waste-ok {
+        color: #f5a623;
+      }
+      .waste-bad {
+        color: #c0392b;
+      }
+
+      .roll-body {
+        padding: 0.75rem 1rem;
+      }
+
+      .cut-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.3rem 0;
+        border-bottom: 1px solid #2e2e2e;
+        font-size: 0.85rem;
+      }
+
+      .cut-row:last-child {
+        border-bottom: none;
+      }
+
+      .cut-label {
+        color: #ccc;
+      }
+      .cut-drivers {
+        color: #888;
+        font-size: 0.8rem;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #1a1a1a;
+        border-radius: 4px;
+        margin-top: 0.75rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #27ae60, #f5a623);
+        transition: width 0.3s;
+      }
+
+      .summary-box {
+        background: #1e2a1e;
+        border: 1px solid #2d4a2d;
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .summary-stat {
+        color: #888;
+        font-size: 0.75rem;
+        margin-bottom: 0.2rem;
+      }
+      .summary-val {
+        color: #e0e0e0;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .pitch-section {
+        margin-bottom: 1.5rem;
+      }
+      .pitch-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .pitch-header {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        border-bottom: 1px solid #333;
+        padding-bottom: 0.4rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .error-msg {
+        background: #2a1515;
+        border: 1px solid #5a2020;
+        color: #e07070;
+        border-radius: 5px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.82rem;
+        margin-top: 0.5rem;
+      }
+
+      .info-row {
+        font-size: 0.78rem;
+        color: #555;
+        margin-top: 1rem;
+        line-height: 1.5;
+      }
+
+      /* Pricing section */
+      .pricing-section {
+        max-width: 1100px;
+        margin-top: 2rem;
+      }
+
+      .pricing-section h2 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #888;
+        margin-bottom: 1rem;
+      }
+
+      .pricing-controls {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+      }
+
+      .pricing-controls .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .pricing-controls label {
+        font-size: 0.78rem;
+        color: #aaa;
+        margin-bottom: 0;
+      }
+
+      .pricing-controls input {
+        width: 130px;
+        margin-bottom: 0;
+      }
+
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.82rem;
+      }
+
+      .pricing-table th {
+        text-align: left;
+        padding: 0.45rem 0.75rem;
+        background: #2e2e2e;
+        color: #888;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid #333;
+      }
+
+      .pricing-table th.price-col {
+        text-align: right;
+      }
+
+      .pricing-table td {
+        padding: 0.4rem 0.75rem;
+        border-bottom: 1px solid #2a2a2a;
+        color: #ccc;
+      }
+
+      .pricing-table td.price-col {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .pricing-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .pricing-table tr:hover td {
+        background: #2a2a2a;
+      }
+
+      .pricing-table .pitch-group-header td {
+        background: #222;
+        color: #666;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.3rem 0.75rem;
+        border-bottom: 1px solid #333;
+      }
+
+      .cost-disc {
+        color: #27ae60;
+      }
+      .cost-reg {
+        color: #e07070;
+      }
+      .margin-col {
+        color: #f5a623;
+      }
+
+      .paired-price {
+        text-align: left !important;
+        padding-left: 0.3rem !important;
+        padding-right: 1.25rem !important;
+      }
+
+      .group-start {
+        border-left: 2px solid #444 !important;
+        padding-left: 0.75rem !important;
+      }
+
+      .cost-static {
+        display: block;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 5px;
+        color: #e0e0e0;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+        width: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chainsaw Chain Roll Optimizer</h1>
+    <p class="subtitle">Minimize waste when cutting chains from 100' rolls</p>
+
+    <div class="layout">
+      <!-- LEFT: Inputs -->
+      <div>
+        <div class="panel">
+          <h2>Chain Requirements</h2>
+          <div id="chain-list"></div>
+          <button class="btn btn-add" onclick="addChainEntry()">
+            + Add chain size
+          </button>
+          <button class="btn btn-primary" onclick="optimize()">
+            Calculate Optimal Cutting Plan
+          </button>
+          <div id="error-msg"></div>
+        </div>
+
+        <div class="panel" style="margin-top: 1rem">
+          <h2>Reference</h2>
+          <div class="info-row">
+            <strong style="color: #aaa">3/8" standard:</strong> 1,640 drivers /
+            100' roll<br />
+            <strong style="color: #aaa">.404":</strong> 1,484 drivers / 100'
+            roll<br /><br />
+            Bar length → drive links varies by manufacturer &amp; nose radius.
+            Values shown are typical Stihl/Oregon counts.
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Results -->
+      <div class="panel" id="results-panel">
+        <h2>Cutting Plan</h2>
+        <div id="results">
+          <p class="results-empty">
+            Enter your chain requirements and click Calculate.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING SECTION -->
+    <div class="pricing-section panel" style="margin-top: 2rem">
+      <h2>Pricing &amp; Margin Reference</h2>
+      <div class="pricing-controls">
+        <div class="field">
+          <label>3/8" roll — discounted cost</label>
+          <span class="cost-static" id="cost-disc-38" data-value="281.18"
+            >$281.18</span
+          >
+        </div>
+        <div class="field">
+          <label>3/8" roll — regular cost</label>
+          <span class="cost-static" id="cost-reg-38" data-value="330.80"
+            >$330.80</span
+          >
+        </div>
+        <div class="field">
+          <label>.404" roll — discounted cost</label>
+          <span class="cost-static" id="cost-disc-404" data-value="445.00"
+            >$445.00</span
+          >
+        </div>
+        <div class="field">
+          <label>.404" roll — regular cost</label>
+          <span class="cost-static" id="cost-reg-404" data-value="523.77"
+            >$523.77</span
+          >
+        </div>
+      </div>
+      <div id="pricing-table-container"></div>
+    </div>
+
+    <script>
+      // ─── Chain data ────────────────────────────────────────────────────────────────
+
+      const ROLL_DRIVERS = {
+        "3/8": 1640,
+        ".404": 1484,
+      };
+
+      // Bar length (inches) → drive link counts per pitch
+      // Source: Stihl/Oregon standard counts. User can override with manual entry.
+      const BAR_TO_DRIVERS = {
+        "3/8": {
+          16: 56,
+          18: 66,
+          20: 72,
+          "24/25": 84,
+          28: 91,
+          32: 105,
+          36: 114,
+        },
+        ".404": {
+          36: 111,
+          42: 123,
+          50: 142,
+          60: 172,
+          72: 196,
+        },
+      };
+
+      // ─── UI helpers ────────────────────────────────────────────────────────────────
+
+      // Sort bar keys numerically (parseFloat handles "24/25" → 24)
+      function sortedBarEntries(pitch) {
+        return Object.entries(BAR_TO_DRIVERS[pitch]).sort(
+          (a, b) => parseFloat(a[0]) - parseFloat(b[0]),
+        );
+      }
+
+      let entryId = 0;
+
+      function barOptions(pitch) {
+        return sortedBarEntries(pitch)
+          .map(([b]) => `<option value="${b}">${b}"</option>`)
+          .join("");
+      }
+
+      function addChainEntry(pitch = "3/8", bar = 16, qty = 1) {
+        const id = entryId++;
+        const div = document.createElement("div");
+        div.id = `entry-${id}`;
+        div.className = "chain-entry";
+
+        div.innerHTML = `
+    <div>
+      ${id === 0 ? "<label>Pitch</label>" : "<label>&nbsp;</label>"}
+      <select onchange="onPitchChange(${id})" id="pitch-${id}">
+        <option value="3/8" ${pitch === "3/8" ? "selected" : ""}>3/8"</option>
+        <option value=".404" ${pitch === ".404" ? "selected" : ""}>.404"</option>
+      </select>
+    </div>
+    <div>
+      ${id === 0 ? "<label>Bar length</label>" : "<label>&nbsp;</label>"}
+      <select id="bar-${id}" onchange="updatePreview(${id})">
+        <option value="custom">Custom (drivers)</option>
+        ${barOptions(pitch)}
+      </select>
+    </div>
+    <div>
+      ${id === 0 ? "<label>Qty / drivers</label>" : "<label>&nbsp;</label>"}
+      <input type="number" id="qty-${id}" min="1" value="${qty}" onchange="updatePreview(${id})">
+    </div>
+    <div>
+      ${id === 0 ? "<label>&nbsp;</label>" : "<label>&nbsp;</label>"}
+      <button class="btn btn-remove" onclick="removeEntry(${id})" title="Remove">×</button>
+    </div>
+  `;
+
+        document.getElementById("chain-list").appendChild(div);
+
+        // Set default bar selection
+        const barSel = document.getElementById(`bar-${id}`);
+        barSel.value = bar;
+        updatePreview(id);
+      }
+
+      function onPitchChange(id) {
+        const pitch = document.getElementById(`pitch-${id}`).value;
+        const barSel = document.getElementById(`bar-${id}`);
+        const currentBar = barSel.value;
+
+        // Rebuild bar options for new pitch
+        barSel.innerHTML =
+          `<option value="custom">Custom (drivers)</option>` +
+          barOptions(pitch);
+
+        // Try to keep same bar length if valid for new pitch
+        const available = Object.keys(BAR_TO_DRIVERS[pitch]);
+        if (available.includes(currentBar)) {
+          barSel.value = currentBar;
+        }
+        updatePreview(id);
+      }
+
+      function updatePreview(id) {
+        // Remove old preview if present
+        const old = document.getElementById(`preview-${id}`);
+        if (old) old.remove();
+
+        const pitch = document.getElementById(`pitch-${id}`).value;
+        const bar = document.getElementById(`bar-${id}`).value;
+        const qty = parseInt(document.getElementById(`qty-${id}`).value) || 1;
+
+        if (bar === "custom") return;
+
+        const drivers = BAR_TO_DRIVERS[pitch][bar];
+        if (!drivers) return;
+
+        const preview = document.createElement("div");
+        preview.id = `preview-${id}`;
+        preview.className = "driver-preview";
+        preview.style.gridColumn = "1 / 4";
+        preview.style.marginTop = "-0.5rem";
+        preview.style.marginBottom = "0.75rem";
+        preview.textContent = `${bar}" bar = ${drivers} drivers × ${qty} = ${drivers * qty} total`;
+
+        // Insert after the entry div
+        const entryDiv = document.getElementById(`entry-${id}`);
+        entryDiv.insertAdjacentElement("afterend", preview);
+      }
+
+      function removeEntry(id) {
+        const el = document.getElementById(`entry-${id}`);
+        if (el) el.remove();
+        const preview = document.getElementById(`preview-${id}`);
+        if (preview) preview.remove();
+      }
+
+      // ─── Optimization ─────────────────────────────────────────────────────────────
+
+      /*
+  Cutting stock problem: given N item types (each with a size in drivers and a
+  quantity), and rolls of fixed capacity, find the minimum number of rolls and
+  the cutting pattern that minimizes total waste (leftover drivers).
+
+  Approach:
+  1. Group items by pitch (each pitch is an independent problem).
+  2. For each pitch, solve using a column-generation / exhaustive pattern search:
+     - Generate all feasible cutting patterns for a single roll.
+     - Use a greedy best-fit: pick the pattern that uses the most drivers while
+       still satisfying remaining demand, repeat until all demand is filled.
+  This is NP-hard in general but tractable for the small item counts typical
+  in chainsaw chain purchasing (< 10 distinct sizes).
+*/
+
+      function getEntries() {
+        const entries = [];
+        const divs = document.querySelectorAll('[id^="entry-"]');
+        divs.forEach((div) => {
+          const id = div.id.replace("entry-", "");
+          const pitch = document.getElementById(`pitch-${id}`)?.value;
+          const bar = document.getElementById(`bar-${id}`)?.value;
+          const qtyEl = document.getElementById(`qty-${id}`);
+          const qty = parseInt(qtyEl?.value) || 0;
+
+          if (!pitch || !bar || qty <= 0) return;
+
+          let drivers;
+          if (bar === "custom") {
+            // qty field repurposed as driver count when custom; we need a separate field
+            // For now: treat qty field as driver count, but let's add a note
+            drivers = qty;
+            entries.push({
+              pitch,
+              bar: "custom",
+              drivers,
+              qty: 1,
+              label: `${drivers} drivers`,
+            });
+          } else {
+            drivers = BAR_TO_DRIVERS[pitch][bar];
+            if (!drivers) return;
+            entries.push({
+              pitch,
+              bar,
+              drivers,
+              qty,
+              label: `${bar}" bar (${drivers} DL)`,
+            });
+          }
+        });
+        return entries;
+      }
+
+      // Generate all cutting patterns for one roll of `capacity` drivers,
+      // given item sizes. Returns array of patterns, each pattern is an
+      // array of counts parallel to `sizes`.
+      function generatePatterns(capacity, sizes) {
+        const patterns = [];
+
+        function recurse(idx, remaining, current) {
+          if (idx === sizes.length) {
+            if (current.some((c) => c > 0)) {
+              patterns.push([...current]);
+            }
+            return;
+          }
+          const maxCount = Math.floor(remaining / sizes[idx]);
+          for (let c = maxCount; c >= 0; c--) {
+            current[idx] = c;
+            recurse(idx + 1, remaining - c * sizes[idx], current);
+          }
+          current[idx] = 0;
+        }
+
+        recurse(0, capacity, new Array(sizes.length).fill(0));
+        return patterns;
+      }
+
+      // Score a pattern: total drivers used (maximize)
+      function patternUsage(pattern, sizes) {
+        return pattern.reduce((sum, c, i) => sum + c * sizes[i], 0);
+      }
+
+      // Greedy solver: pick patterns that best satisfy remaining demand.
+      // Returns array of {pattern, usage, waste} objects.
+      function solveGreedy(capacity, sizes, demands) {
+        const remaining = [...demands];
+        const rolls = [];
+
+        let safety = 0;
+        while (remaining.some((r) => r > 0) && safety < 500) {
+          safety++;
+
+          // Generate all patterns feasible given remaining demand
+          // (don't cut more of any size than still needed)
+          const patterns = generatePatterns(capacity, sizes);
+
+          // Filter to patterns that contribute to remaining demand
+          const useful = patterns.filter((p) =>
+            p.some((c, i) => c > 0 && remaining[i] > 0),
+          );
+
+          if (useful.length === 0) break;
+
+          // Score: primary = drivers used toward remaining demand (don't count excess)
+          // secondary = minimize number of items that exceed remaining demand (prefer exact)
+          let best = null;
+          let bestScore = -Infinity;
+          let bestExcess = Infinity;
+
+          for (const p of useful) {
+            let usageTowardDemand = 0;
+            let excess = 0;
+            for (let i = 0; i < sizes.length; i++) {
+              const effective = Math.min(p[i], remaining[i]);
+              usageTowardDemand += effective * sizes[i];
+              excess += Math.max(0, p[i] - remaining[i]) * sizes[i];
+            }
+            // Prefer: highest drivers toward demand, then least waste, then least excess
+            const waste = capacity - patternUsage(p, sizes);
+            const score = usageTowardDemand * 1000 - waste;
+            if (
+              score > bestScore ||
+              (score === bestScore && excess < bestExcess)
+            ) {
+              bestScore = score;
+              bestExcess = excess;
+              best = p;
+            }
+          }
+
+          if (!best) break;
+
+          // Apply this roll
+          const cuts = [];
+          for (let i = 0; i < sizes.length; i++) {
+            if (best[i] > 0) {
+              cuts.push({ index: i, count: best[i] });
+              remaining[i] = Math.max(0, remaining[i] - best[i]);
+            }
+          }
+          const usage = patternUsage(best, sizes);
+          rolls.push({ cuts, usage, waste: capacity - usage });
+        }
+
+        return rolls;
+      }
+
+      // ─── Render results ───────────────────────────────────────────────────────────
+
+      function wasteClass(wastePct) {
+        if (wastePct < 5) return "waste-good";
+        if (wastePct < 15) return "waste-ok";
+        return "waste-bad";
+      }
+
+      function renderResults(resultsByPitch) {
+        const container = document.getElementById("results");
+        container.innerHTML = "";
+
+        let totalRolls = 0;
+        let totalDriversUsed = 0;
+        let totalDriversWasted = 0;
+
+        for (const [pitch, { rolls, items, capacity }] of Object.entries(
+          resultsByPitch,
+        )) {
+          const section = document.createElement("div");
+          section.className = "pitch-section";
+
+          section.innerHTML = `<div class="pitch-header">${pitch}" pitch — ${capacity.toLocaleString()} drivers/roll</div>`;
+
+          rolls.forEach((roll, idx) => {
+            totalRolls++;
+            totalDriversUsed += roll.usage;
+            totalDriversWasted += roll.waste;
+
+            const wastePct = ((roll.waste / capacity) * 100).toFixed(1);
+            const wClass = wasteClass(parseFloat(wastePct));
+
+            const rollDiv = document.createElement("div");
+            rollDiv.className = "roll-result";
+            rollDiv.innerHTML = `
+        <div class="roll-header">
+          <span class="roll-id">Roll ${idx + 1}</span>
+          <span class="roll-waste">
+            Used: ${roll.usage.toLocaleString()} / ${capacity.toLocaleString()} drivers &nbsp;|&nbsp;
+            Waste: <span class="${wClass}">${roll.waste.toLocaleString()} (${wastePct}%)</span>
+          </span>
+        </div>
+        <div class="roll-body">
+          ${roll.cuts
+            .map((c) => {
+              const item = items[c.index];
+              return `
+              <div class="cut-row">
+                <span class="cut-label">${c.count}× ${item.label}</span>
+                <span class="cut-drivers">${(c.count * item.drivers).toLocaleString()} drivers</span>
+              </div>
+            `;
+            })
+            .join("")}
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:${((roll.usage / capacity) * 100).toFixed(1)}%"></div>
+          </div>
+        </div>
+      `;
+            section.appendChild(rollDiv);
+          });
+
+          container.appendChild(section);
+        }
+
+        // Summary
+        const totalCapacity =
+          totalRolls *
+          Object.values(resultsByPitch).reduce((_, v) => v.capacity, 0);
+        // recalculate total capacity properly
+        let tc = 0;
+        for (const { rolls, capacity } of Object.values(resultsByPitch)) {
+          tc += rolls.length * capacity;
+        }
+        const overallWastePct = ((totalDriversWasted / tc) * 100).toFixed(1);
+        const wClass = wasteClass(parseFloat(overallWastePct));
+
+        const summary = document.createElement("div");
+        summary.className = "summary-box";
+        summary.style.marginBottom = "1.5rem";
+        summary.innerHTML = `
+    <div><div class="summary-stat">Rolls needed</div><div class="summary-val">${totalRolls}</div></div>
+    <div><div class="summary-stat">Drivers used</div><div class="summary-val">${totalDriversUsed.toLocaleString()}</div></div>
+    <div><div class="summary-stat">Total waste</div><div class="summary-val ${wClass}">${totalDriversWasted.toLocaleString()} (${overallWastePct}%)</div></div>
+  `;
+        container.insertBefore(summary, container.firstChild);
+      }
+
+      function optimize() {
+        document.getElementById("error-msg").innerHTML = "";
+        const entries = getEntries();
+
+        if (entries.length === 0) {
+          document.getElementById("error-msg").innerHTML =
+            '<div class="error-msg">Add at least one chain size.</div>';
+          return;
+        }
+
+        // Group by pitch
+        const byPitch = {};
+        for (const e of entries) {
+          if (!byPitch[e.pitch]) byPitch[e.pitch] = [];
+          byPitch[e.pitch].push(e);
+        }
+
+        const resultsByPitch = {};
+
+        for (const [pitch, items] of Object.entries(byPitch)) {
+          const capacity = ROLL_DRIVERS[pitch];
+          const sizes = items.map((i) => i.drivers);
+          const demands = items.map((i) => i.qty);
+
+          // Validate no single chain exceeds roll capacity
+          for (let i = 0; i < items.length; i++) {
+            if (sizes[i] > capacity) {
+              document.getElementById("error-msg").innerHTML =
+                `<div class="error-msg">${items[i].label} requires ${sizes[i]} drivers, which exceeds a 100' roll (${capacity} drivers).</div>`;
+              return;
+            }
+          }
+
+          const rolls = solveGreedy(capacity, sizes, demands);
+          resultsByPitch[pitch] = { rolls, items, capacity };
+        }
+
+        renderResults(resultsByPitch);
+      }
+
+      // ─── Pricing table ────────────────────────────────────────────────────────────
+
+      const PRICE_LEVELS = {
+        "3/8": [1.0, 1.25],
+        ".404": [1.5, 1.75, 2.0],
+      };
+
+      function renderPricingTable() {
+        const costDisc = {
+          "3/8":
+            parseFloat(document.getElementById("cost-disc-38").dataset.value) ||
+            0,
+          ".404":
+            parseFloat(
+              document.getElementById("cost-disc-404").dataset.value,
+            ) || 0,
+        };
+        const costReg = {
+          "3/8":
+            parseFloat(document.getElementById("cost-reg-38").dataset.value) ||
+            0,
+          ".404":
+            parseFloat(document.getElementById("cost-reg-404").dataset.value) ||
+            0,
+        };
+
+        const $ = (n) =>
+          n.toLocaleString("en-US", { style: "currency", currency: "USD" });
+
+        let html = `<table class="pricing-table"><tbody>`;
+
+        for (const [pitch, bars] of Object.entries(BAR_TO_DRIVERS)) {
+          const rollDrivers = ROLL_DRIVERS[pitch];
+          const disc = costDisc[pitch];
+          const reg = costReg[pitch];
+          const levels = PRICE_LEVELS[pitch];
+          const is38 = pitch === "3/8";
+
+          // Pitch group header
+          const colspan = is38 ? 6 : 7;
+          html += `<tr class="pitch-group-header"><td colspan="${colspan}">${pitch}" pitch — ${rollDrivers.toLocaleString()} drivers/roll &nbsp;|&nbsp; disc: ${$(disc)} &nbsp;|&nbsp; reg: ${$(reg)}</td></tr>`;
+
+          // Column headers — for 3/8: disc, price[0], reg, price[1]; else: disc, reg, prices
+          if (is38) {
+            html += `
+              <tr>
+                <th rowspan="2">Bar</th>
+                <th rowspan="2">Drivers</th>
+                <th colspan="2" style="text-align:center;border-bottom:1px solid #444;">
+                  <span style="color:#27ae60">Discounted roll</span>
+                </th>
+                <th colspan="2" class="group-start" style="text-align:center;border-bottom:1px solid #444;">
+                  <span style="color:#e07070">Regular roll</span>
+                </th>
+              </tr>
+              <tr>
+                <th>Cost/chain</th>
+                <th class="price-col paired-price">@ $${levels[0].toFixed(2)}/in</th>
+                <th class="group-start">Cost/chain</th>
+                <th class="price-col paired-price">@ $${levels[1].toFixed(2)}/in</th>
+              </tr>
+            `;
+          } else {
+            html += `
+              <tr>
+                <th>Bar</th>
+                <th>Drivers</th>
+                <th>Cost/chain<br><span style="color:#27ae60">disc</span></th>
+                <th>Cost/chain<br><span style="color:#e07070">reg</span></th>
+                ${levels.map((r) => `<th class="price-col">@ $${r.toFixed(2)}/in</th>`).join("")}
+              </tr>
+            `;
+          }
+
+          for (const [bar, drivers] of sortedBarEntries(pitch)) {
+            const costPerChainDisc = (drivers / rollDrivers) * disc;
+            const costPerChainReg = (drivers / rollDrivers) * reg;
+            const barIn = parseFloat(bar);
+
+            let cols;
+            if (is38) {
+              cols = `
+                <td class="cost-disc">${$(costPerChainDisc)}</td>
+                <td class="price-col paired-price">${$(barIn * levels[0])}</td>
+                <td class="cost-reg group-start">${$(costPerChainReg)}</td>
+                <td class="price-col paired-price">${$(barIn * levels[1])}</td>
+              `;
+            } else {
+              cols = `
+                <td class="cost-disc">${$(costPerChainDisc)}</td>
+                <td class="cost-reg">${$(costPerChainReg)}</td>
+                ${levels.map((rate) => `<td class="price-col">${$(barIn * rate)}</td>`).join("")}
+              `;
+            }
+
+            html += `
+              <tr>
+                <td>${bar}"</td>
+                <td>${drivers}</td>
+                ${cols}
+              </tr>
+            `;
+          }
+        }
+
+        html += `</tbody></table>`;
+        document.getElementById("pricing-table-container").innerHTML = html;
+      }
+
+      // ─── Init ─────────────────────────────────────────────────────────────────────
+
+      // Seed with a couple of example entries
+      addChainEntry("3/8", 16, 3);
+      addChainEntry("3/8", 20, 2);
+      renderPricingTable();
+    </script>
+  </body>
+</html>
