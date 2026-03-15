@@ -199,16 +199,264 @@
         padding: 3rem 1rem;
         font-size: 0.9rem;
       }
+
+      /* View toggle */
+      .view-toggle {
+        display: flex;
+        gap: 0;
+        margin-bottom: 1.25rem;
+        border: 1px solid #444;
+        border-radius: 6px;
+        overflow: hidden;
+        width: fit-content;
+      }
+      .toggle-btn {
+        background: #252525;
+        border: none;
+        color: #888;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.85rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .toggle-btn:not(:last-child) {
+        border-right: 1px solid #444;
+      }
+      .toggle-btn:hover {
+        color: #ccc;
+        background: #2e2e2e;
+      }
+      .toggle-btn.active {
+        background: #f5a623;
+        color: #1a1a1a;
+        font-weight: 600;
+      }
+
+      /* Bar PN search */
+      .bar-pn-field {
+        position: relative;
+      }
+      .bar-pn-field input {
+        background: #252525;
+        border: 1px solid #444;
+        border-radius: 5px;
+        color: #e0e0e0;
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+        min-width: 200px;
+        outline: none;
+        font-family: inherit;
+      }
+      .bar-pn-field input:focus {
+        border-color: #f5a623;
+      }
+      .pn-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2a2a2a;
+        border: 1px solid #444;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 10;
+      }
+      .pn-dropdown.open {
+        display: block;
+      }
+      .pn-option {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        color: #ccc;
+        cursor: pointer;
+      }
+      .pn-option:hover {
+        background: #383838;
+        color: #f5a623;
+      }
+      .pn-option .pn-meta {
+        color: #666;
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
+      }
+
+      /* Bar results */
+      .bar-result-card {
+        background: #252525;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        overflow-x: auto;
+      }
+      .bar-specs {
+        display: grid;
+        grid-template-columns: 3.5rem 10rem 3.5rem 3.5rem 4rem 9rem auto;
+        gap: 0.75rem;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+      }
+      .bar-specs:hover {
+        background: #2a2a2a;
+        margin: -0.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+      .bar-result-card.open .bar-specs {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #333;
+      }
+      @media (max-width: 700px) {
+        .bar-specs {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+      }
+      .bar-toggle {
+        display: flex;
+        align-items: center;
+        color: #555;
+        font-size: 0.75rem;
+        margin-left: auto;
+        padding-left: 1rem;
+        flex-shrink: 0;
+      }
+      .bar-toggle::after {
+        content: "\25B6";
+        font-size: 0.6rem;
+        transition: transform 0.15s;
+      }
+      .bar-result-card.open .bar-toggle::after {
+        transform: rotate(90deg);
+      }
+      .bar-detail {
+        display: none;
+      }
+      .bar-result-card.open .bar-detail {
+        display: block;
+      }
+      .bar-spec {
+        display: flex;
+        flex-direction: column;
+      }
+      .bar-spec-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #666;
+      }
+      .bar-spec-value {
+        font-size: 0.95rem;
+        color: #e0e0e0;
+        font-weight: 500;
+      }
+      .bar-section-title {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #888;
+        margin: 1rem 0 0.5rem 0;
+      }
+      .saw-list-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.78rem;
+      }
+      .saw-list-table th {
+        text-align: left;
+        padding: 0.3rem 0.5rem;
+        background: #2e2e2e;
+        color: #888;
+        font-weight: 600;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid #444;
+      }
+      .saw-list-table td {
+        padding: 0.3rem 0.5rem;
+        border-bottom: 1px solid #2a2a2a;
+        color: #ccc;
+      }
+      .saw-list-table tr:hover td {
+        background: #2a2a2a;
+      }
+      .saw-list {
+        font-size: 0.82rem;
+        color: #ccc;
+        line-height: 1.6;
+      }
+      .saw-link {
+        color: #f5a623;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .saw-link:hover {
+        text-decoration: underline;
+      }
+      .copy-btn {
+        background: none;
+        border: 1px solid #444;
+        border-radius: 3px;
+        color: #888;
+        font-size: 0.6rem;
+        padding: 1px 4px;
+        margin-left: 4px;
+        cursor: pointer;
+        vertical-align: middle;
+        line-height: 1;
+      }
+      .copy-btn:hover {
+        border-color: #f5a623;
+        color: #f5a623;
+      }
+      .copy-btn.copied {
+        border-color: #4a4;
+        color: #4a4;
+      }
+
+      .bar-results-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .no-results {
+        color: #555;
+        font-size: 0.85rem;
+        padding: 1rem 0;
+      }
     </style>
   </head>
   <body>
     <h1>Stihl Chain &amp; Bar Compatibility Guide</h1>
     <p class="subtitle">
-      Select your chainsaw to see compatible bars and chains &nbsp;|&nbsp;
+      Look up by chainsaw or by bar &nbsp;|&nbsp;
       <a href="index.html">Back to Chain Calculator</a>
     </p>
 
-    <div class="controls">
+    <div class="view-toggle">
+      <button
+        class="toggle-btn active"
+        data-view="saw"
+        onclick="switchView('saw')"
+      >
+        By Chainsaw
+      </button>
+      <button class="toggle-btn" data-view="bar" onclick="switchView('bar')">
+        By Bar
+      </button>
+    </div>
+
+    <div id="saw-controls" class="controls">
       <div class="field">
         <label>Brand</label>
         <select id="brand-select" onchange="onBrandChange()">
@@ -224,6 +472,44 @@
       </div>
     </div>
 
+    <div id="bar-controls" class="controls" style="display: none">
+      <div class="field">
+        <label>Bar Size</label>
+        <select id="bar-size-select" onchange="onBarFilterChange()">
+          <option value="">All sizes...</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Bar Type</label>
+        <select id="bar-type-select" onchange="onBarFilterChange()">
+          <option value="">All types...</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Gauge</label>
+        <select id="bar-gauge-select" onchange="onBarFilterChange()">
+          <option value="">All gauges...</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Pitch</label>
+        <select id="bar-pitch-select" onchange="onBarFilterChange()">
+          <option value="">All pitches...</option>
+        </select>
+      </div>
+      <div class="field bar-pn-field">
+        <label>Part Number</label>
+        <input
+          type="text"
+          id="bar-pn-input"
+          placeholder="Search P/N..."
+          oninput="onBarPNInput()"
+          autocomplete="off"
+        />
+        <div id="bar-pn-dropdown" class="pn-dropdown"></div>
+      </div>
+    </div>
+
     <div id="results">
       <p class="empty-state">
         Select your chainsaw model above to see compatible bars and chains.
@@ -233,6 +519,11 @@
     <script>
       // Chain type short codes used as column headers
       const CHAIN_TYPES = [
+        "PM3",
+        "PS3",
+        "PD3",
+        "PM",
+        "PS",
         "RM3",
         "RS3",
         "RD3",
@@ -243,6 +534,11 @@
         "RSK",
       ];
       const CHAIN_LABELS = {
+        PM3: "Semi Chisel\nSafety",
+        PS3: "Full Chisel\nSafety",
+        PD3: "Carbide\nSafety",
+        PM: "Semi\nChisel",
+        PS: "Full\nChisel",
         RM3: "Semi Chisel\nSafety",
         RS3: "Full Chisel\nSafety",
         RD3: "Carbide\nSafety",
@@ -1373,10 +1669,1157 @@
               },
             ],
           },
+          "MS 660 / MS 661": {
+            sprockets: [
+              {
+                pitch: '3/8"',
+                teeth: 7,
+                spur: "1122 640 2002",
+                rimKit: "1122 007 1000",
+                rim: "0000 642 1223",
+              },
+              {
+                pitch: '3/8"',
+                teeth: 8,
+                spur: "1122 640 2000",
+                rimKit: "1122 007 1001",
+                rim: "0000 642 1216",
+              },
+              {
+                pitch: '.404"',
+                teeth: 7,
+                spur: "1122 640 2001",
+                rimKit: "1122 007 1002",
+                rim: "0000 642 1207",
+              },
+            ],
+            rows: [
+              // ── 16" Rollomatic E ──
+              {
+                size: '16"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 60,
+                barPN: "3003 000 5213",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 60",
+                  RS3: "36 RS3 60",
+                  RD3: "36 RD3 60",
+                  RM: "36 RM 60",
+                  RS: "36 RS 60",
+                  RSK: "36 RSK 60",
+                },
+              },
+              // ── 18" ──
+              {
+                size: '18"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 66,
+                barPN: "3003 000 5217",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 66",
+                  RS3: "36 RS3 66",
+                  RD3: "36 RD3 66",
+                  RM: "36 RM 66",
+                  RS: "36 RS 66",
+                  RSK: "36 RSK 66",
+                },
+              },
+              // ── 20" ──
+              {
+                size: '20"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 72,
+                barPN: "3003 000 5221",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                },
+              },
+              // ── 25" ──
+              {
+                size: '25"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: "84/85",
+                barPN: "3003 000 7831",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3",
+                  RS3: "33 RS3",
+                  RD3: "33 RD3",
+                  RM: "33 RM",
+                  RMF: "33 RMF",
+                  RS: "33 RS",
+                  RSF: "33 RSF",
+                  RSK: "33 RSK",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 84,
+                barPN: "3003 000 5231",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+              // ── 16" Rollomatic ES ──
+              {
+                size: '16"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 60,
+                barPN: "3003 000 8813",
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 60",
+                  RS3: "33 RS3 60",
+                  RD3: "33 RD3 60",
+                  RM: "33 RM 60",
+                  RMF: "33 RMF 60",
+                  RS: "33 RS 60",
+                  RSF: "33 RSF 60",
+                  RSK: "33 RSK 60",
+                },
+              },
+              {
+                size: '16"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 60,
+                barPN: "3003 001 9413\n3003 000 9413",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 60",
+                  RS3: "36 RS3 60",
+                  RD3: "36 RD3 60",
+                  RM: "36 RM 60",
+                  RS: "36 RS 60",
+                  RSK: "36 RSK 60",
+                },
+              },
+              // ── 18" Rollomatic ES ──
+              {
+                size: '18"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 66,
+                barPN: "3003 000 8817",
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 66",
+                  RS3: "33 RS3 66",
+                  RD3: "33 RD3 66",
+                  RM: "33 RM 66",
+                  RMF: "33 RMF 66",
+                  RS: "33 RS 66",
+                  RSF: "33 RSF 66",
+                  RSK: "33 RSK 66",
+                },
+              },
+              {
+                size: '18"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 66,
+                barPN: "3003 000 9417",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 66",
+                  RS3: "36 RS3 66",
+                  RD3: "36 RD3 66",
+                  RM: "36 RM 66",
+                  RS: "36 RS 66",
+                  RSK: "36 RSK 66",
+                },
+              },
+              // ── 20" Rollomatic ES ──
+              {
+                size: '20"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 72,
+                barPN: "3003 000 8822",
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 72",
+                  RS3: "33 RS3 72",
+                  RD3: "33 RD3 72",
+                  RM: "33 RM 72",
+                  RMF: "33 RMF 72",
+                  RS: "33 RS 72",
+                  RSF: "33 RSF 72",
+                  RSK: "33 RSK 72",
+                },
+              },
+              {
+                size: '20"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 72,
+                barPN: "3003 002 9421\n3003 000 9421",
+                rec: true,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                },
+              },
+              {
+                size: '20"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 66,
+                barPN: "3003 000 9721",
+                rec: false,
+                chains: {
+                  RM: "46 RM 66",
+                  RMF: "46 RMF 66",
+                  RS: "46 RS 66",
+                  RSF: "46 RSF 66",
+                },
+              },
+              // ── 22" ──
+              {
+                size: '22"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 76,
+                barPN: "3003 000 9425",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 76",
+                  RS3: "36 RS3 76",
+                  RD3: "36 RD3 76",
+                  RM: "36 RM 76",
+                  RS: "36 RS 76",
+                  RSK: "36 RSK 76",
+                },
+              },
+              // ── 25" Rollomatic ES ──
+              {
+                size: '25"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 84,
+                barPN: "3003 000 8830\n3003 000 4030",
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 84",
+                  RS3: "33 RS3 84",
+                  RD3: "33 RD3 84",
+                  RM: "33 RM 84",
+                  RMF: "33 RMF 84",
+                  RS: "33 RS 84",
+                  RSF: "33 RSF 84",
+                  RSK: "33 RSK 84",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 84,
+                barPN: "3003 000 9431",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 77,
+                barPN: "3003 000 9731",
+                rec: false,
+                chains: {
+                  RM: "46 RM 77",
+                  RMF: "46 RMF 77",
+                  RS: "46 RS 77",
+                  RSF: "46 RSF 77",
+                },
+              },
+              // ── 28" ──
+              {
+                size: '28"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 91,
+                barPN: "3003 000 8838",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 91",
+                  RS3: "33 RS3 91",
+                  RD3: "33 RD3 91",
+                  RM: "33 RM 91",
+                  RMF: "33 RMF 91",
+                  RS: "33 RS 91",
+                  RSF: "33 RSF 91",
+                  RSK: "33 RSK 91",
+                },
+              },
+              {
+                size: '28"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: "91/92",
+                barPN: "3003 000 6038",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3",
+                  RS3: "36 RS3",
+                  RD3: "36 RD3",
+                  RM: "36 RM",
+                  RS: "36 RS",
+                  RSK: "36 RSK",
+                },
+              },
+              // ── 30" ──
+              {
+                size: '30"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 98,
+                barPN: "3003 000 6041",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 98",
+                  RS3: "36 RS3 98",
+                  RD3: "36 RD3 98",
+                  RM: "36 RM 98",
+                  RS: "36 RS 98",
+                  RSK: "36 RSK 98",
+                },
+              },
+              // ── 32" ──
+              {
+                size: '32"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 105,
+                barPN: "3003 000 8846",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 105",
+                  RS3: "33 RS3 105",
+                  RD3: "33 RD3 105",
+                  RM: "33 RM 105",
+                  RMF: "33 RMF 105",
+                  RS: "33 RS 105",
+                  RSF: "33 RSF 105",
+                  RSK: "33 RSK 105",
+                },
+              },
+              {
+                size: '32"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 105,
+                barPN: "3003 000 6046",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 105",
+                  RS3: "36 RS3 105",
+                  RD3: "36 RD3 105",
+                  RM: "36 RM 105",
+                  RS: "36 RS 105",
+                  RSK: "36 RSK 105",
+                },
+              },
+              {
+                size: '32"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 95,
+                barPN: "3003 000 7346",
+                rec: false,
+                chains: {
+                  RM: "46 RM 95",
+                  RMF: "46 RMF 95",
+                  RS: "46 RS 95",
+                  RSF: "46 RSF 95",
+                },
+              },
+              // ── 36" ──
+              {
+                size: '36"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 114,
+                barPN: "3003 000 8853",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 114",
+                  RS3: "33 RS3 114",
+                  RD3: "33 RD3 114",
+                  RM: "33 RM 114",
+                  RMF: "33 RMF 114",
+                  RS: "33 RS 114",
+                  RSF: "33 RSF 114",
+                  RSK: "33 RSK 114",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 114,
+                barPN: "3003 000 6053",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 114",
+                  RS3: "36 RS3 114",
+                  RD3: "36 RD3 114",
+                  RM: "36 RM 114",
+                  RS: "36 RS 114",
+                  RSK: "36 RSK 114",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 104,
+                barPN: "3003 000 7353",
+                rec: false,
+                chains: {
+                  RM: "46 RM 104",
+                  RMF: "46 RMF 104",
+                  RS: "46 RS 104",
+                  RSF: "46 RSF 104",
+                },
+              },
+              // ── Rollomatic ES Light ──
+              {
+                size: '20"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 72,
+                barPN: "3003 000 2221",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 72",
+                  RS3: "33 RS3 72",
+                  RD3: "33 RD3 72",
+                  RM: "33 RM 72",
+                  RMF: "33 RMF 72",
+                  RS: "33 RS 72",
+                  RSF: "33 RSF 72",
+                  RSK: "33 RSK 72",
+                },
+              },
+              {
+                size: '20"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 72,
+                barPN: "3003 000 2021",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 84,
+                barPN: "3003 000 2231",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 84",
+                  RS3: "33 RS3 84",
+                  RD3: "33 RD3 84",
+                  RM: "33 RM 84",
+                  RMF: "33 RMF 84",
+                  RS: "33 RS 84",
+                  RSF: "33 RSF 84",
+                  RSK: "33 RSK 84",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 84,
+                barPN: "3003 000 2031",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+              {
+                size: '28"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 91,
+                barPN: "3003 000 2238",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 91",
+                  RS3: "33 RS3 91",
+                  RD3: "33 RD3 91",
+                  RM: "33 RM 91",
+                  RMF: "33 RMF 91",
+                  RS: "33 RS 91",
+                  RSF: "33 RSF 91",
+                  RSK: "33 RSK 91",
+                },
+              },
+              {
+                size: '28"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 91,
+                barPN: "3003 000 2038",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 91",
+                  RS3: "36 RS3 91",
+                  RD3: "36 RD3 91",
+                  RM: "36 RM 91",
+                  RS: "36 RS 91",
+                  RSK: "36 RSK 91",
+                },
+              },
+              {
+                size: '32"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 105,
+                barPN: "3003 000 2246",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 105",
+                  RS3: "33 RS3 105",
+                  RD3: "33 RD3 105",
+                  RM: "33 RM 105",
+                  RMF: "33 RMF 105",
+                  RS: "33 RS 105",
+                  RSF: "33 RSF 105",
+                  RSK: "33 RSK 105",
+                },
+              },
+              {
+                size: '32"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 105,
+                barPN: "3003 000 2046",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 105",
+                  RS3: "36 RS3 105",
+                  RD3: "36 RD3 105",
+                  RM: "36 RM 105",
+                  RS: "36 RS 105",
+                  RSK: "36 RSK 105",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".050",
+                dl: 114,
+                barPN: "3003 000 2253",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 114",
+                  RS3: "33 RS3 114",
+                  RD3: "33 RD3 114",
+                  RM: "33 RM 114",
+                  RMF: "33 RMF 114",
+                  RS: "33 RS 114",
+                  RSF: "33 RSF 114",
+                  RSK: "33 RSK 114",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 114,
+                barPN: "3003 000 2053",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 114",
+                  RS3: "36 RS3 114",
+                  RD3: "36 RD3 114",
+                  RM: "36 RM 114",
+                  RS: "36 RS 114",
+                  RSK: "36 RSK 114",
+                },
+              },
+            ],
+          },
+          "MS 880 / MS 881": {
+            sprockets: [
+              {
+                pitch: '3/8"',
+                teeth: 8,
+                spur: "1124 640 2004",
+                rimKit: "1124 007 1025",
+                rim: "0000 642 1216",
+              },
+              {
+                pitch: '.404"',
+                teeth: 7,
+                spur: "1124 640 2005",
+                rimKit: "1124 007 1024",
+                rim: "0000 642 1207",
+              },
+            ],
+            rows: [
+              // ── Rollomatic ES ──
+              {
+                size: '21"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 75,
+                barPN: "3002 000 9123",
+                rec: false,
+                chains: { RS3: "36 RS3 75", RS: "36 RS 75" },
+              },
+              {
+                size: '25"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 80,
+                barPN: "3002 000 9731",
+                rec: false,
+                chains: {
+                  RM: "46 RM 80",
+                  RMF: "46 RMF 80",
+                  RS: "46 RS 80",
+                  RSF: "46 RSF 80",
+                },
+              },
+              {
+                size: '30"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 91,
+                barPN: "3002 000 9741",
+                rec: false,
+                chains: {
+                  RM: "46 RM 91",
+                  RMF: "46 RMF 91",
+                  RS: "46 RS 91",
+                  RSF: "46 RSF 91",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 108,
+                barPN: "3002 000 9753",
+                rec: false,
+                chains: {
+                  RM: "46 RM 108",
+                  RMF: "46 RMF 108",
+                  RS: "46 RS 108",
+                  RSF: "46 RSF 108",
+                },
+              },
+              {
+                size: '41"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 123,
+                barPN: "3002 000 9757",
+                rec: false,
+                chains: {
+                  RM: "46 RM 123",
+                  RMF: "46 RMF 123",
+                  RS: "46 RS 123",
+                  RSF: "46 RSF 123",
+                },
+              },
+              {
+                size: '59"',
+                barType: "Rollomatic ES",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 173,
+                barPN: "3002 000 9576",
+                rec: false,
+                chains: {
+                  RM: "46 RM 173",
+                  RMF: "46 RMF 173",
+                  RS: "46 RS 173",
+                  RSF: "46 RSF 173",
+                },
+              },
+              // ── Duromatic E ──
+              {
+                size: '17"',
+                barType: "Duromatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 66,
+                barPN: "3002 000 9215",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 66",
+                  RS3: "36 RS3 66",
+                  RD3: "36 RD3 66",
+                  RM: "36 RM 66",
+                  RS: "36 RS 66",
+                  RSK: "36 RSK 66",
+                },
+              },
+              {
+                size: '17"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 60,
+                barPN: "3002 000 9215",
+                rec: false,
+                chains: {
+                  RM: "46 RM 60",
+                  RMF: "46 RMF 60",
+                  RS: "46 RS 60",
+                  RSF: "46 RSF 60",
+                },
+              },
+              {
+                size: '25"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 80,
+                barPN: "3002 000 9231",
+                rec: false,
+                chains: {
+                  RM: "46 RM 80",
+                  RMF: "46 RMF 80",
+                  RS: "46 RS 80",
+                  RSF: "46 RSF 80",
+                },
+              },
+              {
+                size: '30"',
+                barType: "Duromatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 100,
+                barPN: "3002 000 8041",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 100",
+                  RS3: "36 RS3 100",
+                  RD3: "36 RD3 100",
+                  RM: "36 RM 100",
+                  RS: "36 RS 100",
+                  RSK: "36 RSK 100",
+                },
+              },
+              {
+                size: '30"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 91,
+                barPN: "3002 000 8041",
+                rec: false,
+                chains: {
+                  RM: "46 RM 91",
+                  RMF: "46 RMF 91",
+                  RS: "46 RS 91",
+                  RSF: "46 RSF 91",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Duromatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 114,
+                barPN: "3002 000 8052",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 114",
+                  RS3: "36 RS3 114",
+                  RD3: "36 RD3 114",
+                  RM: "36 RM 114",
+                  RS: "36 RS 114",
+                  RSK: "36 RSK 114",
+                },
+              },
+              {
+                size: '36"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 104,
+                barPN: "3002 000 8052",
+                rec: false,
+                chains: {
+                  RM: "46 RM 104",
+                  RMF: "46 RMF 104",
+                  RS: "46 RS 104",
+                  RSF: "46 RSF 104",
+                },
+              },
+              {
+                size: '41"',
+                barType: "Duromatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 135,
+                barPN: "3002 000 8058",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 135",
+                  RS3: "36 RS3 135",
+                  RD3: "36 RD3 135",
+                  RM: "36 RM 135",
+                  RS: "36 RS 135",
+                  RSK: "36 RSK 135",
+                },
+              },
+              {
+                size: '41"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 123,
+                barPN: "3002 000 8058",
+                rec: false,
+                chains: {
+                  RM: "46 RM 123",
+                  RMF: "46 RMF 123",
+                  RS: "46 RS 123",
+                  RSF: "46 RSF 123",
+                },
+              },
+              {
+                size: '47"',
+                barType: "Duromatic E",
+                pitch: '3/8"',
+                gauge: ".063",
+                dl: 152,
+                barPN: "3002 000 8064",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 152",
+                  RS3: "36 RS3 152",
+                  RD3: "36 RD3 152",
+                  RM: "36 RM 152",
+                  RS: "36 RS 152",
+                  RSK: "36 RSK 152",
+                },
+              },
+              {
+                size: '47"',
+                barType: "Duromatic E",
+                pitch: '.404"',
+                gauge: ".063",
+                dl: 138,
+                barPN: "3002 000 8064",
+                rec: false,
+                chains: {
+                  RM: "46 RM 138",
+                  RMF: "46 RMF 138",
+                  RS: "46 RS 138",
+                  RSF: "46 RSF 138",
+                },
+              },
+            ],
+          },
+          "MS 170": {
+            sprockets: [
+              { pitch: '3/8" P', teeth: 6, spur: "1123 640 2003" },
+              { pitch: '1/4"', teeth: 8, spur: "1123 640 2007" },
+            ],
+            rows: [
+              // ── 12" Rollomatic E ──
+              {
+                size: '12"',
+                barType: "Rollomatic E",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 44,
+                barPN: "3005 000 4805",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 44",
+                  PS3: "63 PS3 44",
+                  PD3: "63 PD3 44",
+                  PM: "63 PM 44",
+                  PS: "63 PS 44",
+                },
+              },
+              // ── 14" ──
+              {
+                size: '14"',
+                barType: "Rollomatic E",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 50,
+                barPN: "3005 000 4809",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 50",
+                  PS3: "63 PS3 50",
+                  PD3: "63 PD3 50",
+                  PM: "63 PM 50",
+                  PS: "63 PS 50",
+                },
+              },
+              // ── 16" ──
+              {
+                size: '16"',
+                barType: "Rollomatic E",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 55,
+                barPN: "3005 008 4813\n3005 000 4813",
+                rec: true,
+                chains: {
+                  PM3: "63 PM3 55",
+                  PS3: "63 PS3 55",
+                  PD3: "63 PD3 55",
+                  PM: "63 PM 55",
+                  PS: "63 PS 55",
+                },
+              },
+              // ── 18" ──
+              {
+                size: '18"',
+                barType: "Rollomatic E",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 61,
+                barPN: "3005 000 4817",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 61",
+                  PS3: "63 PS3 61",
+                  PD3: "63 PD3 61",
+                  PM: "63 PM 61",
+                  PS: "63 PS 61",
+                },
+              },
+              // ── Rollomatic E Light ──
+              {
+                size: '12"',
+                barType: "Rollomatic E Light",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 44,
+                barPN: "3005 000 7405",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 44",
+                  PS3: "63 PS3 44",
+                  PD3: "63 PD3 44",
+                  PM: "63 PM 44",
+                  PS: "63 PS 44",
+                },
+              },
+              {
+                size: '14"',
+                barType: "Rollomatic E Light",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 50,
+                barPN: "3005 000 7409",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 50",
+                  PS3: "63 PS3 50",
+                  PD3: "63 PD3 50",
+                  PM: "63 PM 50",
+                  PS: "63 PS 50",
+                },
+              },
+              {
+                size: '16"',
+                barType: "Rollomatic E Light",
+                pitch: '3/8" P',
+                gauge: ".050",
+                dl: 55,
+                barPN: "3005 000 7413",
+                rec: false,
+                chains: {
+                  PM3: "63 PM3 55",
+                  PS3: "63 PS3 55",
+                  PD3: "63 PD3 55",
+                  PM: "63 PM 55",
+                  PS: "63 PS 55",
+                },
+              },
+            ],
+          },
         },
       };
 
+      // ─── Helpers ────────────────────────────────────────────────────────────────────
+      function escAttr(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function copyPN(pn, btn) {
+        navigator.clipboard.writeText(pn).then(() => {
+          btn.textContent = "✓";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "copy";
+            btn.classList.remove("copied");
+          }, 1200);
+        });
+      }
+
+      // ─── Bar Index (computed from MODELS) ─────────────────────────────────────────
+      // Key = bar PN, value = { barType, size, pitch, gauge, dl, chains, saws: [{brand, model, rec}] }
+      const BAR_INDEX = {};
+      (function buildBarIndex() {
+        for (const brand of Object.keys(MODELS)) {
+          for (const model of Object.keys(MODELS[brand])) {
+            const data = MODELS[brand][model];
+            for (const row of data.rows) {
+              const pns = row.barPN.split("\n");
+              for (const pn of pns) {
+                const key = pn.trim();
+                if (!BAR_INDEX[key]) {
+                  BAR_INDEX[key] = {
+                    pn: key,
+                    barType: row.barType,
+                    size: row.size,
+                    pitch: row.pitch,
+                    gauge: row.gauge,
+                    dl: row.dl,
+                    chains: { ...row.chains },
+                    saws: [],
+                  };
+                } else {
+                  // Merge chains (same bar may have different chain avail listed per model)
+                  for (const [ct, cv] of Object.entries(row.chains)) {
+                    if (!BAR_INDEX[key].chains[ct])
+                      BAR_INDEX[key].chains[ct] = cv;
+                  }
+                }
+                // Add saw reference
+                const already = BAR_INDEX[key].saws.find(
+                  (s) => s.brand === brand && s.model === model,
+                );
+                if (!already) {
+                  BAR_INDEX[key].saws.push({ brand, model, rec: row.rec });
+                }
+              }
+            }
+          }
+        }
+      })();
+
+      // Sorted list of all unique bar PNs
+      const ALL_BAR_PNS = Object.keys(BAR_INDEX).sort();
+
       // ─── UI ────────────────────────────────────────────────────────────────────────
+
+      let currentView = "saw"; // "saw" or "bar"
+
+      function switchView(view) {
+        currentView = view;
+        document.querySelectorAll(".toggle-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.view === view);
+        });
+        document.getElementById("saw-controls").style.display =
+          view === "saw" ? "flex" : "none";
+        document.getElementById("bar-controls").style.display =
+          view === "bar" ? "flex" : "none";
+
+        if (view === "saw") {
+          onModelChange();
+        } else {
+          populateBarFilters();
+          onBarFilterChange();
+        }
+      }
+
+      // ─── Saw View ──────────────────────────────────────────────────────────────────
 
       function onBrandChange() {
         const brand = document.getElementById("brand-select").value;
@@ -1396,15 +2839,18 @@
         const model = document.getElementById("model-select").value;
         if (!brand || !model) {
           document.getElementById("results").innerHTML =
-            '<p class="empty-state">Select your chainsaw model above.</p>';
-          history.replaceState(null, "", location.pathname);
+            '<p class="empty-state">Select your chainsaw model above to see compatible bars and chains.</p>';
+          if (currentView === "saw")
+            history.replaceState(null, "", location.pathname);
           return;
         }
-        history.replaceState(
-          null,
-          "",
-          `#${encodeURIComponent(brand)}/${encodeURIComponent(model)}`,
-        );
+        if (currentView === "saw") {
+          history.replaceState(
+            null,
+            "",
+            `#saw/${encodeURIComponent(brand)}/${encodeURIComponent(model)}`,
+          );
+        }
         renderModel(model, MODELS[brand][model]);
       }
 
@@ -1416,16 +2862,15 @@
           data.rows.some((r) => r.chains[t]),
         );
 
-        // Group rows by size
-        const sizes = [];
+        // Group rows by size, sorted numerically
         const sizeMap = {};
         for (const row of data.rows) {
-          if (!sizeMap[row.size]) {
-            sizeMap[row.size] = [];
-            sizes.push(row.size);
-          }
+          if (!sizeMap[row.size]) sizeMap[row.size] = [];
           sizeMap[row.size].push(row);
         }
+        const sizes = Object.keys(sizeMap).sort(
+          (a, b) => parseFloat(a) - parseFloat(b),
+        );
 
         let html = "";
         html += `<div class="legend">`;
@@ -1442,9 +2887,9 @@
             html += `<tr>`;
             html += `<td class="bar-info">${s.pitch}</td>`;
             html += `<td class="bar-info">${s.teeth}</td>`;
-            html += `<td class="bar-pn">${s.spur || "–"}</td>`;
-            html += `<td class="bar-pn">${s.rim}</td>`;
-            html += `<td class="bar-pn">${s.rimKit}</td>`;
+            html += `<td class="bar-pn">${s.spur ? s.spur + ` <button class="copy-btn" onclick="copyPN('${s.spur}',this)">copy</button>` : "–"}</td>`;
+            html += `<td class="bar-pn">${s.rim ? s.rim + ` <button class="copy-btn" onclick="copyPN('${s.rim}',this)">copy</button>` : "–"}</td>`;
+            html += `<td class="bar-pn">${s.rimKit ? s.rimKit + ` <button class="copy-btn" onclick="copyPN('${s.rimKit}',this)">copy</button>` : "–"}</td>`;
             html += `</tr>`;
           }
           html += `</tbody></table></div>`;
@@ -1493,7 +2938,13 @@
             }
             html += `<td class="bar-info">${row.gauge}</td>`;
             html += `<td class="bar-info">${row.dl}</td>`;
-            html += `<td class="bar-pn">${barPNs.join("<br>")}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            const pnLinks = barPNs
+              .map((pn) => {
+                const p = pn.trim();
+                return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>`;
+              })
+              .join("<br>");
+            html += `<td class="bar-pn">${pnLinks}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             for (const t of usedTypes) {
               const c = row.chains[t];
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
@@ -1507,20 +2958,364 @@
         container.innerHTML = html;
       }
 
-      // Init — restore from hash or default to stihl
+      // ─── Bar View ──────────────────────────────────────────────────────────────────
+
+      function populateBarFilters() {
+        const sizeSel = document.getElementById("bar-size-select");
+        const typeSel = document.getElementById("bar-type-select");
+        const gaugeSel = document.getElementById("bar-gauge-select");
+        const pitchSel = document.getElementById("bar-pitch-select");
+
+        const sizes = [...new Set(Object.values(BAR_INDEX).map((b) => b.size))];
+        const types = [
+          ...new Set(Object.values(BAR_INDEX).map((b) => b.barType)),
+        ];
+        const gauges = [
+          ...new Set(Object.values(BAR_INDEX).map((b) => b.gauge)),
+        ];
+        const pitches = [
+          ...new Set(Object.values(BAR_INDEX).map((b) => b.pitch)),
+        ];
+
+        // Sort sizes numerically
+        sizes.sort((a, b) => parseFloat(a) - parseFloat(b));
+        types.sort();
+        gauges.sort();
+        pitches.sort();
+
+        function fill(sel, opts) {
+          const val = sel.value;
+          const label = sel.options[0].text;
+          sel.innerHTML = `<option value="">${label}</option>`;
+          for (const o of opts)
+            sel.innerHTML += `<option value="${escAttr(o)}">${o}</option>`;
+          if (opts.includes(val)) sel.value = val;
+        }
+
+        fill(sizeSel, sizes);
+        fill(typeSel, types);
+        fill(gaugeSel, gauges);
+        fill(pitchSel, pitches);
+      }
+
+      function getFilteredBars() {
+        const size = document.getElementById("bar-size-select").value;
+        const type = document.getElementById("bar-type-select").value;
+        const gauge = document.getElementById("bar-gauge-select").value;
+        const pitch = document.getElementById("bar-pitch-select").value;
+
+        return Object.values(BAR_INDEX).filter((b) => {
+          if (size && b.size !== size) return false;
+          if (type && b.barType !== type) return false;
+          if (gauge && b.gauge !== gauge) return false;
+          if (pitch && b.pitch !== pitch) return false;
+          return true;
+        });
+      }
+
+      function onBarFilterChange() {
+        // Clear PN input when filters change
+        document.getElementById("bar-pn-input").value = "";
+        closePNDropdown();
+
+        const bars = getFilteredBars();
+        updateBarFilterOptions(bars);
+        renderBarResults(bars);
+        updateBarHash();
+      }
+
+      function updateBarFilterOptions(matchingBars) {
+        // Update each filter to only show options that exist in the current result set,
+        // but preserve the user's current selections
+        const sizeSel = document.getElementById("bar-size-select");
+        const typeSel = document.getElementById("bar-type-select");
+        const gaugeSel = document.getElementById("bar-gauge-select");
+        const pitchSel = document.getElementById("bar-pitch-select");
+
+        // For each filter, determine available options by relaxing just that filter
+        function optionsFor(field) {
+          const size = sizeSel.value;
+          const type = typeSel.value;
+          const gauge = gaugeSel.value;
+          const pitch = pitchSel.value;
+          const vals = new Set();
+          for (const b of Object.values(BAR_INDEX)) {
+            if (field !== "size" && size && b.size !== size) continue;
+            if (field !== "type" && type && b.barType !== type) continue;
+            if (field !== "gauge" && gauge && b.gauge !== gauge) continue;
+            if (field !== "pitch" && pitch && b.pitch !== pitch) continue;
+            vals.add(b[field === "type" ? "barType" : field]);
+          }
+          return vals;
+        }
+
+        function updateOpts(sel, opts, sort) {
+          const val = sel.value;
+          const label = sel.options[0].text;
+          const sorted = [...opts];
+          if (sort === "num")
+            sorted.sort((a, b) => parseFloat(a) - parseFloat(b));
+          else sorted.sort();
+          sel.innerHTML = `<option value="">${label}</option>`;
+          for (const o of sorted)
+            sel.innerHTML += `<option value="${escAttr(o)}">${o}</option>`;
+          if (opts.has(val)) sel.value = val;
+          else sel.value = "";
+        }
+
+        updateOpts(sizeSel, optionsFor("size"), "num");
+        updateOpts(typeSel, optionsFor("type"), "str");
+        updateOpts(gaugeSel, optionsFor("gauge"), "str");
+        updateOpts(pitchSel, optionsFor("pitch"), "str");
+      }
+
+      function onBarPNInput() {
+        const input = document.getElementById("bar-pn-input");
+        const dropdown = document.getElementById("bar-pn-dropdown");
+        const query = input.value.trim().replace(/\s+/g, "");
+
+        if (query.length < 2) {
+          closePNDropdown();
+          return;
+        }
+
+        // Search — match anywhere in the PN (ignoring spaces)
+        const matches = ALL_BAR_PNS.filter((pn) =>
+          pn.replace(/\s+/g, "").includes(query),
+        ).slice(0, 15);
+
+        if (matches.length === 0) {
+          dropdown.innerHTML =
+            '<div class="pn-option" style="color:#555;cursor:default;">No matches</div>';
+          dropdown.classList.add("open");
+          return;
+        }
+
+        dropdown.innerHTML = matches
+          .map((pn) => {
+            const b = BAR_INDEX[pn];
+            return `<div class="pn-option" onclick="selectBarPN('${pn}')">${pn}<span class="pn-meta">${b.size} ${b.barType} ${b.pitch} ${b.gauge}</span></div>`;
+          })
+          .join("");
+        dropdown.classList.add("open");
+      }
+
+      function selectBarPN(pn) {
+        document.getElementById("bar-pn-input").value = pn;
+        closePNDropdown();
+
+        // Reset filters
+        document.getElementById("bar-size-select").value = "";
+        document.getElementById("bar-type-select").value = "";
+        document.getElementById("bar-gauge-select").value = "";
+        document.getElementById("bar-pitch-select").value = "";
+
+        const bar = BAR_INDEX[pn];
+        if (bar) {
+          renderBarResults([bar]);
+          history.replaceState(null, "", `#bar/pn/${encodeURIComponent(pn)}`);
+        }
+      }
+
+      function closePNDropdown() {
+        document.getElementById("bar-pn-dropdown").classList.remove("open");
+      }
+
+      // Close PN dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".bar-pn-field")) closePNDropdown();
+      });
+
+      function updateBarHash() {
+        const size = document.getElementById("bar-size-select").value;
+        const type = document.getElementById("bar-type-select").value;
+        const gauge = document.getElementById("bar-gauge-select").value;
+        const pitch = document.getElementById("bar-pitch-select").value;
+        if (!size && !type && !gauge && !pitch) {
+          history.replaceState(null, "", "#bar");
+          return;
+        }
+        const parts = [];
+        if (size) parts.push(`s=${encodeURIComponent(size)}`);
+        if (type) parts.push(`t=${encodeURIComponent(type)}`);
+        if (gauge) parts.push(`g=${encodeURIComponent(gauge)}`);
+        if (pitch) parts.push(`p=${encodeURIComponent(pitch)}`);
+        history.replaceState(null, "", `#bar/${parts.join("&")}`);
+      }
+
+      function renderBarResults(bars) {
+        const container = document.getElementById("results");
+
+        if (bars.length === 0) {
+          container.innerHTML =
+            '<p class="empty-state">No bars match the current filters.</p>';
+          return;
+        }
+
+        if (bars.length > 50) {
+          container.innerHTML = `<p class="empty-state">Showing all ${bars.length} bars. Use the filters to narrow down.</p>`;
+          // Still render them, just show a count header
+        }
+
+        // Sort: by size (numeric), then bar type, then gauge
+        bars.sort((a, b) => {
+          const sA = parseFloat(a.size),
+            sB = parseFloat(b.size);
+          if (sA !== sB) return sA - sB;
+          if (a.barType !== b.barType)
+            return a.barType.localeCompare(b.barType);
+          return a.gauge.localeCompare(b.gauge);
+        });
+
+        // Figure out which chain types are present across all filtered bars
+        const usedTypes = CHAIN_TYPES.filter((t) =>
+          bars.some((b) => b.chains[t]),
+        );
+
+        let html = `<div class="bar-results-grid">`;
+
+        for (const bar of bars) {
+          const barUsedTypes = usedTypes.filter((t) => bar.chains[t]);
+
+          const autoOpen = bars.length === 1 ? " open" : "";
+          html += `<div class="bar-result-card${autoOpen}">`;
+
+          // Bar specs row (clickable toggle)
+          html += `<div class="bar-specs" onclick="this.parentElement.classList.toggle('open')">`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Size</span><span class="bar-spec-value">${bar.size}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Type</span><span class="bar-spec-value">${bar.barType}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
+          html += `<div class="bar-toggle"></div>`;
+          html += `</div>`;
+
+          // Collapsible detail section
+          html += `<div class="bar-detail">`;
+
+          // Compatible chains
+          if (barUsedTypes.length) {
+            html += `<div class="bar-section-title">Compatible Chains</div>`;
+            html += `<table class="compat-table"><thead><tr>`;
+            for (const t of barUsedTypes) {
+              html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+            }
+            html += `</tr></thead><tbody><tr>`;
+            for (const t of barUsedTypes) {
+              const c = bar.chains[t];
+              html += `<td class="chain-cell has">${c || "–"}</td>`;
+            }
+            html += `</tr></tbody></table>`;
+          }
+
+          // Compatible saws
+          if (bar.saws.length) {
+            html += `<div class="bar-section-title">Fits These Chainsaws</div>`;
+            html += `<div class="saw-list">`;
+            html += bar.saws
+              .map((s) => {
+                const brandLabel = s.brand === "stihl" ? "STIHL" : s.brand;
+                return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
+              })
+              .join(", ");
+            html += `</div>`;
+          }
+
+          html += `</div>`; // .bar-detail
+          html += `</div>`; // .bar-result-card
+        }
+
+        html += `</div>`;
+        container.innerHTML = html;
+      }
+
+      function jumpToSaw(brand, model) {
+        switchView("saw");
+        document.getElementById("brand-select").value = brand;
+        onBrandChange();
+        document.getElementById("model-select").value = model;
+        onModelChange();
+      }
+
+      function jumpToBar(pn) {
+        switchView("bar");
+        document.getElementById("bar-size-select").value = "";
+        document.getElementById("bar-type-select").value = "";
+        document.getElementById("bar-gauge-select").value = "";
+        document.getElementById("bar-pitch-select").value = "";
+        document.getElementById("bar-pn-input").value = pn;
+        const bar = BAR_INDEX[pn];
+        if (bar) {
+          renderBarResults([bar]);
+          history.replaceState(null, "", `#bar/pn/${encodeURIComponent(pn)}`);
+        }
+      }
+
+      // ─── Init ──────────────────────────────────────────────────────────────────────
+
       (function init() {
+        // Always populate the model dropdown regardless of which view loads
+        document.getElementById("brand-select").value = "stihl";
+        onBrandChange();
+
         const hash = decodeURIComponent(location.hash.slice(1));
-        const [brand, model] = hash.split("/");
-        if (brand && MODELS[brand]) {
-          document.getElementById("brand-select").value = brand;
-          onBrandChange();
-          if (model && MODELS[brand][model]) {
-            document.getElementById("model-select").value = model;
-            onModelChange();
+
+        if (hash.startsWith("bar")) {
+          // Bar view
+          switchView("bar");
+
+          if (hash.startsWith("bar/pn/")) {
+            // Specific PN
+            const pn = hash.slice(7);
+            if (BAR_INDEX[pn]) {
+              document.getElementById("bar-pn-input").value = pn;
+              renderBarResults([BAR_INDEX[pn]]);
+            }
+          } else if (hash.includes("=")) {
+            // Filters
+            const params = hash.replace("bar/", "").split("&");
+            for (const p of params) {
+              const [k, v] = p.split("=");
+              const val = decodeURIComponent(v);
+              if (k === "s")
+                document.getElementById("bar-size-select").value = val;
+              if (k === "t")
+                document.getElementById("bar-type-select").value = val;
+              if (k === "g")
+                document.getElementById("bar-gauge-select").value = val;
+              if (k === "p")
+                document.getElementById("bar-pitch-select").value = val;
+            }
+            onBarFilterChange();
+          } else {
+            // Just "bar" with no filters — show empty state
+            document.getElementById("results").innerHTML =
+              '<p class="empty-state">Use the filters or search a part number to find bars.</p>';
           }
         } else {
-          document.getElementById("brand-select").value = "stihl";
-          onBrandChange();
+          // Saw view (default)
+          // Handle legacy hashes without "saw/" prefix
+          let brand, model;
+          if (hash.startsWith("saw/")) {
+            const rest = hash.slice(4); // remove "saw/"
+            const idx = rest.indexOf("/");
+            brand = idx >= 0 ? rest.slice(0, idx) : rest;
+            model = idx >= 0 ? rest.slice(idx + 1) : undefined;
+          } else if (hash.includes("/")) {
+            const idx = hash.indexOf("/");
+            brand = hash.slice(0, idx);
+            model = hash.slice(idx + 1);
+          }
+
+          if (brand && MODELS[brand]) {
+            document.getElementById("brand-select").value = brand;
+            onBrandChange();
+            if (model && MODELS[brand][model]) {
+              document.getElementById("model-select").value = model;
+              onModelChange();
+            }
+          }
         }
       })();
     </script>
