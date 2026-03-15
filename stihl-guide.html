@@ -736,10 +736,42 @@
       function renderModel(name, data) {
         const container = document.getElementById("results");
 
-        // Figure out which chain types are actually used
-        const usedTypes = CHAIN_TYPES.filter((t) =>
-          data.rows.some((r) => r.chains[t]),
-        );
+        // P-prefix and R-prefix chains share the same display label (e.g. PM3/RM3,
+        // PS3/RS3, PD3/RD3, PM/RM, PS/RS). Merge them into a single column keyed
+        // by the R-prefix code (or P-prefix if no R equivalent exists).
+        const PICCO_MERGE = {
+          PM3: "RM3",
+          PS3: "RS3",
+          PD3: "RD3",
+          PM: "RM",
+          PS: "RS",
+        };
+
+        // Build deduplicated column list in CHAIN_TYPES order
+        const usedTypeSet = new Set();
+        for (const t of CHAIN_TYPES) {
+          if (data.rows.some((r) => r.chains[t])) {
+            // Map P-prefix to its R-prefix equivalent if one exists
+            usedTypeSet.add(PICCO_MERGE[t] || t);
+          }
+        }
+        const usedTypes = CHAIN_TYPES.filter((t) => usedTypeSet.has(t));
+
+        // Helper: get chain value for a column, checking both P and R codes
+        const R_TO_P = {
+          RM3: "PM3",
+          RS3: "PS3",
+          RD3: "PD3",
+          RM: "PM",
+          RS: "PS",
+        };
+        function chainVal(row, col) {
+          return (
+            row.chains[col] ||
+            (R_TO_P[col] ? row.chains[R_TO_P[col]] : null) ||
+            null
+          );
+        }
 
         // Group rows by size, sorted numerically
         const sizeMap = {};
@@ -825,7 +857,7 @@
               .join("<br>");
             html += `<td class="bar-pn">${pnLinks}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             for (const t of usedTypes) {
-              const c = row.chains[t];
+              const c = chainVal(row, t);
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
             }
             html += `</tr>`;
