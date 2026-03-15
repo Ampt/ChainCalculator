@@ -473,7 +473,10 @@
           id="model-input"
           placeholder="Type to search..."
           oninput="onModelInput()"
-          onfocus="onModelInput()"
+          onfocus="
+            this.select();
+            onModelInput();
+          "
           onkeydown="onModelKeydown(event)"
           autocomplete="off"
         />
@@ -691,6 +694,8 @@
           e.preventDefault();
           if (modelDropdownIdx >= 0 && opts[modelDropdownIdx]) {
             opts[modelDropdownIdx].click();
+          } else if (opts.length === 1) {
+            opts[0].click();
           }
         } else if (e.key === "Escape") {
           closeModelDropdown();
