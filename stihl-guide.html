@@ -632,10 +632,13 @@
         input.value = "";
         allModels = [];
         if (brand && MODELS[brand]) {
-          allModels = Object.keys(MODELS[brand]).map((m) => ({
-            brand,
-            model: m,
-          }));
+          allModels = Object.keys(MODELS[brand])
+            .sort((a, b) => {
+              const num = (s) =>
+                parseFloat(s.replace(/[^0-9.]/g, " ").trim()) || 0;
+              return num(a) - num(b);
+            })
+            .map((m) => ({ brand, model: m }));
         }
         closeModelDropdown();
         document.getElementById("results").innerHTML =
