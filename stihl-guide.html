@@ -236,10 +236,10 @@
       }
 
       /* Bar PN search */
-      .bar-pn-field {
+      .search-field {
         position: relative;
       }
-      .bar-pn-field input {
+      .search-field input {
         background: #252525;
         border: 1px solid #444;
         border-radius: 5px;
@@ -249,11 +249,12 @@
         min-width: 200px;
         outline: none;
         font-family: inherit;
+        width: 100%;
       }
-      .bar-pn-field input:focus {
+      .search-field input:focus {
         border-color: #f5a623;
       }
-      .pn-dropdown {
+      .search-dropdown {
         display: none;
         position: absolute;
         top: 100%;
@@ -263,24 +264,25 @@
         border: 1px solid #444;
         border-top: none;
         border-radius: 0 0 5px 5px;
-        max-height: 200px;
+        max-height: 260px;
         overflow-y: auto;
         z-index: 10;
       }
-      .pn-dropdown.open {
+      .search-dropdown.open {
         display: block;
       }
-      .pn-option {
+      .search-option {
         padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: #ccc;
         cursor: pointer;
       }
-      .pn-option:hover {
+      .search-option:hover,
+      .search-option.active {
         background: #383838;
         color: #f5a623;
       }
-      .pn-option .pn-meta {
+      .search-option .search-meta {
         color: #666;
         font-size: 0.7rem;
         margin-left: 0.5rem;
@@ -464,11 +466,18 @@
           <option value="stihl" selected>STIHL</option>
         </select>
       </div>
-      <div class="field">
+      <div class="field search-field">
         <label>Model</label>
-        <select id="model-select" onchange="onModelChange()">
-          <option value="">Select model...</option>
-        </select>
+        <input
+          type="text"
+          id="model-input"
+          placeholder="Type to search..."
+          oninput="onModelInput()"
+          onfocus="onModelInput()"
+          onkeydown="onModelKeydown(event)"
+          autocomplete="off"
+        />
+        <div id="model-dropdown" class="search-dropdown"></div>
       </div>
     </div>
 
@@ -497,7 +506,7 @@
           <option value="">All pitches...</option>
         </select>
       </div>
-      <div class="field bar-pn-field">
+      <div class="field search-field">
         <label>Part Number</label>
         <input
           type="text"
@@ -506,7 +515,7 @@
           oninput="onBarPNInput()"
           autocomplete="off"
         />
-        <div id="bar-pn-dropdown" class="pn-dropdown"></div>
+        <div id="bar-pn-dropdown" class="search-dropdown"></div>
       </div>
     </div>
 
@@ -611,23 +620,98 @@
 
       // ─── Saw View ──────────────────────────────────────────────────────────────────
 
+      let allModels = []; // [{brand, model}] — populated on brand change
+      let modelDropdownIdx = -1; // keyboard nav index
+
       function onBrandChange() {
         const brand = document.getElementById("brand-select").value;
-        const modelSel = document.getElementById("model-select");
-        modelSel.innerHTML = '<option value="">Select model...</option>';
+        const input = document.getElementById("model-input");
+        input.value = "";
+        allModels = [];
         if (brand && MODELS[brand]) {
-          for (const m of Object.keys(MODELS[brand])) {
-            modelSel.innerHTML += `<option value="${m}">${m}</option>`;
-          }
+          allModels = Object.keys(MODELS[brand]).map((m) => ({
+            brand,
+            model: m,
+          }));
         }
+        closeModelDropdown();
         document.getElementById("results").innerHTML =
           '<p class="empty-state">Select your chainsaw model above to see compatible bars and chains.</p>';
       }
 
+      function onModelInput() {
+        const input = document.getElementById("model-input");
+        const dropdown = document.getElementById("model-dropdown");
+        const query = input.value.trim().toLowerCase();
+        modelDropdownIdx = -1;
+
+        // Filter models — show all if input is empty (on focus)
+        const matches = allModels.filter(
+          (m) => !query || m.model.toLowerCase().includes(query),
+        );
+
+        if (matches.length === 0) {
+          dropdown.innerHTML =
+            '<div class="search-option" style="color:#555;cursor:default;">No matches</div>';
+          dropdown.classList.add("open");
+          return;
+        }
+
+        dropdown.innerHTML = matches
+          .map(
+            (m, i) =>
+              `<div class="search-option" data-idx="${i}" onclick="selectModel('${escAttr(m.brand)}','${escAttr(m.model)}')">${m.model}</div>`,
+          )
+          .join("");
+        dropdown.classList.add("open");
+      }
+
+      function onModelKeydown(e) {
+        const dropdown = document.getElementById("model-dropdown");
+        const opts = dropdown.querySelectorAll(
+          ".search-option:not([style*='cursor:default'])",
+        );
+        if (!opts.length) return;
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          modelDropdownIdx = Math.min(modelDropdownIdx + 1, opts.length - 1);
+          opts.forEach((o, i) =>
+            o.classList.toggle("active", i === modelDropdownIdx),
+          );
+          opts[modelDropdownIdx].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          modelDropdownIdx = Math.max(modelDropdownIdx - 1, 0);
+          opts.forEach((o, i) =>
+            o.classList.toggle("active", i === modelDropdownIdx),
+          );
+          opts[modelDropdownIdx].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter") {
+          e.preventDefault();
+          if (modelDropdownIdx >= 0 && opts[modelDropdownIdx]) {
+            opts[modelDropdownIdx].click();
+          }
+        } else if (e.key === "Escape") {
+          closeModelDropdown();
+        }
+      }
+
+      function selectModel(brand, model) {
+        document.getElementById("model-input").value = model;
+        closeModelDropdown();
+        onModelChange();
+      }
+
+      function closeModelDropdown() {
+        document.getElementById("model-dropdown").classList.remove("open");
+        modelDropdownIdx = -1;
+      }
+
       function onModelChange() {
         const brand = document.getElementById("brand-select").value;
-        const model = document.getElementById("model-select").value;
-        if (!brand || !model) {
+        const model = document.getElementById("model-input").value.trim();
+        if (!brand || !model || !MODELS[brand] || !MODELS[brand][model]) {
           document.getElementById("results").innerHTML =
             '<p class="empty-state">Select your chainsaw model above to see compatible bars and chains.</p>';
           if (currentView === "saw")
@@ -876,7 +960,7 @@
 
         if (matches.length === 0) {
           dropdown.innerHTML =
-            '<div class="pn-option" style="color:#555;cursor:default;">No matches</div>';
+            '<div class="search-option" style="color:#555;cursor:default;">No matches</div>';
           dropdown.classList.add("open");
           return;
         }
@@ -884,7 +968,7 @@
         dropdown.innerHTML = matches
           .map((pn) => {
             const b = BAR_INDEX[pn];
-            return `<div class="pn-option" onclick="selectBarPN('${pn}')">${pn}<span class="pn-meta">${b.size} ${b.barType} ${b.pitch} ${b.gauge}</span></div>`;
+            return `<div class="search-option" onclick="selectBarPN('${pn}')">${pn}<span class="search-meta">${b.size} ${b.barType} ${b.pitch} ${b.gauge}</span></div>`;
           })
           .join("");
         dropdown.classList.add("open");
@@ -911,9 +995,24 @@
         document.getElementById("bar-pn-dropdown").classList.remove("open");
       }
 
-      // Close PN dropdown when clicking outside
+      // Close dropdowns when clicking outside
       document.addEventListener("click", (e) => {
-        if (!e.target.closest(".bar-pn-field")) closePNDropdown();
+        if (!e.target.closest(".search-field")) {
+          closePNDropdown();
+          closeModelDropdown();
+        } else {
+          // If clicking inside a search-field, close the OTHER dropdowns
+          if (
+            !e.target.closest("#model-input") &&
+            !e.target.closest("#model-dropdown")
+          )
+            closeModelDropdown();
+          if (
+            !e.target.closest("#bar-pn-input") &&
+            !e.target.closest("#bar-pn-dropdown")
+          )
+            closePNDropdown();
+        }
       });
 
       function updateBarHash() {
@@ -1024,7 +1123,7 @@
         switchView("saw");
         document.getElementById("brand-select").value = brand;
         onBrandChange();
-        document.getElementById("model-select").value = model;
+        document.getElementById("model-input").value = model;
         onModelChange();
       }
 
@@ -1102,7 +1201,7 @@
             document.getElementById("brand-select").value = brand;
             onBrandChange();
             if (model && MODELS[brand][model]) {
-              document.getElementById("model-select").value = model;
+              document.getElementById("model-input").value = model;
               onModelChange();
             }
           }
