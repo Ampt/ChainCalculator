@@ -1486,12 +1486,12 @@
             html += `<tr${cls}>`;
             if (rowspanAt[i]) {
               const span = rowspanAt[i] > 1 ? ` rowspan="${rowspanAt[i]}"` : "";
-              html += `<td class="bar-info"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}${hasRec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+              html += `<td class="bar-info"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}</td>`;
               html += `<td class="bar-info"${span} style="vertical-align:middle;">${row.pitch}</td>`;
             }
             html += `<td class="bar-info">${row.gauge}</td>`;
             html += `<td class="bar-info">${row.dl}</td>`;
-            html += `<td class="bar-pn">${barPNs.join("<br>")}</td>`;
+            html += `<td class="bar-pn">${barPNs.join("<br>")}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             for (const t of usedTypes) {
               const c = row.chains[t];
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
