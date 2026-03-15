@@ -136,7 +136,7 @@
         font-weight: 500;
       }
       .compat-table .bar-pn {
-        color: #666;
+        color: #e0e0e0;
         font-size: 0.7rem;
       }
       .compat-table .chain-cell {
@@ -247,15 +247,14 @@
         "RSK",
       ];
       const CHAIN_LABELS = {
-        RM3: "RAPID\nMicro 3",
-        RS3: "RAPID\nSuper 3",
-        RD3: "RAPID\nDuro 3",
-        RM: "RAPID\nMicro",
-        RMF: "RAPID\nMicro F",
-        RS: "RAPID\nSuper",
-        RSF: "RAPID\nSuper F",
-        RSK: "RAPID\nSuper K",
-        RDR: "RAPID\nDuro Rescue",
+        RM3: "Semi Chisel\nSafety",
+        RS3: "Full Chisel\nSafety",
+        RD3: "Carbide\nSafety",
+        RM: "Semi\nChisel",
+        RMF: "Semi Chisel\nFull Skip",
+        RS: "Full\nChisel",
+        RSF: "Full Chisel\nFull Skip",
+        RSK: "Square\nGround",
       };
 
       // Data: each bar entry is one row. "rec" = recommended combo.
@@ -272,7 +271,7 @@
             rows: [
               // ── 16" / 40cm ──
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -282,7 +281,7 @@
                 chains: { RS3: "33 RS3 60" },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -299,7 +298,7 @@
                 },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -317,7 +316,7 @@
                 },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -336,7 +335,7 @@
 
               // ── 18" / 45cm ──
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -353,7 +352,7 @@
                 },
               },
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -371,7 +370,7 @@
                 },
               },
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -390,7 +389,7 @@
 
               // ── 20" / 50cm ──
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -407,7 +406,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -425,7 +424,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -443,7 +442,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -462,7 +461,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -481,7 +480,7 @@
 
               // ── 22" / 55cm ──
               {
-                size: '55cm / 22"',
+                size: '22"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -500,7 +499,7 @@
 
               // ── 25" / 63cm ──
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -519,7 +518,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -536,7 +535,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -555,7 +554,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -572,7 +571,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -591,7 +590,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -610,7 +609,7 @@
 
               // ── 28" / 71cm ──
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -629,7 +628,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -646,7 +645,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -665,7 +664,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -684,7 +683,7 @@
 
               // ── 30" / 75cm ──
               {
-                size: '75cm / 30"',
+                size: '30"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -703,7 +702,7 @@
 
               // ── 32" / 80cm ──
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -721,7 +720,7 @@
                 },
               },
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -739,7 +738,7 @@
 
               // ── 36" / 90cm ──
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -757,7 +756,7 @@
                 },
               },
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -794,7 +793,7 @@
             rows: [
               // ── 16" / 40cm ──
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -804,7 +803,7 @@
                 chains: { RS3: "33 RS3 60" },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -821,7 +820,7 @@
                 },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -839,7 +838,7 @@
                 },
               },
               {
-                size: '40cm / 16"',
+                size: '16"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -857,7 +856,7 @@
               },
               // ── 18" / 45cm ──
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -874,7 +873,7 @@
                 },
               },
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic E",
                 pitch: '.325"',
                 gauge: ".063",
@@ -889,7 +888,7 @@
                 },
               },
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -907,7 +906,7 @@
                 },
               },
               {
-                size: '45cm / 18"',
+                size: '18"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -925,7 +924,7 @@
               },
               // ── 20" / 50cm ──
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -942,7 +941,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -960,7 +959,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -977,7 +976,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -996,7 +995,7 @@
                 },
               },
               {
-                size: '50cm / 20"',
+                size: '20"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1014,7 +1013,7 @@
               },
               // ── 22" / 55cm ──
               {
-                size: '55cm / 22"',
+                size: '22"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1032,7 +1031,7 @@
               },
               // ── 25" / 63cm ──
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1051,7 +1050,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic E",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1068,7 +1067,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1087,7 +1086,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1104,7 +1103,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1123,7 +1122,7 @@
                 },
               },
               {
-                size: '63cm / 25"',
+                size: '25"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1141,7 +1140,7 @@
               },
               // ── 28" / 71cm ──
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1160,7 +1159,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1177,7 +1176,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1196,7 +1195,7 @@
                 },
               },
               {
-                size: '71cm / 28"',
+                size: '28"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1214,7 +1213,7 @@
               },
               // ── 30" / 75cm ──
               {
-                size: '75cm / 30"',
+                size: '30"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1232,7 +1231,7 @@
               },
               // ── 32" / 80cm ──
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1251,7 +1250,7 @@
                 },
               },
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1268,7 +1267,7 @@
                 },
               },
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1287,7 +1286,7 @@
                 },
               },
               {
-                size: '80cm / 32"',
+                size: '32"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1305,7 +1304,7 @@
               },
               // ── 36" / 90cm ──
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1324,7 +1323,7 @@
                 },
               },
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1341,7 +1340,7 @@
                 },
               },
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".050",
@@ -1360,7 +1359,7 @@
                 },
               },
               {
-                size: '90cm / 36"',
+                size: '36"',
                 barType: "Rollomatic ES Light",
                 pitch: '3/8"',
                 gauge: ".063",
@@ -1436,7 +1435,7 @@
         const sprs = data.sprockets || (data.sprocket ? [data.sprocket] : []);
         if (sprs.length) {
           html += `<div class="panel"><h2>Sprocket Options</h2>`;
-          html += `<table class="compat-table"><thead><tr><th>Pitch</th><th>Teeth</th><th>Spur Sprocket</th><th>Rim Sprocket</th><th>Rim Kit</th></tr></thead><tbody>`;
+          html += `<table class="compat-table"><thead><tr><th>Pitch</th><th>Teeth</th><th>Spur Sprocket</th><th>Rim Sprocket</th><th>Rim &amp; Drum Kit</th></tr></thead><tbody>`;
           for (const s of sprs) {
             html += `<tr>`;
             html += `<td class="bar-info">${s.pitch}</td>`;
@@ -1456,7 +1455,7 @@
           html += `<div class="size-header">${size}</div>`;
           html += `<table class="compat-table">`;
           html += `<thead><tr>`;
-          html += `<th>Bar Type</th><th>Gauge</th><th>DL</th><th style="color:#666">Bar P/N</th>`;
+          html += `<th>Bar Type</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
           for (const t of usedTypes) {
             html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
           }
@@ -1467,6 +1466,7 @@
             const barPNs = row.barPN.split("\n");
             html += `<tr${cls}>`;
             html += `<td class="bar-info">${row.barType}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            html += `<td class="bar-info">${row.pitch}</td>`;
             html += `<td class="bar-info">${row.gauge}</td>`;
             html += `<td class="bar-info">${row.dl}</td>`;
             html += `<td class="bar-pn">${barPNs.join("<br>")}</td>`;
