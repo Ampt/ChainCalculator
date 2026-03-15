@@ -40,9 +40,6 @@
         color: #f5a623;
         text-decoration: none;
       }
-      .subtitle a:hover {
-        text-decoration: underline;
-      }
       .controls {
         display: flex;
         gap: 1rem;
@@ -79,6 +76,8 @@
         border-radius: 8px;
         padding: 1.25rem;
         margin-bottom: 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
       .panel h2 {
         font-size: 0.9rem;
@@ -86,126 +85,116 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: #888;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
       }
 
-      .rec-badge {
-        display: inline-block;
-        background: #f5a623;
-        color: #1a1a1a;
-        font-size: 0.7rem;
+      .size-header {
+        font-size: 0.85rem;
         font-weight: 700;
-        padding: 0.15rem 0.4rem;
-        border-radius: 3px;
-        margin-left: 0.4rem;
+        color: #f5a623;
+        background: #1e1e1e;
+        padding: 0.5rem 0.6rem;
+        border-bottom: 2px solid #f5a623;
+        margin-top: 1rem;
+      }
+      .size-header:first-child {
+        margin-top: 0;
+      }
+
+      .compat-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.75rem;
+        table-layout: auto;
+      }
+      .compat-table th {
+        text-align: left;
+        padding: 0.3rem 0.5rem;
+        background: #2e2e2e;
+        color: #888;
+        font-weight: 600;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid #444;
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+      .compat-table td {
+        padding: 0.3rem 0.5rem;
+        border-bottom: 1px solid #2a2a2a;
+        white-space: nowrap;
         vertical-align: middle;
       }
-
-      .bar-group {
-        border: 1px solid #333;
-        border-radius: 6px;
-        margin-bottom: 0.75rem;
-        overflow: hidden;
+      .compat-table tr:hover td {
+        background: #2a2a2a;
       }
-      .bar-header {
-        background: #2e2e2e;
-        padding: 0.6rem 1rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.85rem;
-        user-select: none;
+      .compat-table .bar-info {
+        color: #ccc;
+        font-weight: 500;
       }
-      .bar-header:hover {
-        background: #363636;
-      }
-      .bar-header .bar-label {
-        font-weight: 600;
-        color: #e0e0e0;
-      }
-      .bar-header .bar-meta {
-        color: #888;
-        font-size: 0.78rem;
-      }
-      .bar-header .toggle {
+      .compat-table .bar-pn {
         color: #666;
-        font-size: 0.9rem;
-        transition: transform 0.2s;
+        font-size: 0.7rem;
       }
-      .bar-header .toggle.open {
-        transform: rotate(90deg);
+      .compat-table .chain-cell {
+        text-align: center;
+        color: #888;
+        font-size: 0.72rem;
       }
-      .bar-body {
-        padding: 0.75rem 1rem;
-        display: none;
+      .compat-table .chain-cell.has {
+        color: #ccc;
       }
-      .bar-body.open {
+      .compat-table .chain-cell .code {
         display: block;
       }
 
-      .detail-grid {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.2rem 1rem;
-        font-size: 0.82rem;
-        margin-bottom: 0.75rem;
+      .rec {
+        position: relative;
       }
-      .detail-grid .label {
-        color: #888;
-      }
-      .detail-grid .value {
-        color: #ccc;
-        font-variant-numeric: tabular-nums;
+      .rec::after {
+        content: "\2605";
+        color: #f5a623;
+        font-size: 0.6rem;
+        position: absolute;
+        top: -2px;
+        right: -1px;
       }
 
-      .chain-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.8rem;
+      .rec-row td {
+        background: #1e2a1e !important;
       }
-      .chain-table th {
-        text-align: left;
-        padding: 0.35rem 0.5rem;
-        background: #1e1e1e;
-        color: #888;
-        font-weight: 600;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        border-bottom: 1px solid #333;
+      .rec-row:hover td {
+        background: #243a24 !important;
       }
-      .chain-table td {
-        padding: 0.35rem 0.5rem;
-        border-bottom: 1px solid #2a2a2a;
-        color: #ccc;
-      }
-      .chain-table tr:last-child td {
-        border-bottom: none;
-      }
-      .chain-table tr:hover td {
-        background: #2a2a2a;
-      }
-      .chain-table .pn {
-        font-variant-numeric: tabular-nums;
-        color: #999;
+
+      .legend {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
         font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 1rem;
+        align-items: center;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      .legend-star {
+        color: #f5a623;
       }
 
       .sprocket-info {
-        background: #1e1e1e;
-        border: 1px solid #333;
-        border-radius: 6px;
-        padding: 0.75rem 1rem;
-        margin-top: 1rem;
-        font-size: 0.82rem;
-      }
-      .sprocket-info h3 {
         font-size: 0.8rem;
         color: #888;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .sprocket-info span {
+        color: #ccc;
       }
 
       .empty-state {
@@ -213,11 +202,6 @@
         text-align: center;
         padding: 3rem 1rem;
         font-size: 0.9rem;
-      }
-
-      #chain-table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
       }
     </style>
   </head>
@@ -251,591 +235,538 @@
     </div>
 
     <script>
-      // ─── Data ──────────────────────────────────────────────────────────────────────
-      // Each model has: recommended combos, and full bar/chain matrix grouped by bar type
-      // Chain types: RM3=Rapid Micro 3, RS3=Rapid Super 3, RD3=Rapid Duro 3,
-      //   RM=Rapid Micro, RMF=Rapid Micro F, RS=Rapid Super, RSF=Rapid Super F, RSK=Rapid Super K
-      //   RDR=Rapid Duro Rescue
+      // Chain type short codes used as column headers
+      const CHAIN_TYPES = [
+        "RM3",
+        "RS3",
+        "RD3",
+        "RM",
+        "RMF",
+        "RS",
+        "RSF",
+        "RSK",
+        "RDR",
+      ];
+      const CHAIN_LABELS = {
+        RM3: "RAPID\nMicro 3",
+        RS3: "RAPID\nSuper 3",
+        RD3: "RAPID\nDuro 3",
+        RM: "RAPID\nMicro",
+        RMF: "RAPID\nMicro F",
+        RS: "RAPID\nSuper",
+        RSF: "RAPID\nSuper F",
+        RSK: "RAPID\nSuper K",
+        RDR: "RAPID\nDuro Rescue",
+      };
 
+      // Data: each bar entry is one row. "rec" = recommended combo.
+      // chains: object keyed by short type code → chain code string (e.g. "33 RM3 60")
       const MODELS = {
         stihl: {
           "MS 500i": {
-            sprocket: {
-              pitch: '3/8"',
-              spur: { pn: "1128 007 1017", teeth: 7 },
-            },
-            recommended: [
+            sprocket: { pitch: '3/8"', pn: "1128 007 1017", teeth: 7 },
+            rows: [
+              // ── 16" / 40cm ──
               {
+                size: '40cm / 16"',
                 barType: "Rollomatic E",
-                barLen: '40cm / 16"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 60,
                 barPN: "3003 000 7813",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "33 RS3 60",
-                    pn: "3624 000 0060",
-                  },
-                ],
+                rec: true,
+                chains: { RS3: "33 RS3 60" },
               },
               {
-                barType: "Rollomatic ES",
-                barLen: '40cm / 16"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 60,
-                barPN: "3003 000 8813",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "33 RS3 60",
-                    pn: "3624 000 0060",
-                  },
-                  {
-                    type: "RAPID Super",
-                    code: "33 RS 60",
-                    pn: "3623 000 0060",
-                  },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '45cm / 18"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 66,
-                barPN: "3003 000 8817",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "33 RS3 66",
-                    pn: "3624 000 0066",
-                  },
-                  {
-                    type: "RAPID Super",
-                    code: "33 RS 66",
-                    pn: "3623 000 0066",
-                  },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '50cm / 20"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 72,
-                barPN: "3003 000 8822",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "33 RS3 72",
-                    pn: "3624 000 0072",
-                  },
-                  {
-                    type: "RAPID Super",
-                    code: "33 RS 72",
-                    pn: "3623 000 0072",
-                  },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '50cm / 20"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 72,
-                barPN: "3003 002 9421",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "36 RS3 72",
-                    pn: "3626 000 0072",
-                  },
-                  {
-                    type: "RAPID Duro Rescue",
-                    code: "36 RDR 72",
-                    pn: "3944 000 0072",
-                  },
-                  {
-                    type: "RAPID Super",
-                    code: "36 RS 72",
-                    pn: "3621 000 0072",
-                  },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '63cm / 25"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 84,
-                barPN: "3003 000 8830",
-                chains: [
-                  {
-                    type: "RAPID Super 3",
-                    code: "33 RS3 84",
-                    pn: "3624 000 0084",
-                  },
-                  {
-                    type: "RAPID Super",
-                    code: "33 RS 84",
-                    pn: "3623 000 0084",
-                  },
-                ],
-              },
-            ],
-            bars: [
-              // ── Rollomatic E ──
-              {
+                size: '40cm / 16"',
                 barType: "Rollomatic E",
-                barLen: '40cm / 16"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 60,
                 barPN: "3003 000 5213",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 60" },
-                  { type: "RAPID Super 3", code: "36 RS3 60" },
-                  { type: "RAPID Duro 3", code: "36 RD3 60" },
-                  { type: "RAPID Micro", code: "36 RM 60" },
-                  { type: "RAPID Super", code: "36 RS 60" },
-                  { type: "RAPID Super K", code: "36 RSK 60" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 60",
+                  RS3: "36 RS3 60",
+                  RD3: "36 RD3 60",
+                  RM: "36 RM 60",
+                  RS: "36 RS 60",
+                  RSK: "36 RSK 60",
+                },
               },
               {
-                barType: "Rollomatic E",
-                barLen: '45cm / 18"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 66,
-                barPN: "3003 000 5217",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 66" },
-                  { type: "RAPID Super 3", code: "36 RS3 66" },
-                  { type: "RAPID Duro 3", code: "36 RD3 66" },
-                  { type: "RAPID Micro", code: "36 RM 66" },
-                  { type: "RAPID Super", code: "36 RS 66" },
-                  { type: "RAPID Super K", code: "36 RSK 66" },
-                ],
-              },
-              {
-                barType: "Rollomatic E",
-                barLen: '50cm / 20"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 72,
-                barPN: "3003 000 5221",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 72" },
-                  { type: "RAPID Super 3", code: "36 RS3 72" },
-                  { type: "RAPID Duro 3", code: "36 RD3 72" },
-                  { type: "RAPID Micro", code: "36 RM 72" },
-                  { type: "RAPID Super", code: "36 RS 72" },
-                  { type: "RAPID Super K", code: "36 RSK 72" },
-                ],
-              },
-              {
-                barType: "Rollomatic E",
-                barLen: '63cm / 25"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: [84, 85],
-                barPN: "3003 000 7831",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3" },
-                  { type: "RAPID Super 3", code: "33 RS3" },
-                  { type: "RAPID Duro 3", code: "33 RD3" },
-                  { type: "RAPID Micro", code: "33 RM" },
-                  { type: "RAPID Micro F", code: "33 RMF" },
-                  { type: "RAPID Super", code: "33 RS" },
-                  { type: "RAPID Super F", code: "33 RSF" },
-                  { type: "RAPID Super K", code: "33 RSK" },
-                ],
-              },
-              {
-                barType: "Rollomatic E",
-                barLen: '63cm / 25"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 84,
-                barPN: "3003 000 5231",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 84" },
-                  { type: "RAPID Super 3", code: "36 RS3 84" },
-                  { type: "RAPID Duro 3", code: "36 RD3 84" },
-                  { type: "RAPID Micro", code: "36 RM 84" },
-                  { type: "RAPID Super", code: "36 RS 84" },
-                  { type: "RAPID Super K", code: "36 RSK 84" },
-                ],
-              },
-              // ── Rollomatic ES ──
-              {
+                size: '40cm / 16"',
                 barType: "Rollomatic ES",
-                barLen: '40cm / 16"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 60,
                 barPN: "3003 000 8813",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 60" },
-                  { type: "RAPID Super 3", code: "33 RS3 60" },
-                  { type: "RAPID Duro 3", code: "33 RD3 60" },
-                  { type: "RAPID Micro", code: "33 RM 60" },
-                  { type: "RAPID Micro F", code: "33 RMF 60" },
-                  { type: "RAPID Super F", code: "33 RSF 60" },
-                  { type: "RAPID Super K", code: "33 RSK 60" },
-                ],
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 60",
+                  RS3: "33 RS3 60",
+                  RD3: "33 RD3 60",
+                  RM: "33 RM 60",
+                  RMF: "33 RMF 60",
+                  RSF: "33 RSF 60",
+                  RSK: "33 RSK 60",
+                },
               },
               {
+                size: '40cm / 16"',
                 barType: "Rollomatic ES",
-                barLen: '40cm / 16"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 60,
-                barPN: ["3003 001 9413", "3003 000 9413"],
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 60" },
-                  { type: "RAPID Super 3", code: "36 RS3 60" },
-                  { type: "RAPID Duro 3", code: "36 RD3 60" },
-                  { type: "RAPID Micro", code: "36 RM 60" },
-                  { type: "RAPID Super", code: "36 RS 60" },
-                  { type: "RAPID Super K", code: "36 RSK 60" },
-                ],
+                barPN: "3003 001 9413\n3003 000 9413",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 60",
+                  RS3: "36 RS3 60",
+                  RD3: "36 RD3 60",
+                  RM: "36 RM 60",
+                  RS: "36 RS 60",
+                  RSK: "36 RSK 60",
+                },
+              },
+
+              // ── 18" / 45cm ──
+              {
+                size: '45cm / 18"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: "1.6",
+                dl: 66,
+                barPN: "3003 000 5217",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 66",
+                  RS3: "36 RS3 66",
+                  RD3: "36 RD3 66",
+                  RM: "36 RM 66",
+                  RS: "36 RS 66",
+                  RSK: "36 RSK 66",
+                },
               },
               {
+                size: '45cm / 18"',
                 barType: "Rollomatic ES",
-                barLen: '45cm / 18"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 66,
                 barPN: "3003 000 8817",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 66" },
-                  { type: "RAPID Super 3", code: "33 RS3 66" },
-                  { type: "RAPID Duro 3", code: "33 RD3 66" },
-                  { type: "RAPID Micro", code: "33 RM 66" },
-                  { type: "RAPID Micro F", code: "33 RMF 66" },
-                  { type: "RAPID Super F", code: "33 RSF 66" },
-                  { type: "RAPID Super K", code: "33 RSK 66" },
-                ],
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 66",
+                  RS3: "33 RS3 66",
+                  RD3: "33 RD3 66",
+                  RM: "33 RM 66",
+                  RMF: "33 RMF 66",
+                  RSF: "33 RSF 66",
+                  RSK: "33 RSK 66",
+                },
               },
               {
+                size: '45cm / 18"',
                 barType: "Rollomatic ES",
-                barLen: '45cm / 18"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 66,
                 barPN: "3003 000 9417",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 66" },
-                  { type: "RAPID Super 3", code: "36 RS3 66" },
-                  { type: "RAPID Duro 3", code: "36 RD3 66" },
-                  { type: "RAPID Micro", code: "36 RM 66" },
-                  { type: "RAPID Super", code: "36 RS 66" },
-                  { type: "RAPID Super K", code: "36 RSK 66" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 66",
+                  RS3: "36 RS3 66",
+                  RD3: "36 RD3 66",
+                  RM: "36 RM 66",
+                  RS: "36 RS 66",
+                  RSK: "36 RSK 66",
+                },
+              },
+
+              // ── 20" / 50cm ──
+              {
+                size: '50cm / 20"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: "1.6",
+                dl: 72,
+                barPN: "3003 000 5221",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                },
               },
               {
+                size: '50cm / 20"',
                 barType: "Rollomatic ES",
-                barLen: '50cm / 20"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 72,
                 barPN: "3003 000 8822",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 72" },
-                  { type: "RAPID Super 3", code: "33 RS3 72" },
-                  { type: "RAPID Duro 3", code: "33 RD3 72" },
-                  { type: "RAPID Micro", code: "33 RM 72" },
-                  { type: "RAPID Micro F", code: "33 RMF 72" },
-                  { type: "RAPID Super F", code: "33 RSF 72" },
-                  { type: "RAPID Super K", code: "33 RSK 72" },
-                ],
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 72",
+                  RS3: "33 RS3 72",
+                  RD3: "33 RD3 72",
+                  RM: "33 RM 72",
+                  RMF: "33 RMF 72",
+                  RSF: "33 RSF 72",
+                  RSK: "33 RSK 72",
+                },
               },
               {
+                size: '50cm / 20"',
                 barType: "Rollomatic ES",
-                barLen: '50cm / 20"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 72,
-                barPN: ["3003 002 9421", "3003 000 9421"],
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 72" },
-                  { type: "RAPID Super 3", code: "36 RS3 72" },
-                  { type: "RAPID Duro 3", code: "36 RD3 72" },
-                  { type: "RAPID Micro", code: "36 RM 72" },
-                  { type: "RAPID Super", code: "36 RS 72" },
-                  { type: "RAPID Super K", code: "36 RSK 72" },
-                ],
+                barPN: "3003 002 9421\n3003 000 9421",
+                rec: true,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                  RDR: "36 RDR 72",
+                },
               },
               {
-                barType: "Rollomatic ES",
-                barLen: '55cm / 22"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 76,
-                barPN: "3003 000 9425",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 76" },
-                  { type: "RAPID Super 3", code: "36 RS3 76" },
-                  { type: "RAPID Duro 3", code: "36 RD3 76" },
-                  { type: "RAPID Micro", code: "36 RM 76" },
-                  { type: "RAPID Super", code: "36 RS 76" },
-                  { type: "RAPID Super K", code: "36 RSK 76" },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '63cm / 25"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 84,
-                barPN: ["3003 000 8830", "3003 000 4030"],
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 84" },
-                  { type: "RAPID Super 3", code: "33 RS3 84" },
-                  { type: "RAPID Duro 3", code: "33 RD3 84" },
-                  { type: "RAPID Micro", code: "33 RM 84" },
-                  { type: "RAPID Micro F", code: "33 RMF 84" },
-                  { type: "RAPID Super", code: "33 RS 84" },
-                  { type: "RAPID Super F", code: "33 RSF 84" },
-                  { type: "RAPID Super K", code: "33 RSK 84" },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '63cm / 25"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 84,
-                barPN: "3003 000 9431",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 84" },
-                  { type: "RAPID Super 3", code: "36 RS3 84" },
-                  { type: "RAPID Duro 3", code: "36 RD3 84" },
-                  { type: "RAPID Micro", code: "36 RM 84" },
-                  { type: "RAPID Super", code: "36 RS 84" },
-                  { type: "RAPID Super K", code: "36 RSK 84" },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '71cm / 28"',
-                pitch: '3/8"',
-                gauge: "1.3 / .050",
-                dl: 91,
-                barPN: "3003 000 8838",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 91" },
-                  { type: "RAPID Super 3", code: "33 RS3 91" },
-                  { type: "RAPID Duro 3", code: "33 RD3 91" },
-                  { type: "RAPID Micro", code: "33 RM 91" },
-                  { type: "RAPID Micro F", code: "33 RMF 91" },
-                  { type: "RAPID Super", code: "33 RS 91" },
-                  { type: "RAPID Super F", code: "33 RSF 91" },
-                  { type: "RAPID Super K", code: "33 RSK 91" },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '71cm / 28"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: [91, 92],
-                barPN: "3003 000 6038",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3" },
-                  { type: "RAPID Super 3", code: "36 RS3" },
-                  { type: "RAPID Duro 3", code: "36 RD3" },
-                  { type: "RAPID Micro", code: "36 RM" },
-                  { type: "RAPID Super", code: "36 RS" },
-                  { type: "RAPID Super K", code: "36 RSK" },
-                ],
-              },
-              {
-                barType: "Rollomatic ES",
-                barLen: '75cm / 30"',
-                pitch: '3/8"',
-                gauge: "1.6 / .063",
-                dl: 98,
-                barPN: "3003 000 6041",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 98" },
-                  { type: "RAPID Super 3", code: "36 RS3 98" },
-                  { type: "RAPID Duro 3", code: "36 RD3 98" },
-                  { type: "RAPID Micro", code: "36 RM 98" },
-                  { type: "RAPID Super", code: "36 RS 98" },
-                  { type: "RAPID Super K", code: "36 RSK 98" },
-                ],
-              },
-              // ── Rollomatic ES Light ──
-              {
+                size: '50cm / 20"',
                 barType: "Rollomatic ES Light",
-                barLen: '50cm / 20"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 72,
                 barPN: "3003 000 2221",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 72" },
-                  { type: "RAPID Super 3", code: "33 RS3 72" },
-                  { type: "RAPID Duro 3", code: "33 RD3 72" },
-                  { type: "RAPID Micro", code: "33 RM 72" },
-                  { type: "RAPID Micro F", code: "33 RMF 72" },
-                  { type: "RAPID Super", code: "33 RS 72" },
-                  { type: "RAPID Super F", code: "33 RSF 72" },
-                  { type: "RAPID Super K", code: "33 RSK 72" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 72",
+                  RS3: "33 RS3 72",
+                  RD3: "33 RD3 72",
+                  RM: "33 RM 72",
+                  RMF: "33 RMF 72",
+                  RS: "33 RS 72",
+                  RSF: "33 RSF 72",
+                  RSK: "33 RSK 72",
+                },
               },
               {
+                size: '50cm / 20"',
                 barType: "Rollomatic ES Light",
-                barLen: '50cm / 20"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 72,
                 barPN: "3003 000 2021",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 72" },
-                  { type: "RAPID Super 3", code: "36 RS3 72" },
-                  { type: "RAPID Duro 3", code: "36 RD3 72" },
-                  { type: "RAPID Micro", code: "36 RM 72" },
-                  { type: "RAPID Super", code: "36 RS 72" },
-                  { type: "RAPID Super K", code: "36 RSK 72" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 72",
+                  RS3: "36 RS3 72",
+                  RD3: "36 RD3 72",
+                  RM: "36 RM 72",
+                  RS: "36 RS 72",
+                  RSK: "36 RSK 72",
+                },
+              },
+
+              // ── 22" / 55cm ──
+              {
+                size: '55cm / 22"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: "1.6",
+                dl: 76,
+                barPN: "3003 000 9425",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 76",
+                  RS3: "36 RS3 76",
+                  RD3: "36 RD3 76",
+                  RM: "36 RM 76",
+                  RS: "36 RS 76",
+                  RSK: "36 RSK 76",
+                },
+              },
+
+              // ── 25" / 63cm ──
+              {
+                size: '63cm / 25"',
+                barType: "Rollomatic E",
+                pitch: '3/8"',
+                gauge: "1.3",
+                dl: "84/85",
+                barPN: "3003 000 7831",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3",
+                  RS3: "33 RS3",
+                  RD3: "33 RD3",
+                  RM: "33 RM",
+                  RMF: "33 RMF",
+                  RS: "33 RS",
+                  RSF: "33 RSF",
+                  RSK: "33 RSK",
+                },
               },
               {
-                barType: "Rollomatic ES Light",
-                barLen: '63cm / 25"',
+                size: '63cm / 25"',
+                barType: "Rollomatic E",
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.6",
+                dl: 84,
+                barPN: "3003 000 5231",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+              {
+                size: '63cm / 25"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: "1.3",
+                dl: 84,
+                barPN: "3003 000 8830\n3003 000 4030",
+                rec: true,
+                chains: {
+                  RM3: "33 RM3 84",
+                  RS3: "33 RS3 84",
+                  RD3: "33 RD3 84",
+                  RM: "33 RM 84",
+                  RMF: "33 RMF 84",
+                  RS: "33 RS 84",
+                  RSF: "33 RSF 84",
+                  RSK: "33 RSK 84",
+                },
+              },
+              {
+                size: '63cm / 25"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: "1.6",
+                dl: 84,
+                barPN: "3003 000 9431",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+              {
+                size: '63cm / 25"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: "1.3",
                 dl: 84,
                 barPN: "3003 000 2231",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 84" },
-                  { type: "RAPID Super 3", code: "33 RS3 84" },
-                  { type: "RAPID Duro 3", code: "33 RD3 84" },
-                  { type: "RAPID Micro", code: "33 RM 84" },
-                  { type: "RAPID Micro F", code: "33 RMF 84" },
-                  { type: "RAPID Super", code: "33 RS 84" },
-                  { type: "RAPID Super F", code: "33 RSF 84" },
-                  { type: "RAPID Super K", code: "33 RSK 84" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 84",
+                  RS3: "33 RS3 84",
+                  RD3: "33 RD3 84",
+                  RM: "33 RM 84",
+                  RMF: "33 RMF 84",
+                  RS: "33 RS 84",
+                  RSF: "33 RSF 84",
+                  RSK: "33 RSK 84",
+                },
               },
               {
+                size: '63cm / 25"',
                 barType: "Rollomatic ES Light",
-                barLen: '63cm / 25"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 84,
                 barPN: "3003 000 2031",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 84" },
-                  { type: "RAPID Super 3", code: "36 RS3 84" },
-                  { type: "RAPID Duro 3", code: "36 RD3 84" },
-                  { type: "RAPID Micro", code: "36 RM 84" },
-                  { type: "RAPID Super", code: "36 RS 84" },
-                  { type: "RAPID Super K", code: "36 RSK 84" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 84",
+                  RS3: "36 RS3 84",
+                  RD3: "36 RD3 84",
+                  RM: "36 RM 84",
+                  RS: "36 RS 84",
+                  RSK: "36 RSK 84",
+                },
+              },
+
+              // ── 28" / 71cm ──
+              {
+                size: '71cm / 28"',
+                barType: "Rollomatic ES",
+                pitch: '3/8"',
+                gauge: "1.3",
+                dl: 91,
+                barPN: "3003 000 8838",
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 91",
+                  RS3: "33 RS3 91",
+                  RD3: "33 RD3 91",
+                  RM: "33 RM 91",
+                  RMF: "33 RMF 91",
+                  RS: "33 RS 91",
+                  RSF: "33 RSF 91",
+                  RSK: "33 RSK 91",
+                },
               },
               {
-                barType: "Rollomatic ES Light",
-                barLen: '71cm / 28"',
+                size: '71cm / 28"',
+                barType: "Rollomatic ES",
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.6",
+                dl: "91/92",
+                barPN: "3003 000 6038",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3",
+                  RS3: "36 RS3",
+                  RD3: "36 RD3",
+                  RM: "36 RM",
+                  RS: "36 RS",
+                  RSK: "36 RSK",
+                },
+              },
+              {
+                size: '71cm / 28"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: "1.3",
                 dl: 91,
                 barPN: "3003 000 2238",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 91" },
-                  { type: "RAPID Super 3", code: "33 RS3 91" },
-                  { type: "RAPID Duro 3", code: "33 RD3 91" },
-                  { type: "RAPID Micro", code: "33 RM 91" },
-                  { type: "RAPID Micro F", code: "33 RMF 91" },
-                  { type: "RAPID Super", code: "33 RS 91" },
-                  { type: "RAPID Super F", code: "33 RSF 91" },
-                  { type: "RAPID Super K", code: "33 RSK 91" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 91",
+                  RS3: "33 RS3 91",
+                  RD3: "33 RD3 91",
+                  RM: "33 RM 91",
+                  RMF: "33 RMF 91",
+                  RS: "33 RS 91",
+                  RSF: "33 RSF 91",
+                  RSK: "33 RSK 91",
+                },
               },
               {
+                size: '71cm / 28"',
                 barType: "Rollomatic ES Light",
-                barLen: '71cm / 28"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 91,
                 barPN: "3003 000 2038",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 91" },
-                  { type: "RAPID Super 3", code: "36 RS3 91" },
-                  { type: "RAPID Duro 3", code: "36 RD3 91" },
-                  { type: "RAPID Micro", code: "36 RM 91" },
-                  { type: "RAPID Super", code: "36 RS 91" },
-                  { type: "RAPID Super K", code: "36 RSK 91" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 91",
+                  RS3: "36 RS3 91",
+                  RD3: "36 RD3 91",
+                  RM: "36 RM 91",
+                  RS: "36 RS 91",
+                  RSK: "36 RSK 91",
+                },
               },
+
+              // ── 30" / 75cm ──
               {
-                barType: "Rollomatic ES Light",
-                barLen: '80cm / 32"',
+                size: '75cm / 30"',
+                barType: "Rollomatic ES",
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.6",
+                dl: 98,
+                barPN: "3003 000 6041",
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 98",
+                  RS3: "36 RS3 98",
+                  RD3: "36 RD3 98",
+                  RM: "36 RM 98",
+                  RS: "36 RS 98",
+                  RSK: "36 RSK 98",
+                },
+              },
+
+              // ── 32" / 80cm ──
+              {
+                size: '80cm / 32"',
+                barType: "Rollomatic ES Light",
+                pitch: '3/8"',
+                gauge: "1.3",
                 dl: 105,
                 barPN: "3003 000 2246",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 105" },
-                  { type: "RAPID Super 3", code: "33 RS3 105" },
-                  { type: "RAPID Duro 3", code: "33 RD3 105" },
-                  { type: "RAPID Micro", code: "33 RM 105" },
-                  { type: "RAPID Micro F", code: "33 RMF 105" },
-                  { type: "RAPID Super", code: "33 RS 105" },
-                  { type: "RAPID Super F", code: "33 RSF 105" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 105",
+                  RS3: "33 RS3 105",
+                  RD3: "33 RD3 105",
+                  RM: "33 RM 105",
+                  RMF: "33 RMF 105",
+                  RS: "33 RS 105",
+                  RSF: "33 RSF 105",
+                },
               },
               {
+                size: '80cm / 32"',
                 barType: "Rollomatic ES Light",
-                barLen: '80cm / 32"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 105,
                 barPN: "3003 000 2046",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 105" },
-                  { type: "RAPID Super 3", code: "36 RS3 105" },
-                  { type: "RAPID Duro 3", code: "36 RD3 105" },
-                  { type: "RAPID Micro", code: "36 RM 105" },
-                  { type: "RAPID Super", code: "36 RS 105" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 105",
+                  RS3: "36 RS3 105",
+                  RD3: "36 RD3 105",
+                  RM: "36 RM 105",
+                  RS: "36 RS 105",
+                },
               },
+
+              // ── 36" / 90cm ──
               {
+                size: '90cm / 36"',
                 barType: "Rollomatic ES Light",
-                barLen: '90cm / 36"',
                 pitch: '3/8"',
-                gauge: "1.3 / .050",
+                gauge: "1.3",
                 dl: 114,
                 barPN: "3003 000 2253",
-                chains: [
-                  { type: "RAPID Micro 3", code: "33 RM3 114" },
-                  { type: "RAPID Super 3", code: "33 RS3 114" },
-                  { type: "RAPID Duro 3", code: "33 RD3 114" },
-                  { type: "RAPID Micro", code: "33 RM 114" },
-                  { type: "RAPID Micro F", code: "33 RMF 114" },
-                  { type: "RAPID Super", code: "33 RS 114" },
-                  { type: "RAPID Super F", code: "33 RSF 114" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "33 RM3 114",
+                  RS3: "33 RS3 114",
+                  RD3: "33 RD3 114",
+                  RM: "33 RM 114",
+                  RMF: "33 RMF 114",
+                  RS: "33 RS 114",
+                  RSF: "33 RSF 114",
+                },
               },
               {
+                size: '90cm / 36"',
                 barType: "Rollomatic ES Light",
-                barLen: '90cm / 36"',
                 pitch: '3/8"',
-                gauge: "1.6 / .063",
+                gauge: "1.6",
                 dl: 114,
                 barPN: "3003 000 2053",
-                chains: [
-                  { type: "RAPID Micro 3", code: "36 RM3 114" },
-                  { type: "RAPID Super 3", code: "36 RS3 114" },
-                  { type: "RAPID Duro 3", code: "36 RD3 114" },
-                  { type: "RAPID Micro", code: "36 RM 114" },
-                  { type: "RAPID Super", code: "36 RS 114" },
-                ],
+                rec: false,
+                chains: {
+                  RM3: "36 RM3 114",
+                  RS3: "36 RS3 114",
+                  RD3: "36 RD3 114",
+                  RM: "36 RM 114",
+                  RS: "36 RS 114",
+                },
               },
             ],
           },
@@ -862,91 +793,76 @@
         const model = document.getElementById("model-select").value;
         if (!brand || !model) {
           document.getElementById("results").innerHTML =
-            '<p class="empty-state">Select your chainsaw model above to see compatible bars and chains.</p>';
+            '<p class="empty-state">Select your chainsaw model above.</p>';
           return;
         }
-        const data = MODELS[brand]?.[model];
-        if (!data) return;
-        renderModel(model, data);
+        renderModel(model, MODELS[brand][model]);
       }
 
       function renderModel(name, data) {
         const container = document.getElementById("results");
+
+        // Figure out which chain types are actually used
+        const usedTypes = CHAIN_TYPES.filter((t) =>
+          data.rows.some((r) => r.chains[t]),
+        );
+
+        // Group rows by size
+        const sizes = [];
+        const sizeMap = {};
+        for (const row of data.rows) {
+          if (!sizeMap[row.size]) {
+            sizeMap[row.size] = [];
+            sizes.push(row.size);
+          }
+          sizeMap[row.size].push(row);
+        }
+
         let html = "";
-
-        // Recommended combos
-        html += `<div class="panel"><h2>Recommended Combinations for ${name}</h2>`;
-        for (const rec of data.recommended) {
-          html += `<div class="bar-group">`;
-          html += `<div class="bar-header" style="cursor:default;">`;
-          html += `<span class="bar-label">${rec.barLen} — ${rec.barType} <span class="rec-badge">RECOMMENDED</span></span>`;
-          html += `<span class="bar-meta">${rec.pitch} pitch &nbsp;|&nbsp; ${rec.gauge}mm gauge &nbsp;|&nbsp; ${rec.dl} DL</span>`;
-          html += `</div>`;
-          html += `<div class="bar-body open">`;
-          html += `<div class="detail-grid"><span class="label">Bar P/N:</span><span class="value">${rec.barPN}</span></div>`;
-          html += `<div id="chain-table-container"><table class="chain-table"><thead><tr><th>Chain Type</th><th>Chain Code</th><th>Part Number</th></tr></thead><tbody>`;
-          for (const c of rec.chains) {
-            html += `<tr><td>${c.type}</td><td>${c.code}</td><td class="pn">${c.pn}</td></tr>`;
-          }
-          html += `</tbody></table></div></div></div>`;
-        }
-        html += `</div>`;
-
-        // All compatible bars grouped by bar type
-        const barTypes = [...new Set(data.bars.map((b) => b.barType))];
-        html += `<div class="panel"><h2>All Compatible Combinations</h2>`;
-        for (const bt of barTypes) {
-          html += `<h3 style="font-size:0.82rem;color:#666;text-transform:uppercase;letter-spacing:0.04em;margin:1rem 0 0.5rem;border-bottom:1px solid #333;padding-bottom:0.3rem;">${bt}</h3>`;
-          const barsOfType = data.bars.filter((b) => b.barType === bt);
-          for (const bar of barsOfType) {
-            const dlStr = Array.isArray(bar.dl) ? bar.dl.join(" or ") : bar.dl;
-            const pnStr = Array.isArray(bar.barPN)
-              ? bar.barPN.join(", ")
-              : bar.barPN;
-            const id = `bar-${Math.random().toString(36).slice(2, 8)}`;
-            html += `<div class="bar-group">`;
-            html += `<div class="bar-header" onclick="toggleBar('${id}')">`;
-            html += `<span class="bar-label">${bar.barLen}</span>`;
-            html += `<span class="bar-meta">${bar.pitch} &nbsp;|&nbsp; ${bar.gauge}mm &nbsp;|&nbsp; ${dlStr} DL &nbsp;&nbsp;<span class="toggle" id="tog-${id}">&#9654;</span></span>`;
-            html += `</div>`;
-            html += `<div class="bar-body" id="${id}">`;
-            html += `<div class="detail-grid">`;
-            html += `<span class="label">Bar P/N:</span><span class="value">${pnStr}</span>`;
-            html += `<span class="label">Pitch:</span><span class="value">${bar.pitch}</span>`;
-            html += `<span class="label">Gauge:</span><span class="value">${bar.gauge}mm</span>`;
-            html += `<span class="label">Drive Links:</span><span class="value">${dlStr}</span>`;
-            html += `</div>`;
-            html += `<div id="chain-table-container"><table class="chain-table"><thead><tr><th>Chain Type</th><th>Chain Code</th></tr></thead><tbody>`;
-            for (const c of bar.chains) {
-              html += `<tr><td>${c.type}</td><td>${c.code}</td></tr>`;
-            }
-            html += `</tbody></table></div></div></div>`;
-          }
-        }
-        html += `</div>`;
-
-        // Sprocket
+        html += `<div class="legend">`;
+        html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
+        html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
+        html += `<span class="legend-item" style="color:#555;">All bars 3/8" pitch</span>`;
         if (data.sprocket) {
-          html += `<div class="sprocket-info"><h3>Sprocket Information</h3>`;
-          html += `<div class="detail-grid">`;
-          html += `<span class="label">Chain Pitch:</span><span class="value">${data.sprocket.pitch}</span>`;
-          html += `<span class="label">Spur Sprocket P/N:</span><span class="value">${data.sprocket.spur.pn}</span>`;
-          html += `<span class="label">Teeth:</span><span class="value">${data.sprocket.spur.teeth}</span>`;
-          html += `</div></div>`;
+          html += `<span class="sprocket-info">Sprocket: <span>${data.sprocket.pn}</span> (${data.sprocket.teeth}T)</span>`;
+        }
+        html += `</div>`;
+
+        html += `<div class="panel">`;
+
+        for (const size of sizes) {
+          const rows = sizeMap[size];
+          html += `<div class="size-header">${size}</div>`;
+          html += `<table class="compat-table">`;
+          html += `<thead><tr>`;
+          html += `<th>Bar Type</th><th>Gauge</th><th>DL</th><th style="color:#666">Bar P/N</th>`;
+          for (const t of usedTypes) {
+            html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+          }
+          html += `</tr></thead><tbody>`;
+
+          for (const row of rows) {
+            const cls = row.rec ? ' class="rec-row"' : "";
+            const barPNs = row.barPN.split("\n");
+            html += `<tr${cls}>`;
+            html += `<td class="bar-info">${row.barType}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            html += `<td class="bar-info">${row.gauge}</td>`;
+            html += `<td class="bar-info">${row.dl}</td>`;
+            html += `<td class="bar-pn">${barPNs.join("<br>")}</td>`;
+            for (const t of usedTypes) {
+              const c = row.chains[t];
+              html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
+            }
+            html += `</tr>`;
+          }
+          html += `</tbody></table>`;
         }
 
+        html += `</div>`;
         container.innerHTML = html;
       }
 
-      function toggleBar(id) {
-        const body = document.getElementById(id);
-        const tog = document.getElementById("tog-" + id);
-        body.classList.toggle("open");
-        tog.classList.toggle("open");
-      }
-
       // Init
-      onBrandChange();
       document.getElementById("brand-select").value = "stihl";
       onBrandChange();
     </script>
