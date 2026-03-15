@@ -1453,19 +1453,18 @@
         const totalCols = 5 + usedTypes.length;
 
         html += `<div class="panel">`;
-        html += `<table class="compat-table">`;
-        html += `<thead><tr>`;
-        html += `<th>Bar Type</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
-        for (const t of usedTypes) {
-          html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
-        }
-        html += `</tr></thead><tbody>`;
+        html += `<table class="compat-table"><tbody>`;
 
         for (const size of sizes) {
           const rows = sizeMap[size];
 
-          // Size header row spanning all columns
-          html += `<tr><td colspan="${totalCols}" class="size-header">${size}</td></tr>`;
+          // Header row with size as first column
+          html += `<tr>`;
+          html += `<th class="size-header" style="text-align:left;">${size}</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
+          for (const t of usedTypes) {
+            html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+          }
+          html += `</tr>`;
 
           // Calculate rowspans for bar type + pitch groups
           const groups = [];
