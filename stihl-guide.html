@@ -1460,9 +1460,10 @@
 
           // Header row with size as first column
           html += `<tr>`;
-          html += `<th class="size-header" style="text-align:left;">${size}</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
+          html += `<th class="size-header" style="text-align:left;">${size}</th>`;
+          html += `<th class="size-header">Pitch</th><th class="size-header">Gauge</th><th class="size-header">DL</th><th class="size-header">Bar P/N</th>`;
           for (const t of usedTypes) {
-            html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+            html += `<th class="size-header chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
           }
           html += `</tr>`;
 
