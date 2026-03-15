@@ -92,13 +92,9 @@
         font-size: 0.85rem;
         font-weight: 700;
         color: #f5a623;
-        background: #1e1e1e;
+        background: #1e1e1e !important;
         padding: 0.5rem 0.6rem;
-        border-bottom: 2px solid #f5a623;
-        margin-top: 1rem;
-      }
-      .size-header:first-child {
-        margin-top: 0;
+        border-bottom: 2px solid #f5a623 !important;
       }
 
       .compat-table {
@@ -1454,18 +1450,22 @@
           html += `</tbody></table></div>`;
         }
 
+        const totalCols = 5 + usedTypes.length;
+
         html += `<div class="panel">`;
+        html += `<table class="compat-table">`;
+        html += `<thead><tr>`;
+        html += `<th>Bar Type</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
+        for (const t of usedTypes) {
+          html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+        }
+        html += `</tr></thead><tbody>`;
 
         for (const size of sizes) {
           const rows = sizeMap[size];
-          html += `<div class="size-header">${size}</div>`;
-          html += `<table class="compat-table">`;
-          html += `<thead><tr>`;
-          html += `<th>Bar Type</th><th>Pitch</th><th>Gauge</th><th>DL</th><th>Bar P/N</th>`;
-          for (const t of usedTypes) {
-            html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
-          }
-          html += `</tr></thead><tbody>`;
+
+          // Size header row spanning all columns
+          html += `<tr><td colspan="${totalCols}" class="size-header">${size}</td></tr>`;
 
           // Calculate rowspans for bar type + pitch groups
           const groups = [];
@@ -1484,12 +1484,8 @@
 
           for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
-            const cls = "";
             const barPNs = row.barPN.split("\n");
-            const hasRec = rows
-              .slice(i, i + (rowspanAt[i] || 0))
-              .some((r) => r.rec);
-            html += `<tr${cls}>`;
+            html += `<tr>`;
             if (rowspanAt[i]) {
               const span = rowspanAt[i] > 1 ? ` rowspan="${rowspanAt[i]}"` : "";
               html += `<td class="bar-info"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}</td>`;
@@ -1504,9 +1500,9 @@
             }
             html += `</tr>`;
           }
-          html += `</tbody></table>`;
         }
 
+        html += `</tbody></table>`;
         html += `</div>`;
         container.innerHTML = html;
       }
