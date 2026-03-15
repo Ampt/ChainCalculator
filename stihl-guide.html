@@ -1401,8 +1401,14 @@
         if (!brand || !model) {
           document.getElementById("results").innerHTML =
             '<p class="empty-state">Select your chainsaw model above.</p>';
+          history.replaceState(null, "", location.pathname);
           return;
         }
+        history.replaceState(
+          null,
+          "",
+          `#${encodeURIComponent(brand)}/${encodeURIComponent(model)}`,
+        );
         renderModel(model, MODELS[brand][model]);
       }
 
@@ -1505,9 +1511,22 @@
         container.innerHTML = html;
       }
 
-      // Init
-      document.getElementById("brand-select").value = "stihl";
-      onBrandChange();
+      // Init — restore from hash or default to stihl
+      (function init() {
+        const hash = decodeURIComponent(location.hash.slice(1));
+        const [brand, model] = hash.split("/");
+        if (brand && MODELS[brand]) {
+          document.getElementById("brand-select").value = brand;
+          onBrandChange();
+          if (model && MODELS[brand][model]) {
+            document.getElementById("model-select").value = model;
+            onModelChange();
+          }
+        } else {
+          document.getElementById("brand-select").value = "stihl";
+          onBrandChange();
+        }
+      })();
     </script>
   </body>
 </html>
