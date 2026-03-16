@@ -1217,11 +1217,12 @@
             }
             for (const t of usedTypes) {
               const c = chainVal(row, t);
+              const cDisplay = c ? c.replace(/^(\d+)\s+/, "$1") : null;
               const oregonPN = c ? getOregonChainPN(c) : null;
               const oregonNote = oregonPN
                 ? `<br><span style="color:#aaa;">${oregonPN}</span>`
                 : "";
-              html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}${oregonNote}</td>`;
+              html += `<td class="chain-cell ${c ? "has" : ""}">${cDisplay || "–"}${oregonNote}</td>`;
             }
             html += `</tr>`;
           }
