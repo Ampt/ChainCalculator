@@ -934,9 +934,22 @@
           if (!sizeMap[row.size]) sizeMap[row.size] = [];
           sizeMap[row.size].push(row);
         }
-        // Sort rows within each size: pitch order, then gauge ascending
+        // Sort rows within each size: barType order, then pitch order, then gauge ascending
+        const BAR_TYPE_ORDER = [
+          "Fixed",
+          "Regular",
+          "Lightweight",
+          "Hard Nose",
+          "Carving",
+          "Regular (Narrow Gauge)",
+          "Lightweight (Narrow Gauge)",
+        ];
         for (const rows of Object.values(sizeMap)) {
           rows.sort((a, b) => {
+            const it =
+              BAR_TYPE_ORDER.indexOf(a.barType) -
+              BAR_TYPE_ORDER.indexOf(b.barType);
+            if (it !== 0) return it;
             const ip =
               PITCH_ORDER.indexOf(a.pitch) - PITCH_ORDER.indexOf(b.pitch);
             if (ip !== 0) return ip;
