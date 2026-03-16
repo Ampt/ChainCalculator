@@ -622,9 +622,9 @@
             H: null,
           };
           const CANNON_TYPE = {
-            CSB: "Fixed Roller",
-            "CSB-DL": "Replaceable Roller",
-            CSM: "Fixed Roller (Narrow Gauge)",
+            CSB: "Regular",
+            "CSB-DL": "Lightweight",
+            CSM: "Regular (Narrow Gauge)",
             CCA: "Carving (Arbor Tip)",
             CCT: "Carving (Toonie Tip)",
             CCQ: "Carving (Quarter Tip)",
@@ -903,13 +903,10 @@
         const hasCannon = Object.keys(cannonLookup).length > 0;
 
         // Cannon only makes replaceable-nose bars — no equivalent for fixed nose types.
-        const CANNON_NO_MATCH = new Set([
-          "Fixed Roller",
-          "Lightweight Fixed Roller",
-          "Fixed Roller (Narrow Gauge)",
-          "Lightweight Fixed Roller (Narrow Gauge)",
-          "Hard Nose",
-        ]);
+        // Cannon only makes replaceable-nose bars — no equivalent for fixed/hard nose types.
+        // Since we've merged Fixed+Replaceable into "Regular", Cannon CSB maps to Regular.
+        // The only no-match types are Hard Nose and Narrow Gauge (SuperMini has no Cannon match for fixed).
+        const CANNON_NO_MATCH = new Set(["Hard Nose"]);
 
         function cannonForRow(row) {
           if (CANNON_NO_MATCH.has(row.barType)) return [];
@@ -921,8 +918,8 @@
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];
           const all = cannonLookup[`${sz}|${gauge}|${pitch}`] || [];
-          // DuraLite maps to Lightweight Replaceable Roller only; standard CSB to everything else.
-          const isDLRow = row.barType === "Lightweight Replaceable Roller";
+          // DuraLite maps to Lightweight rows only; standard CSB maps to Regular.
+          const isDLRow = row.barType === "Lightweight";
           return all.filter((p) =>
             isDLRow ? p.includes("-DL-") : !p.includes("-DL-"),
           );
