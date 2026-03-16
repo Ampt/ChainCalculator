@@ -910,7 +910,13 @@
           const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];
-          return cannonLookup[`${sz}|${gauge}|${pitch}`] || [];
+          const all = cannonLookup[`${sz}|${gauge}|${pitch}`] || [];
+          // DuraLite (CSB-*-DL-*) maps to Lightweight Replaceable Roller rows only.
+          // Standard CSB maps to everything except Lightweight Replaceable Roller.
+          const isDLRow = row.barType === "Lightweight Replaceable Roller";
+          return all.filter((p) =>
+            isDLRow ? p.includes("-DL-") : !p.includes("-DL-"),
+          );
         }
 
         let html = "";
