@@ -643,8 +643,10 @@
             }
           }
 
-          for (const [mount, pns] of Object.entries(CANNON.bars)) {
-            for (const pn of pns) {
+          for (const [mount, entries] of Object.entries(CANNON.bars)) {
+            for (const entry of entries) {
+              const pn = entry.pn;
+              const dl = entry.dl ?? null;
               const parts = pn.split("-");
               const isDL = parts.includes("DL");
               const base = parts[0]; // CSB, CSM, CCA, etc.
@@ -670,7 +672,7 @@
                 size,
                 pitch,
                 gauge,
-                dl: null,
+                dl,
                 chains: {},
                 saws: mountSaws[mount] || [],
               };
@@ -883,15 +885,16 @@
           ".058": "58",
           ".063": "63",
         };
-        const cannonLookup = {}; // "16|50|3" → ["CSB-S1-16-50-3", "CSB-S1-16-50-3-DL", ...]
+        const cannonLookup = {}; // "16|50|3" → ["CSB-S1-16-50-3", ...]
         if (data.cannonMount && CANNON && CANNON.bars[data.cannonMount]) {
-          for (const pn of CANNON.bars[data.cannonMount]) {
+          for (const entry of CANNON.bars[data.cannonMount]) {
+            const pn = entry.pn;
             const parts = pn.split("-");
             const isDL = parts.includes("DL");
-            const sz = isDL ? parts[2] : parts[2];
-            const gauge = isDL ? parts[3] : parts[3];
+            const sz = parts[2];
+            const gauge = parts[3];
             const pitch = isDL ? parts[5] : parts[4];
-            if (!pitch || pitch === "H") continue; // skip hard nose — no pitch to match
+            if (!pitch || pitch === "H") continue;
             const key = `${sz}|${gauge}|${pitch}`;
             if (!cannonLookup[key]) cannonLookup[key] = [];
             cannonLookup[key].push(pn);
@@ -1254,7 +1257,7 @@
           html += `<div class="bar-spec"><span class="bar-spec-label">Type</span><span class="bar-spec-value">${bar.barType}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
-          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl ?? "–"}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl != null ? bar.dl : "–"}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
           html += `<div class="bar-toggle"></div>`;
           html += `</div>`;
