@@ -903,7 +903,10 @@
         const hasCannon = Object.keys(cannonLookup).length > 0;
 
         function cannonForRow(row) {
-          const sz = String(parseFloat(row.size)); // "16\"" → "16"
+          const rawSz = String(parseFloat(row.size)); // "16\"" → "16"
+          const sz =
+            (CANNON.stihlSizeAliases && CANNON.stihlSizeAliases[rawSz]) ||
+            rawSz;
           const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];
