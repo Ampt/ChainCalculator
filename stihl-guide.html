@@ -1198,7 +1198,7 @@
               const c = chainVal(row, t);
               const oregonPN = c ? getOregonChainPN(c) : null;
               const oregonNote = oregonPN
-                ? `<br><span style="color:#aaa;font-size:.8em;">${oregonPN} <button class="copy-btn" style="font-size:.75em;" onclick="event.stopPropagation();copyPN('${oregonPN}',this)">copy</button></span>`
+                ? `<br><span style="color:#aaa;">${oregonPN}</span>`
                 : "";
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}${oregonNote}</td>`;
             }
