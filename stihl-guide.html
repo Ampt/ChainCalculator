@@ -1059,7 +1059,13 @@
 
         // Sort sizes numerically
         sizes.sort((a, b) => parseFloat(a) - parseFloat(b));
-        types.sort();
+        // Sort bar types so Lightweight variants appear immediately after their base type
+        types.sort((a, b) => {
+          const key = (t) =>
+            t.replace(/^Lightweight /, "") +
+            (t.startsWith("Lightweight") ? "~" : "");
+          return key(a).localeCompare(key(b));
+        });
         gauges.sort();
         pitches.sort();
 
