@@ -2479,7 +2479,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -6614,23 +6614,6 @@
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
-            "barPN": "3003 001 5631",
-            "rec": false,
-            "chains": {
-              "RM3": "36 RM3",
-              "RS3": "36 RS3",
-              "RD3": "36 RD3",
-              "RM": "36 RM",
-              "RS": "36 RS",
-              "RSK": "36 RSK"
-            }
-          },
-          {
-            "size": "24/25\"",
-            "barType": "Hard Nose",
-            "pitch": "3/8\"",
-            "gauge": ".063",
-            "dl": 85,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -14715,23 +14698,6 @@
               "RS": "36 RS",
               "RSK": "36 RSK"
             }
-          },
-          {
-            "size": "24/25\"",
-            "barType": "Hard Nose",
-            "pitch": "3/8\"",
-            "gauge": ".063",
-            "dl": 85,
-            "barPN": "3003 001 5631",
-            "rec": false,
-            "chains": {
-              "RM3": "36 RM3",
-              "RS3": "36 RS3",
-              "RD3": "36 RD3",
-              "RM": "36 RM",
-              "RS": "36 RS",
-              "RSK": "36 RSK"
-            }
           }
         ],
         "cannonMount": "S1"
@@ -17016,7 +16982,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -27614,7 +27580,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -29204,7 +29170,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -30072,7 +30038,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -30935,7 +30901,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -31787,7 +31753,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -32639,7 +32605,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -33500,7 +33466,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -34048,7 +34014,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
@@ -34910,7 +34876,7 @@
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": "84/85",
+            "dl": 84,
             "barPN": "3003 001 5631",
             "rec": false,
             "chains": {
