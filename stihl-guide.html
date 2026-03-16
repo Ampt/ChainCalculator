@@ -544,24 +544,58 @@
       let OREGON = null;
       let OREGON_CHAINS = null;
 
-      // Oregon chain PN lookup — global so both renderModel and renderBarResults can use it
+      // CHAIN_CATALOG: built at init from model data
+      // Key: "{pitch}|{gauge}|{chainType}" → { stihl: "36RM3", oregon: "72LPX" }
+      let CHAIN_CATALOG = {};
+
+      function buildChainCatalog() {
+        CHAIN_CATALOG = {};
+        // Build Stihl designations from model row data
+        for (const brand of Object.values(MODELS))
+          for (const model of Object.values(brand))
+            for (const row of model.rows)
+              for (const [type, desig] of Object.entries(row.chains)) {
+                const key = `${row.pitch}|${row.gauge}|${type}`;
+                if (!CHAIN_CATALOG[key])
+                  CHAIN_CATALOG[key] = { stihl: desig, oregon: null };
+              }
+        // Add Oregon series from OREGON_CHAINS mapping
+        if (OREGON_CHAINS) {
+          for (const key of Object.keys(CHAIN_CATALOG)) {
+            const [pitch, gauge, type] = key.split("|");
+            // Derive gauge code from Stihl designation (e.g. "36 RM3" → gaugeCode="36")
+            const desig = CHAIN_CATALOG[key].stihl;
+            const m = desig && desig.match(/^(\d+)\s+/);
+            if (!m) continue;
+            const gaugeCode = m[1];
+            const oregon = getOregonSeriesFromCode(gaugeCode, type);
+            if (oregon) CHAIN_CATALOG[key].oregon = oregon;
+          }
+        }
+      }
+
+      function getOregonSeriesFromCode(gaugeCode, chainType) {
+        if (!OREGON_CHAINS) return null;
+        const scKey = `${gaugeCode}_${chainType}`;
+        const sc = OREGON_CHAINS.specialCases;
+        if (sc && scKey in sc) return sc[scKey] || null;
+        const prefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
+        const suffix = OREGON_CHAINS.typeToSuffix[chainType];
+        return prefix && suffix ? prefix + suffix : null;
+      }
+
+      // Look up chain info for a bar row by pitch+gauge+type
+      // Returns { stihl: "36RM3", oregon: "72LPX" } or null
+      function chainInfo(pitch, gauge, type) {
+        return CHAIN_CATALOG[`${pitch}|${gauge}|${type}`] || null;
+      }
+
+      // Legacy helper used in saw view — kept for compatibility
       function getOregonChainPN(chainDesig) {
-        if (!OREGON_CHAINS || !chainDesig) return null;
+        if (!chainDesig) return null;
         const m = chainDesig.match(/^(\d+)\s+([A-Z0-9]+)$/);
         if (!m) return null;
-        const [, gaugeCode, chainType] = m;
-        const key = gaugeCode + "_" + chainType;
-        const sc = OREGON_CHAINS.specialCases;
-        if (sc && key in sc) {
-          const series = sc[key];
-          if (!series) return null;
-          return series;
-        }
-        const numPrefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
-        if (!numPrefix) return null;
-        const suffix = OREGON_CHAINS.typeToSuffix[chainType];
-        if (!suffix) return null;
-        return numPrefix + suffix;
+        return getOregonSeriesFromCode(m[1], m[2]);
       }
 
       // ─── Helpers ────────────────────────────────────────────────────────────────────
@@ -1538,161 +1572,88 @@
         let html = `<div class="bar-results-grid">`;
 
         for (const bar of bars) {
-          try {
-            // For third-party bars with no chain data, derive compatible types from pitch+gauge
-            const CHAINS_BY_PITCH_GAUGE = {
-              '.325"|.050': ["RM3", "RD3", "RM", "RS"],
-              '.325"|.063': ["RM3", "RD3", "RM", "RS"],
-              '.404"|.063': ["RM", "RMF", "RMH", "RMK", "RS", "RSF"],
-              '1/4" P|.043': ["PM3", "PS3"],
-              '1/4"|.050': ["RM", "RMS"],
-              '3/8" P|.043': ["PM3"],
-              '3/8" P|.050': ["PM3", "PS3", "PD3", "PM", "PS"],
-              '3/8"|.050': [
-                "RM3",
-                "RS3",
-                "RD3",
-                "RM",
-                "RMF",
-                "RS",
-                "RSF",
-                "RSK",
-              ],
-              '3/8"|.063': [
-                "RM3",
-                "RS3",
-                "RD3",
-                "RM",
-                "RMF",
-                "RS",
-                "RSF",
-                "RSK",
-              ],
-            };
-            let effectiveChains = bar.chains || {};
-            let chainsAreDerived = false;
-            if (!Object.keys(effectiveChains).length) {
-              const derivedTypes =
-                CHAINS_BY_PITCH_GAUGE[`${bar.pitch}|${bar.gauge}`] || [];
-              effectiveChains = {};
-              for (const t of derivedTypes) effectiveChains[t] = null; // null = no Stihl designation
-              chainsAreDerived = true;
+          // Use CHAIN_CATALOG to find compatible chain types for this bar's pitch+gauge
+          const barUsedTypes = CHAIN_TYPES.filter(
+            (t) => bar.chains[t] || chainInfo(bar.pitch, bar.gauge, t),
+          );
+
+          const autoOpen = bars.length === 1 ? " open" : "";
+          html += `<div class="bar-result-card${autoOpen}">`;
+
+          // Bar specs row (clickable toggle)
+          html += `<div class="bar-specs" onclick="this.parentElement.classList.toggle('open')">`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Size</span><span class="bar-spec-value">${bar.size}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Type</span><span class="bar-spec-value">${bar.barType}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl != null ? bar.dl : "–"}</span></div>`;
+          const mfrLabel =
+            bar.brand === "stihl"
+              ? "STIHL"
+              : bar.brand === "stihl discontinued"
+                ? "STIHL (disc.)"
+                : bar.brand === "cannon"
+                  ? "Cannon"
+                  : bar.brand === "oregon"
+                    ? "Oregon"
+                    : bar.brand || "";
+          html += `<div class="bar-spec"><span class="bar-spec-label">Manufacturer</span><span class="bar-spec-value">${mfrLabel}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
+          html += `<div class="bar-toggle"></div>`;
+          html += `</div>`;
+
+          // Collapsible detail section
+          html += `<div class="bar-detail">`;
+
+          // Compatible chains
+          if (barUsedTypes.length) {
+            html += `<div class="bar-section-title">Compatible Chains</div>`;
+            html += `<table class="compat-table"><thead><tr>`;
+            for (const t of barUsedTypes)
+              html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
+            html += `</tr></thead><tbody><tr>`;
+            for (const t of barUsedTypes) {
+              const info = chainInfo(bar.pitch, bar.gauge, t);
+              const stihl = (
+                bar.chains[t] ||
+                (info && info.stihl) ||
+                ""
+              ).replace(/^(\d+)\s+/, "$1");
+              const oregon = info && info.oregon;
+              const cell = stihl
+                ? `${stihl}${oregon ? `<br><span style="color:#aaa;">${oregon}</span>` : ""}`
+                : oregon
+                  ? `<span style="color:#aaa;">${oregon}</span>`
+                  : "–";
+              html += `<td class="chain-cell has">${cell}</td>`;
             }
-            const barUsedTypes = CHAIN_TYPES.filter((t) =>
-              effectiveChains.hasOwnProperty(t),
-            );
-
-            const autoOpen = bars.length === 1 ? " open" : "";
-            html += `<div class="bar-result-card${autoOpen}">`;
-
-            // Bar specs row (clickable toggle)
-            html += `<div class="bar-specs" onclick="this.parentElement.classList.toggle('open')">`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Size</span><span class="bar-spec-value">${bar.size}</span></div>`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Type</span><span class="bar-spec-value">${bar.barType}</span></div>`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl != null ? bar.dl : "–"}</span></div>`;
-            const mfrLabel =
-              bar.brand === "stihl"
-                ? "STIHL"
-                : bar.brand === "stihl discontinued"
-                  ? "STIHL (disc.)"
-                  : bar.brand === "cannon"
-                    ? "Cannon"
-                    : bar.brand === "oregon"
-                      ? "Oregon"
-                      : bar.brand || "";
-            html += `<div class="bar-spec"><span class="bar-spec-label">Manufacturer</span><span class="bar-spec-value">${mfrLabel}</span></div>`;
-            html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
-            html += `<div class="bar-toggle"></div>`;
-            html += `</div>`;
-
-            // Collapsible detail section
-            html += `<div class="bar-detail">`;
-
-            // Compatible chains
-            if (barUsedTypes.length) {
-              html += `<div class="bar-section-title">Compatible Chains</div>`;
-              html += `<table class="compat-table"><thead><tr>`;
-              for (const t of barUsedTypes) {
-                html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
-              }
-              html += `</tr></thead><tbody><tr>`;
-              // Map pitch+gauge → Stihl gauge code used by getOregonChainPN
-              const PITCH_GAUGE_TO_CODE = {
-                '3/8"|.050': "36",
-                '3/8"|.058': "33",
-                '3/8"|.063': "33",
-                '.325"|.050': "23",
-                '.325"|.063': "26",
-                '.404"|.063': "46",
-                '3/8" P|.050': "63",
-                '3/8" P|.043': "61",
-                '1/4" P|.043': "71",
-                '1/4"|.050': "13",
-              };
-              const pgCode = PITCH_GAUGE_TO_CODE[`${bar.pitch}|${bar.gauge}`];
-
-              for (const t of barUsedTypes) {
-                const stihlDesig = effectiveChains[t];
-                const stihlDisplay = stihlDesig
-                  ? stihlDesig.replace(/^(\d+)\s+/, "$1")
-                  : null;
-                // Oregon: use real designation if available, else synthesize from pitch+gauge+type
-                let oregonDisplay = null;
-                if (stihlDesig) {
-                  oregonDisplay = getOregonChainPN(stihlDesig);
-                } else if (pgCode && OREGON_CHAINS) {
-                  const scKey = `${pgCode}_${t}`;
-                  const sc =
-                    OREGON_CHAINS.specialCases &&
-                    OREGON_CHAINS.specialCases[scKey];
-                  if (sc !== undefined) {
-                    oregonDisplay = sc || null;
-                  } else {
-                    const prefix = OREGON_CHAINS.gaugeToSeries[pgCode];
-                    const suffix = OREGON_CHAINS.typeToSuffix[t];
-                    if (prefix && suffix) oregonDisplay = prefix + suffix;
-                  }
-                }
-                const cellContent = stihlDisplay
-                  ? `${stihlDisplay}${oregonDisplay ? `<br><span style="color:#aaa;">${oregonDisplay}</span>` : ""}`
-                  : oregonDisplay
-                    ? `<span style="color:#aaa;">${oregonDisplay}</span>`
-                    : "–";
-                html += `<td class="chain-cell has">${cellContent}</td>`;
-              }
-              html += `</tr></tbody></table>`;
-            }
-
-            // Compatible saws
-            if (bar.saws.length) {
-              html += `<div class="bar-section-title">Fits These Chainsaws</div>`;
-              html += `<div class="saw-list">`;
-              html += bar.saws
-                .map((s) => {
-                  const brandLabel =
-                    s.brand === "stihl"
-                      ? "STIHL"
-                      : s.brand === "stihl discontinued"
-                        ? "STIHL (disc.)"
-                        : s.brand === "cannon"
-                          ? "Cannon"
-                          : s.brand === "oregon"
-                            ? "Oregon"
-                            : s.brand;
-                  return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
-                })
-                .join(", ");
-              html += `</div>`;
-            }
-
-            html += `</div>`; // .bar-detail
-            html += `</div>`; // .bar-result-card
-          } catch (e) {
-            console.error("bar render error for", bar.pn, e);
-            html += `</div></div>`;
+            html += `</tr></tbody></table>`;
           }
+
+          // Compatible saws
+          if (bar.saws.length) {
+            html += `<div class="bar-section-title">Fits These Chainsaws</div>`;
+            html += `<div class="saw-list">`;
+            html += bar.saws
+              .map((s) => {
+                const brandLabel =
+                  s.brand === "stihl"
+                    ? "STIHL"
+                    : s.brand === "stihl discontinued"
+                      ? "STIHL (disc.)"
+                      : s.brand === "cannon"
+                        ? "Cannon"
+                        : s.brand === "oregon"
+                          ? "Oregon"
+                          : s.brand;
+                return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
+              })
+              .join(", ");
+            html += `</div>`;
+          }
+
+          html += `</div>`; // .bar-detail
+          html += `</div>`; // .bar-result-card
         }
 
         html += `</div>`;
@@ -1806,6 +1767,7 @@
           OREGON = data.oregon || null;
           OREGON_CHAINS = data.oregonChains || null;
           buildBarIndex();
+          buildChainCatalog();
           init();
         })
         .catch((err) => {
