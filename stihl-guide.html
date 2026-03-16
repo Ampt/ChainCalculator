@@ -730,7 +730,7 @@
 
       let currentView = "saw"; // "saw" or "bar"
 
-      function switchView(view) {
+      function switchView(view, skipRender) {
         currentView = view;
         document.querySelectorAll(".toggle-btn").forEach((btn) => {
           btn.classList.toggle("active", btn.dataset.view === view);
@@ -744,7 +744,7 @@
           onModelChange();
         } else {
           populateBarFilters();
-          onBarFilterChange();
+          if (!skipRender) onBarFilterChange();
         }
       }
 
@@ -1687,14 +1687,13 @@
       }
 
       function jumpToBar(pn) {
-        // Clear filters BEFORE switchView so onBarFilterChange inside it sees clean state
         document.getElementById("bar-size-select").value = "";
         document.getElementById("bar-type-select").value = "";
         document.getElementById("bar-gauge-select").value = "";
         document.getElementById("bar-pitch-select").value = "";
         document.getElementById("bar-dl-select").value = "";
         document.getElementById("bar-pn-input").value = pn;
-        switchView("bar");
+        switchView("bar", true); // skip auto-render — we'll render the specific bar below
         const bar = BAR_INDEX[pn];
         if (bar) {
           renderBarResults([bar]);
