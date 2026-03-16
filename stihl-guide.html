@@ -832,7 +832,7 @@
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
         html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
         if (hasCannon)
-          html += `<span class="legend-item" style="color:#e0a040;">&#9670; Cannon equivalent</span>`;
+          html += `<span class="legend-item"><span style="color:#e0a040;">&#9670;</span> Cannon equivalent</span>`;
         html += `</div>`;
 
         // Sprocket table
@@ -863,12 +863,10 @@
           // Header row with size as first column
           html += `<tr>`;
           html += `<th class="size-header" style="text-align:left;">${size}</th>`;
-          html += `<th class="size-header">Pitch</th><th class="size-header">Gauge</th><th class="size-header">DL</th><th class="size-header">Bar P/N</th>`;
+          html += `<th class="size-header">Pitch</th><th class="size-header">Gauge</th><th class="size-header">DL</th><th class="size-header">Stihl${hasCannon ? ' / <span style="color:#e0a040;">Cannon</span>' : ""}</th>`;
           for (const t of usedTypes) {
             html += `<th class="size-header chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
           }
-          if (hasCannon)
-            html += `<th class="size-header" style="color:#e0a040;">Cannon</th>`;
           html += `</tr>`;
 
           // Calculate rowspans for bar type + pitch groups
@@ -903,24 +901,17 @@
                 return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>`;
               })
               .join("<br>");
-            html += `<td class="bar-pn">${pnLinks}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            const cPNs = hasCannon ? cannonForRow(row) : [];
+            const cLinks = cPNs
+              .map(
+                (p) =>
+                  `<span style="color:#e0a040;">${p}</span> <button class="copy-btn" onclick="copyPN('${p}',this)">copy</button>`,
+              )
+              .join("<br>");
+            html += `<td class="bar-pn">${pnLinks}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}${cLinks ? "<br>" + cLinks : ""}</td>`;
             for (const t of usedTypes) {
               const c = chainVal(row, t);
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
-            }
-            if (hasCannon) {
-              const cPNs = cannonForRow(row);
-              if (cPNs.length) {
-                const cLinks = cPNs
-                  .map(
-                    (p) =>
-                      `${p} <button class="copy-btn" onclick="copyPN('${p}',this)">copy</button>`,
-                  )
-                  .join("<br>");
-                html += `<td class="bar-pn" style="color:#e0a040;">${cLinks}</td>`;
-              } else {
-                html += `<td class="bar-info">–</td>`;
-              }
             }
             html += `</tr>`;
           }
