@@ -788,10 +788,51 @@
           (a, b) => parseFloat(a) - parseFloat(b),
         );
 
+        // ── Build Cannon lookup: "size|gaugeCode|pitchCode" → [partNumbers] ──────
+        // Pitch: .325"→2, 3/8"→3, 3/8" P→3, .404"→4
+        // Gauge: .043→43, .050→50, .058→58, .063→63
+        const STIHL_PITCH_TO_CANNON = {
+          '.325"': "2",
+          '3/8"': "3",
+          '3/8" P': "3",
+          '.404"': "4",
+        };
+        const STIHL_GAUGE_TO_CANNON = {
+          ".043": "43",
+          ".050": "50",
+          ".058": "58",
+          ".063": "63",
+        };
+        const cannonLookup = {}; // "16|50|3" → ["CSB-S1-16-50-3", "CSB-S1-16-50-3-DL", ...]
+        if (data.cannonMount && CANNON && CANNON.bars[data.cannonMount]) {
+          for (const pn of CANNON.bars[data.cannonMount]) {
+            const parts = pn.split("-");
+            const isDL = parts.includes("DL");
+            const sz = isDL ? parts[2] : parts[2];
+            const gauge = isDL ? parts[3] : parts[3];
+            const pitch = isDL ? parts[5] : parts[4];
+            if (!pitch || pitch === "H") continue; // skip hard nose — no pitch to match
+            const key = `${sz}|${gauge}|${pitch}`;
+            if (!cannonLookup[key]) cannonLookup[key] = [];
+            cannonLookup[key].push(pn);
+          }
+        }
+        const hasCannon = Object.keys(cannonLookup).length > 0;
+
+        function cannonForRow(row) {
+          const sz = String(parseFloat(row.size)); // "16\"" → "16"
+          const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
+          const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
+          if (!gauge || !pitch) return [];
+          return cannonLookup[`${sz}|${gauge}|${pitch}`] || [];
+        }
+
         let html = "";
         html += `<div class="legend">`;
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
         html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
+        if (hasCannon)
+          html += `<span class="legend-item" style="color:#e0a040;">&#9670; Cannon equivalent</span>`;
         html += `</div>`;
 
         // Sprocket table
@@ -826,6 +867,8 @@
           for (const t of usedTypes) {
             html += `<th class="size-header chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
           }
+          if (hasCannon)
+            html += `<th class="size-header" style="color:#e0a040;">Cannon</th>`;
           html += `</tr>`;
 
           // Calculate rowspans for bar type + pitch groups
@@ -865,123 +908,26 @@
               const c = chainVal(row, t);
               html += `<td class="chain-cell ${c ? "has" : ""}">${c || "–"}</td>`;
             }
+            if (hasCannon) {
+              const cPNs = cannonForRow(row);
+              if (cPNs.length) {
+                const cLinks = cPNs
+                  .map(
+                    (p) =>
+                      `${p} <button class="copy-btn" onclick="copyPN('${p}',this)">copy</button>`,
+                  )
+                  .join("<br>");
+                html += `<td class="bar-pn" style="color:#e0a040;">${cLinks}</td>`;
+              } else {
+                html += `<td class="bar-info">–</td>`;
+              }
+            }
             html += `</tr>`;
           }
         }
 
         html += `</tbody></table>`;
         html += `</div>`;
-
-        // ── Cannon bars ───────────────────────────────────────────────────────
-        if (data.cannonMount && CANNON && CANNON.bars[data.cannonMount]) {
-          const mount = data.cannonMount;
-          const GAUGE_LABELS = {
-            43: '.043"',
-            50: '.050"',
-            58: '.058"',
-            63: '.063"',
-          };
-          const PITCH_LABELS = {
-            2: '.325"',
-            3: '3/8"',
-            4: '.404"',
-            H: "Hard nose",
-            "3LM": '3/8" LP',
-          };
-          const TYPE_LABELS = {
-            CSB: "SuperBar",
-            "CSB-DL": "DuraLite SuperBar",
-            CSM: "SuperMini",
-            CCA: "Carving – Arbor Tip",
-            CCT: "Carving – Toonie Tip",
-            CCQ: "Carving – Quarter Tip",
-            CCD: "Carving – Dime Tip",
-            CPP: "Pruning Bar",
-          };
-
-          // Parse each part number into structured fields
-          function parseCannon(pn) {
-            const parts = pn.split("-");
-            // CSB-DL parts: CSB-{mount}-{size}-{gauge}-DL-{pitch}
-            // Regular:      {type}-{mount}-{size}-{gauge}-{pitch}
-            const isDL = parts.includes("DL");
-            const type = isDL ? "CSB-DL" : parts[0];
-            // mount is parts[1], then size, gauge, pitch
-            // For CSB-DL: CSB-C1-16-50-DL-2  → type=CSB-DL, mount=C1, size=16, gauge=50, pitch=2
-            // For CSM:    CSM-C1-14-50-3LM    → parts=[CSM,C1,14,50,3LM]
-            let size, gauge, pitch;
-            if (isDL) {
-              size = parts[2];
-              gauge = parts[3];
-              pitch = parts[5];
-            } else if (parts.length === 5) {
-              size = parts[2];
-              gauge = parts[3];
-              pitch = parts[4];
-            } else {
-              size = parts[2];
-              gauge = parts[3];
-              pitch = parts[4] || "";
-            }
-            return {
-              pn,
-              type,
-              size: size + '"',
-              gauge: GAUGE_LABELS[gauge] || gauge,
-              pitch: PITCH_LABELS[pitch] || pitch,
-            };
-          }
-
-          const allBars = CANNON.bars[mount].map(parseCannon);
-
-          // Group by type
-          const byType = {};
-          for (const b of allBars) {
-            if (!byType[b.type]) byType[b.type] = [];
-            byType[b.type].push(b);
-          }
-
-          html += `<div class="panel">`;
-          html += `<h2>Cannon Bars <span style="font-weight:400;font-size:.85em;color:#aaa;">(${mount} mount)</span></h2>`;
-
-          for (const [type, bars] of Object.entries(byType)) {
-            // Group by size
-            const bySizeMap = {};
-            for (const b of bars) {
-              if (!bySizeMap[b.size]) bySizeMap[b.size] = [];
-              bySizeMap[b.size].push(b);
-            }
-            const sortedSizes = Object.keys(bySizeMap).sort(
-              (a, b) => parseFloat(a) - parseFloat(b),
-            );
-
-            html += `<h3 style="margin:.8rem 0 .3rem;font-size:.95em;color:#e0a040;">${TYPE_LABELS[type] || type}</h3>`;
-            html += `<table class="compat-table"><thead><tr>`;
-            html += `<th>Size</th><th>Gauge</th><th>Pitch</th><th>Part Number</th>`;
-            html += `</tr></thead><tbody>`;
-
-            for (const sz of sortedSizes) {
-              const sizeBars = bySizeMap[sz];
-              html += `<tr>`;
-              html += `<td class="bar-info" rowspan="${sizeBars.length}" style="vertical-align:middle;border-right:1px solid #333;">${sz}</td>`;
-              html += `<td class="bar-info">${sizeBars[0].gauge}</td>`;
-              html += `<td class="bar-info">${sizeBars[0].pitch}</td>`;
-              const p = sizeBars[0].pn;
-              html += `<td class="bar-pn">${p} <button class="copy-btn" onclick="copyPN('${p}',this)">copy</button></td>`;
-              html += `</tr>`;
-              for (let i = 1; i < sizeBars.length; i++) {
-                const p2 = sizeBars[i].pn;
-                html += `<tr>`;
-                html += `<td class="bar-info">${sizeBars[i].gauge}</td>`;
-                html += `<td class="bar-info">${sizeBars[i].pitch}</td>`;
-                html += `<td class="bar-pn">${p2} <button class="copy-btn" onclick="copyPN('${p2}',this)">copy</button></td>`;
-                html += `</tr>`;
-              }
-            }
-            html += `</tbody></table>`;
-          }
-          html += `</div>`;
-        }
 
         container.innerHTML = html;
       }
