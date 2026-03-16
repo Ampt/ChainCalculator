@@ -996,10 +996,12 @@
             const pnLinks = barPNs
               .map((pn) => {
                 const p = pn.trim();
+                if (!p) return null;
                 return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>`;
               })
+              .filter(Boolean)
               .join("<br>");
-            html += `<td class="bar-pn">${pnLinks}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            html += `<td class="bar-pn">${pnLinks || "–"}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             if (hasCannon) {
               const cPNs = cannonForRow(row);
               if (cPNs.length) {
