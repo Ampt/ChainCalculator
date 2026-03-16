@@ -1148,7 +1148,7 @@
               html += `<td class="bar-info"${span} style="vertical-align:middle;">${row.pitch}</td>`;
             }
             html += `<td class="bar-info">${row.gauge}</td>`;
-            html += `<td class="bar-info">${row.dl}</td>`;
+            html += `<td class="bar-info">${row.dl != null ? row.dl : "–"}</td>`;
             const pnLinks = barPNs
               .map((pn) => {
                 const p = pn.trim();
@@ -1165,8 +1165,9 @@
                   .map((p) => {
                     const cBar = BAR_INDEX[p];
                     const cDL = cBar ? cBar.dl : null;
+                    const hasStihlPN = row.barPN && row.barPN.trim();
                     const dlDiff =
-                      cDL != null && row.dl != null
+                      hasStihlPN && cDL != null && row.dl != null
                         ? Math.abs(cDL - row.dl)
                         : 0;
                     const dlNote =
@@ -1191,7 +1192,7 @@
                     const oBar = BAR_INDEX[p];
                     const oDL = oBar ? oBar.dl : null;
                     const dlDiff =
-                      oDL != null && row.dl != null
+                      hasStihlPN && oDL != null && row.dl != null
                         ? Math.abs(oDL - row.dl)
                         : 0;
                     const dlNote =

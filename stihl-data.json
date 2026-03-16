@@ -3154,7 +3154,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".050",
-            "dl": null,
+            "dl": 129,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3173,7 +3173,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 129,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3190,7 +3190,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 117,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3489,7 +3489,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 142,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3506,7 +3506,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 157,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3523,7 +3523,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 172,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3540,7 +3540,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 190,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3557,7 +3557,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 196,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3574,7 +3574,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 217,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3591,7 +3591,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 225,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3608,7 +3608,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": null,
+            "dl": 249,
             "barPN": "",
             "rec": false,
             "chains": {
