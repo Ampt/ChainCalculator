@@ -544,6 +544,26 @@
       let OREGON = null;
       let OREGON_CHAINS = null;
 
+      // Oregon chain PN lookup — global so both renderModel and renderBarResults can use it
+      function getOregonChainPN(chainDesig) {
+        if (!OREGON_CHAINS || !chainDesig) return null;
+        const m = chainDesig.match(/^(\d+)\s+([A-Z0-9]+)$/);
+        if (!m) return null;
+        const [, gaugeCode, chainType] = m;
+        const key = gaugeCode + "_" + chainType;
+        const sc = OREGON_CHAINS.specialCases;
+        if (sc && key in sc) {
+          const series = sc[key];
+          if (!series) return null;
+          return series;
+        }
+        const numPrefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
+        if (!numPrefix) return null;
+        const suffix = OREGON_CHAINS.typeToSuffix[chainType];
+        if (!suffix) return null;
+        return numPrefix + suffix;
+      }
+
       // ─── Helpers ────────────────────────────────────────────────────────────────────
       function escAttr(s) {
         return String(s)
@@ -901,28 +921,6 @@
             (R_TO_P[col] ? row.chains[R_TO_P[col]] : null) ||
             null
           );
-        }
-
-        // Oregon chain PN lookup: "{gaugeCode} {chainType}" + DL → Oregon PN
-        // e.g. "33 RM3" + dl=60 → "73LPX060G"
-        function getOregonChainPN(chainDesig) {
-          if (!OREGON_CHAINS || !chainDesig) return null;
-          const m = chainDesig.match(/^(\d+)\s+([A-Z0-9]+)$/);
-          if (!m) return null;
-          const [, gaugeCode, chainType] = m;
-          const key = gaugeCode + "_" + chainType;
-          // Check special cases first
-          const sc = OREGON_CHAINS.specialCases;
-          if (sc && key in sc) {
-            const series = sc[key];
-            if (!series) return null;
-            return series;
-          }
-          const numPrefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
-          if (!numPrefix) return null;
-          const suffix = OREGON_CHAINS.typeToSuffix[chainType];
-          if (!suffix) return null;
-          return numPrefix + suffix;
         }
 
         // Group rows by size, sorted numerically
