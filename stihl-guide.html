@@ -562,6 +562,8 @@
 
       function buildBarIndex() {
         BAR_INDEX = {};
+
+        // ── Stihl bars (from MODELS) ─────────────────────────────────────────
         for (const brand of Object.keys(MODELS)) {
           for (const model of Object.keys(MODELS[brand])) {
             const data = MODELS[brand][model];
@@ -572,6 +574,7 @@
                 if (!BAR_INDEX[key]) {
                   BAR_INDEX[key] = {
                     pn: key,
+                    brand: brand,
                     barType: row.barType,
                     size: row.size,
                     pitch: row.pitch,
@@ -581,13 +584,11 @@
                     saws: [],
                   };
                 } else {
-                  // Merge chains (same bar may have different chain avail listed per model)
                   for (const [ct, cv] of Object.entries(row.chains)) {
                     if (!BAR_INDEX[key].chains[ct])
                       BAR_INDEX[key].chains[ct] = cv;
                   }
                 }
-                // Add saw reference
                 const already = BAR_INDEX[key].saws.find(
                   (s) => s.brand === brand && s.model === model,
                 );
@@ -598,6 +599,85 @@
             }
           }
         }
+
+        // ── Cannon bars ──────────────────────────────────────────────────────
+        if (CANNON) {
+          // Decode a Cannon PN into bar attributes
+          // Formats:
+          //   CSB-{mount}-{size}-{gauge}-{pitch}          e.g. CSB-S1-18-63-3
+          //   CSB-{mount}-{size}-{gauge}-DL-{pitch}       e.g. CSB-S1-20-50-DL-2
+          //   CSM-{mount}-{size}-{gauge}-{pitch}          e.g. CSM-C1-16-50-2
+          //   CCA/CCT/CCQ/CCD-{mount}-{size}-{gauge}      e.g. CCQ-S1-16-50
+          const CANNON_GAUGE = {
+            43: '.043"',
+            50: '.050"',
+            58: '.058"',
+            63: '.063"',
+          };
+          const CANNON_PITCH = {
+            2: '.325"',
+            3: '3/8"',
+            4: '.404"',
+            "3LM": '3/8" P',
+            H: null,
+          };
+          const CANNON_TYPE = {
+            CSB: "Fixed Roller",
+            "CSB-DL": "Replaceable Roller",
+            CSM: "Fixed Roller (Narrow Gauge)",
+            CCA: "Carving (Arbor Tip)",
+            CCT: "Carving (Toonie Tip)",
+            CCQ: "Carving (Quarter Tip)",
+            CCD: "Carving (Dime Tip)",
+            CPP: "Pruning",
+          };
+
+          // Build mount → saws map once
+          const mountSaws = { C1: [], S1: [], S2: [] };
+          for (const brand of Object.keys(MODELS)) {
+            for (const model of Object.keys(MODELS[brand])) {
+              const mt = MODELS[brand][model].cannonMount;
+              if (mt && mountSaws[mt]) {
+                mountSaws[mt].push({ brand, model, rec: false });
+              }
+            }
+          }
+
+          for (const [mount, pns] of Object.entries(CANNON.bars)) {
+            for (const pn of pns) {
+              const parts = pn.split("-");
+              const isDL = parts.includes("DL");
+              const base = parts[0]; // CSB, CSM, CCA, etc.
+              const type = isDL ? "CSB-DL" : base;
+              let sz, gaugeCode, pitchCode;
+              if (isDL) {
+                sz = parts[2];
+                gaugeCode = parts[3];
+                pitchCode = parts[5];
+              } else {
+                sz = parts[2];
+                gaugeCode = parts[3];
+                pitchCode = parts[4] || null;
+              }
+              const pitch = pitchCode ? CANNON_PITCH[pitchCode] : null;
+              if (!pitch) continue; // skip hard nose — no pitch to work with
+              const gauge = CANNON_GAUGE[gaugeCode] || "." + gaugeCode + '"';
+              const size = sz + '"';
+              BAR_INDEX[pn] = {
+                pn,
+                brand: "cannon",
+                barType: CANNON_TYPE[type] || type,
+                size,
+                pitch,
+                gauge,
+                dl: null,
+                chains: {},
+                saws: mountSaws[mount] || [],
+              };
+            }
+          }
+        }
+
         ALL_BAR_PNS = Object.keys(BAR_INDEX).sort();
       }
 
@@ -909,7 +989,7 @@
                 const cLinks = cPNs
                   .map(
                     (p) =>
-                      `${p} <button class="copy-btn" onclick="copyPN('${p}',this)">copy</button>`,
+                      `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>`,
                   )
                   .join("<br>");
                 html += `<td class="bar-pn">${cLinks}</td>`;
@@ -1174,7 +1254,7 @@
           html += `<div class="bar-spec"><span class="bar-spec-label">Type</span><span class="bar-spec-value">${bar.barType}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
-          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl}</span></div>`;
+          html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl ?? "–"}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
           html += `<div class="bar-toggle"></div>`;
           html += `</div>`;
@@ -1208,7 +1288,9 @@
                     ? "STIHL"
                     : s.brand === "stihl discontinued"
                       ? "STIHL (disc.)"
-                      : s.brand;
+                      : s.brand === "cannon"
+                        ? "Cannon"
+                        : s.brand;
                 return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
               })
               .join(", ");
