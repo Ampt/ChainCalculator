@@ -10280,6 +10280,1409 @@
             }
           }
         ]
+      },
+      "MS 181 / MS 181 C": {
+        "sprockets": [
+          {
+            "pitch": "3/8\" P",
+            "teeth": 6,
+            "spur": "1123 640 2003"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 7,
+            "spur": "1123 640 2002"
+          },
+          {
+            "pitch": "1/4\"",
+            "teeth": 8,
+            "spur": "1123 640 2007"
+          }
+        ],
+        "rows": [
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 4805",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3005 000 6409",
+            "rec": false,
+            "chains": {
+              "RM": "13 RM 72"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 4809",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 008 4813\n3005 000 4813",
+            "rec": true,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 61,
+            "barPN": "3005 000 4817",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 61",
+              "PS3": "63 PS3 61",
+              "PD3": "63 PD3 61",
+              "PM": "63 PM 61",
+              "PS": "63 PS 61"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 7405",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 7409",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 000 7413",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 44,
+            "barPN": "3005 000 3905",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 50,
+            "barPN": "3005 008 3909\n3005 000 3909",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 50"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Mini Light",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 44,
+            "barPN": "3005 000 7605",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Mini Light",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 50,
+            "barPN": "3005 000 7609",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 50"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Carving",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 64,
+            "barPN": "3005 000 3205",
+            "rec": false,
+            "chains": {
+              "RMS": "13 RMS 64"
+            }
+          }
+        ]
+      },
+      "MS 193 C / MS 193 T / MS 193 TC": {
+        "sprockets": [
+          {
+            "pitch": "1/4\" P",
+            "teeth": 8,
+            "spur": "1137 640 2006"
+          },
+          {
+            "pitch": "1/4\"",
+            "teeth": 8,
+            "spur": "1137 640 2008"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 6,
+            "spur": "1137 640 2005"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 7,
+            "spur": "1137 640 2007"
+          }
+        ],
+        "rows": [
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 4805",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3005 000 6409",
+            "rec": false,
+            "chains": {
+              "RM": "13 RM 72"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 4809",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 008 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 000 4813",
+            "rec": true,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 56,
+            "barPN": "3005 000 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 56",
+              "PS3": "63 PS3 56",
+              "PD3": "63 PD3 56",
+              "PM": "63 PM 56",
+              "PS": "63 PS 56"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 61,
+            "barPN": "3005 000 4817",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 61",
+              "PD3": "63 PD3 61",
+              "PM": "63 PM 61",
+              "PS": "63 PS 61"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 7405",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 7409",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 000 7413",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "10\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "1/4\" P",
+            "gauge": ".043",
+            "dl": 56,
+            "barPN": "3005 008 3403",
+            "rec": false,
+            "chains": {
+              "PS3": "71 PM3 56"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "1/4\" P",
+            "gauge": ".043",
+            "dl": 64,
+            "barPN": "3005 008 3405",
+            "rec": false,
+            "chains": {
+              "PS3": "71 PM3 64"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "1/4\" P",
+            "gauge": ".043",
+            "dl": 72,
+            "barPN": "3005 008 3409",
+            "rec": false,
+            "chains": {
+              "PS3": "71 PM3 72"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 50,
+            "barPN": "3005 008 3909\n3005 000 3909",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 50"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Mini",
+            "pitch": "3/8\" P",
+            "gauge": ".043",
+            "dl": 51,
+            "barPN": "3005 008 3909",
+            "rec": false,
+            "chains": {
+              "PM3": "61 PM3 51"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Carving",
+            "pitch": "1/4\" P",
+            "gauge": ".043",
+            "dl": 64,
+            "barPN": "3005 000 3105",
+            "rec": false,
+            "chains": {
+              "PS3": "71 PM3 64"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Carving",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 64,
+            "barPN": "3005 000 3205",
+            "rec": false,
+            "chains": {
+              "RMS": "13 RMS 64"
+            }
+          }
+        ]
+      },
+      "MS 230 / MS 230 C": {
+        "sprockets": [
+          {
+            "pitch": "1/4\"",
+            "teeth": 8,
+            "spur": "1123 640 2077"
+          },
+          {
+            "pitch": ".325\"",
+            "teeth": 7,
+            "spur": "1123 640 2074"
+          },
+          {
+            "pitch": ".325\"",
+            "teeth": 8,
+            "spur": "1123 640 2076"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 6,
+            "spur": "1123 640 2073"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 7,
+            "spur": "1123 640 2072"
+          }
+        ],
+        "rows": [
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 4805",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3005 000 6409",
+            "rec": false,
+            "chains": {
+              "RM": "13 RM 72"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 4809",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 62,
+            "barPN": "3005 008 4713\n3005 000 4713",
+            "rec": false,
+            "chains": {
+              "RM3": "26 RM3 62",
+              "RD3": "26 RD3 62",
+              "RM": "26 RM 62",
+              "RS": "26 RS 62"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 008 4813\n3005 000 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 56,
+            "barPN": "3005 000 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 56",
+              "PS3": "63 PS3 56",
+              "PD3": "63 PD3 56",
+              "PM": "63 PM 56",
+              "PS": "63 PS 56"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 68,
+            "barPN": "3005 008 7017",
+            "rec": false,
+            "chains": {
+              "RM3": "23 RM3 68",
+              "RD3": "23 RD3 68",
+              "RM": "23 RM 68",
+              "RS": "23 RS 68"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 68,
+            "barPN": "3005 008 4717",
+            "rec": false,
+            "chains": {
+              "RM3": "26 RM3 68",
+              "RD3": "26 RD3 68",
+              "RM": "26 RM 68",
+              "RS": "26 RS 68"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 61,
+            "barPN": "3005 000 4817",
+            "rec": true,
+            "chains": {
+              "PM3": "63 PM3 61",
+              "PS3": "63 PS3 61",
+              "PD3": "63 PD3 61",
+              "PM": "63 PM 61",
+              "PS": "63 PS 61"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 7405",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 7409",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 000 7413",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Carving",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 64,
+            "barPN": "3005 000 3205",
+            "rec": false,
+            "chains": {
+              "RMS": "13 RMS 64"
+            }
+          }
+        ]
+      },
+      "MS 250 / MS 250 C": {
+        "sprockets": [
+          {
+            "pitch": "1/4\"",
+            "teeth": 8,
+            "spur": "1123 640 2077"
+          },
+          {
+            "pitch": ".325\"",
+            "teeth": 7,
+            "spur": "1123 640 2074"
+          },
+          {
+            "pitch": ".325\"",
+            "teeth": 8,
+            "spur": "1123 640 2076"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 7,
+            "spur": "1123 640 2072"
+          },
+          {
+            "pitch": "3/8\" P",
+            "teeth": 6,
+            "spur": "1123 640 2073"
+          }
+        ],
+        "rows": [
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 4805",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3005 000 6409",
+            "rec": false,
+            "chains": {
+              "RM": "13 RM 72"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 4809",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 62,
+            "barPN": "3005 008 4713\n3005 000 4713",
+            "rec": false,
+            "chains": {
+              "RM3": "26 RM3 62",
+              "RD3": "26 RD3 62",
+              "RM": "26 RM 62",
+              "RS": "26 RS 62"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 008 4813\n3005 000 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 56,
+            "barPN": "3005 000 4813",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 56",
+              "PS3": "63 PS3 56",
+              "PD3": "63 PD3 56",
+              "PM": "63 PM 56",
+              "PS": "63 PS 56"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 68,
+            "barPN": "3005 008 7017",
+            "rec": false,
+            "chains": {
+              "RM3": "23 RM3 68",
+              "RD3": "23 RD3 68",
+              "RM": "23 RM 68",
+              "RS": "23 RS 68"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 68,
+            "barPN": "3005 008 4717",
+            "rec": true,
+            "chains": {
+              "RD3": "26 RD3 68",
+              "RM": "26 RM 68",
+              "RS": "26 RS 68"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 61,
+            "barPN": "3005 000 4817",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 61",
+              "PS3": "63 PS3 61",
+              "PD3": "63 PD3 61",
+              "PM": "63 PM 61",
+              "PS": "63 PS 61"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 44,
+            "barPN": "3005 000 7405",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 44",
+              "PS3": "63 PS3 44",
+              "PD3": "63 PD3 44",
+              "PM": "63 PM 44",
+              "PS": "63 PS 44"
+            }
+          },
+          {
+            "size": "14\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 50,
+            "barPN": "3005 000 7409",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 50",
+              "PS3": "63 PS3 50",
+              "PD3": "63 PD3 50",
+              "PM": "63 PM 50",
+              "PS": "63 PS 50"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E Light",
+            "pitch": "3/8\" P",
+            "gauge": ".050",
+            "dl": 55,
+            "barPN": "3005 000 7413",
+            "rec": false,
+            "chains": {
+              "PM3": "63 PM3 55",
+              "PS3": "63 PS3 55",
+              "PD3": "63 PD3 55",
+              "PM": "63 PM 55",
+              "PS": "63 PS 55"
+            }
+          },
+          {
+            "size": "12\"",
+            "barType": "Carving",
+            "pitch": "1/4\"",
+            "gauge": ".050",
+            "dl": 64,
+            "barPN": "3005 000 3205",
+            "rec": false,
+            "chains": {
+              "RMS": "13 RMS 64"
+            }
+          }
+        ]
+      },
+      "MS 260 / MS 260 C": {
+        "sprockets": [
+          {
+            "pitch": ".325\"",
+            "teeth": 7,
+            "spur": "1121 640 2000",
+            "rim": "1121 007 1001",
+            "rimKit": "0000 642 1236"
+          },
+          {
+            "pitch": ".325\"",
+            "teeth": 7,
+            "spur": "1121 640 2004",
+            "rim": "1121 007 1037",
+            "rimKit": "0000 642 1236"
+          },
+          {
+            "pitch": "3/8\"",
+            "teeth": 8,
+            "spur": "1121 640 2001",
+            "rim": "1121 007 1002",
+            "rimKit": "0000 642 1234"
+          },
+          {
+            "pitch": "3/8\"",
+            "teeth": 8,
+            "spur": "1121 640 2005",
+            "rim": "1121 007 1038",
+            "rimKit": "0000 642 1234"
+          }
+        ],
+        "rows": [
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 67,
+            "barPN": "3003 008 6813\n3003 000 6813",
+            "rec": false,
+            "chains": {
+              "RM3": "26 RM3 67",
+              "RD3": "26 RD3 67",
+              "RM": "26 RM 67",
+              "RS": "26 RS 67"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 60,
+            "barPN": "3003 008 8913\n3003 000 8913",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 60",
+              "RS3": "33 RS3 60",
+              "RD3": "33 RD3 60",
+              "RM": "33 RM 60",
+              "RMF": "33 RMF 60",
+              "RS": "33 RS 60",
+              "RSF": "33 RSF 60",
+              "RSK": "33 RSK 60"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 60,
+            "barPN": "3003 000 6113",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 60",
+              "RS3": "36 RS3 60",
+              "RD3": "36 RD3 60",
+              "RM": "36 RM 60",
+              "RS": "36 RS 60",
+              "RSK": "36 RSK 60"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 74,
+            "barPN": "3003 008 6817",
+            "rec": true,
+            "chains": {
+              "RM3": "26 RM3 74",
+              "RD3": "26 RD3 74",
+              "RM": "26 RM 74",
+              "RS": "26 RS 74"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 66,
+            "barPN": "3003 008 8917",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 66",
+              "RS3": "33 RS3 66",
+              "RD3": "33 RD3 66",
+              "RM": "33 RM 66",
+              "RMF": "33 RMF 66",
+              "RS": "33 RS 66",
+              "RSF": "33 RSF 66",
+              "RSK": "33 RSK 66"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 66,
+            "barPN": "3003 008 6117",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 66",
+              "RS3": "36 RS3 66",
+              "RD3": "36 RD3 66",
+              "RM": "36 RM 66",
+              "RS": "36 RS 66",
+              "RSK": "36 RSK 66"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic E",
+            "pitch": ".325\"",
+            "gauge": ".063",
+            "dl": 81,
+            "barPN": "3003 008 6821",
+            "rec": false,
+            "chains": {
+              "RM3": "26 RM3 81",
+              "RD3": "26 RD3 81",
+              "RM": "26 RM 81",
+              "RS": "26 RS 81"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 72,
+            "barPN": "3003 008 8921",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 72",
+              "RS3": "33 RS3 72",
+              "RD3": "33 RD3 72",
+              "RM": "33 RM 72",
+              "RMF": "33 RMF 72",
+              "RS": "33 RS 72",
+              "RSF": "33 RSF 72",
+              "RSK": "33 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3003 008 6121\n3003 000 5221",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 72",
+              "RS3": "36 RS3 72",
+              "RD3": "36 RD3 72",
+              "RM": "36 RM 72",
+              "RS": "36 RS 72",
+              "RSK": "36 RSK 72"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 60,
+            "barPN": "3003 000 8813",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 60",
+              "RS3": "33 RS3 60",
+              "RD3": "33 RD3 60",
+              "RM": "33 RM 60",
+              "RMF": "33 RMF 60",
+              "RS": "33 RS 60",
+              "RSF": "33 RSF 60",
+              "RSK": "33 RSK 60"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 60,
+            "barPN": "3003 001 9413\n3003 000 9413",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 60",
+              "RS3": "36 RS3 60",
+              "RD3": "36 RD3 60",
+              "RM": "36 RM 60",
+              "RS": "36 RS 60",
+              "RSK": "36 RSK 60"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 66,
+            "barPN": "3003 000 8817",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 66",
+              "RS3": "33 RS3 66",
+              "RD3": "33 RD3 66",
+              "RM": "33 RM 66",
+              "RMF": "33 RMF 66",
+              "RS": "33 RS 66",
+              "RSF": "33 RSF 66",
+              "RSK": "33 RSK 66"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 66,
+            "barPN": "3003 000 9417",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 66",
+              "RS3": "36 RS3 66",
+              "RD3": "36 RD3 66",
+              "RM": "36 RM 66",
+              "RS": "36 RS 66",
+              "RSK": "36 RSK 66"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 72,
+            "barPN": "3003 000 8822",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 72",
+              "RS3": "33 RS3 72",
+              "RD3": "33 RD3 72",
+              "RM": "33 RM 72",
+              "RMF": "33 RMF 72",
+              "RS": "33 RS 72",
+              "RSF": "33 RSF 72",
+              "RSK": "33 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic ES",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3003 002 9421\n3003 000 9421",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 72",
+              "RS3": "36 RS3 72",
+              "RD3": "36 RD3 72",
+              "RM": "36 RM 72",
+              "RS": "36 RS 72",
+              "RSK": "36 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic ES Light",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 72,
+            "barPN": "3003 000 2221",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 72",
+              "RS3": "33 RS3 72",
+              "RD3": "33 RD3 72",
+              "RM": "33 RM 72",
+              "RMF": "33 RMF 72",
+              "RS": "33 RS 72",
+              "RSF": "33 RSF 72",
+              "RSK": "33 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Rollomatic ES Light",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3003 000 2021",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 72",
+              "RS3": "36 RS3 72",
+              "RD3": "36 RD3 72",
+              "RM": "36 RM 72",
+              "RS": "36 RS 72",
+              "RSK": "36 RSK 72"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Duromatic E",
+            "pitch": ".325\"",
+            "gauge": ".050",
+            "dl": 67,
+            "barPN": "3003 000 8613",
+            "rec": false,
+            "chains": {
+              "RM3": "23 RM3 67",
+              "RD3": "23 RD3 67",
+              "RM": "23 RM 67",
+              "RS": "23 RS 67"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 60,
+            "barPN": "3003 000 8613",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 60",
+              "RS3": "33 RS3 60",
+              "RD3": "33 RD3 60",
+              "RM": "33 RM 60",
+              "RMF": "33 RMF 60",
+              "RS": "33 RS 60",
+              "RSF": "33 RSF 60",
+              "RSK": "33 RSK 60"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 60,
+            "barPN": "3003 001 9213",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 60",
+              "RS3": "36 RS3 60",
+              "RD3": "36 RD3 60",
+              "RM": "36 RM 60",
+              "RS": "36 RS 60",
+              "RSK": "36 RSK 60"
+            }
+          },
+          {
+            "size": "16\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 60,
+            "barPN": "3003 000 9213",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 60",
+              "RS3": "36 RS3 60",
+              "RD3": "36 RD3 60",
+              "RM": "36 RM 60",
+              "RS": "36 RS 60",
+              "RSK": "36 RSK 60"
+            }
+          },
+          {
+            "size": "18\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 66,
+            "barPN": "3003 000 9217",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 66",
+              "RS3": "36 RS3 66",
+              "RD3": "36 RD3 66",
+              "RM": "36 RM 66",
+              "RS": "36 RS 66",
+              "RSK": "36 RSK 66"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Duromatic E",
+            "pitch": ".325\"",
+            "gauge": ".050",
+            "dl": 81,
+            "barPN": "3003 000 8621",
+            "rec": false,
+            "chains": {
+              "RM3": "23 RM3 81",
+              "RD3": "23 RD3 81",
+              "RM": "23 RM 81",
+              "RS": "23 RS 81"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3003 000 8621",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3 72",
+              "RS3": "33 RS3 72",
+              "RD3": "33 RD3 72",
+              "RM": "33 RM 72",
+              "RMF": "33 RMF 72",
+              "RS": "33 RS 72",
+              "RSF": "33 RSF 72",
+              "RSK": "33 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": 72,
+            "barPN": "3003 001 9221",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 72",
+              "RS3": "36 RS3 72",
+              "RD3": "36 RD3 72",
+              "RM": "36 RM 72",
+              "RS": "36 RS 72",
+              "RSK": "36 RSK 72"
+            }
+          },
+          {
+            "size": "20\"",
+            "barType": "Duromatic E",
+            "pitch": "3/8\"",
+            "gauge": ".050",
+            "dl": 72,
+            "barPN": "3003 000 9221",
+            "rec": false,
+            "chains": {
+              "RM3": "36 RM3 72",
+              "RS3": "36 RS3 72",
+              "RD3": "36 RD3 72",
+              "RM": "36 RM 72",
+              "RS": "36 RS 72",
+              "RSK": "36 RSK 72"
+            }
+          }
+        ]
       }
     }
   }
