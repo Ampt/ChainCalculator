@@ -912,8 +912,7 @@
 
         function cannonForRow(row) {
           if (CANNON_NO_MATCH.has(row.barType)) return [];
-          // Use row.size directly as key — Cannon PN size segment normalized to match
-          const sz = row.size; // e.g. "16\"", "24/25\""
+          const sz = row.size; // e.g. "16\"", "24/25\"" — already normalized in data
           const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];

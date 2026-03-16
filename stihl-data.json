@@ -37649,10 +37649,6 @@
         }
       ]
     },
-    "stihlSizeAliases": {
-      "17": "18",
-      "47": "50",
-      "59": "60"
-    }
+    "stihlSizeAliases": {}
   }
 }
