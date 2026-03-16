@@ -535,6 +535,7 @@
       let CHAIN_LABELS = {};
       let MODELS = {};
       let CANNON = null;
+      let OREGON = null;
 
       // ─── Helpers ────────────────────────────────────────────────────────────────────
       function escAttr(s) {
@@ -675,6 +676,35 @@
                 dl,
                 chains: {},
                 saws: mountSaws[mount] || [],
+              };
+            }
+          }
+        }
+
+        // ── Oregon bars ──────────────────────────────────────────────────────
+        if (OREGON) {
+          // Build mount → saws map (same logic as Cannon)
+          const oregonMountSaws = { C1: [], S1: [], S2: [] };
+          for (const brand of Object.keys(MODELS)) {
+            for (const model of Object.keys(MODELS[brand])) {
+              const mt = MODELS[brand][model].cannonMount; // Oregon uses same mount codes
+              if (mt && oregonMountSaws[mt]) {
+                oregonMountSaws[mt].push({ brand, model, rec: false });
+              }
+            }
+          }
+          for (const [mount, bars] of Object.entries(OREGON.bars)) {
+            for (const bar of bars) {
+              BAR_INDEX[bar.pn] = {
+                pn: bar.pn,
+                brand: "oregon",
+                barType: bar.barType,
+                size: bar.size,
+                pitch: bar.pitch,
+                gauge: bar.gauge,
+                dl: bar.dl,
+                chains: {},
+                saws: oregonMountSaws[mount] || [],
               };
             }
           }
@@ -904,6 +934,18 @@
         }
         const hasCannon = Object.keys(cannonLookup).length > 0;
 
+        // Oregon lookup: size|pitch|gauge → [pns]
+        // Oregon bars already have size/pitch/gauge as human strings matching row values
+        const oregonLookup = {};
+        if (data.cannonMount && OREGON && OREGON.bars[data.cannonMount]) {
+          for (const bar of OREGON.bars[data.cannonMount]) {
+            const key = `${bar.size}|${bar.pitch}|${bar.gauge}`;
+            if (!oregonLookup[key]) oregonLookup[key] = [];
+            oregonLookup[key].push(bar.pn);
+          }
+        }
+        const hasOregon = Object.keys(oregonLookup).length > 0;
+
         // Cannon only makes replaceable-nose bars — no equivalent for fixed nose types.
         // Cannon only makes replaceable-nose bars — no equivalent for fixed/hard nose types.
         // Since we've merged Fixed+Replaceable into "Regular", Cannon CSB maps to Regular.
@@ -924,12 +966,28 @@
           );
         }
 
+        // Oregon: no equivalent for Hard Nose, Carving, or Narrow Gauge
+        const OREGON_NO_MATCH = new Set([
+          "Hard Nose",
+          "Carving",
+          "Regular (Narrow Gauge)",
+          "Lightweight (Narrow Gauge)",
+        ]);
+
+        function oregonForRow(row) {
+          if (OREGON_NO_MATCH.has(row.barType)) return [];
+          // Oregon lookup uses size/pitch/gauge directly (same string format as row)
+          return oregonLookup[`${row.size}|${row.pitch}|${row.gauge}`] || [];
+        }
+
         let html = "";
         html += `<div class="legend">`;
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
         html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
         if (hasCannon)
           html += `<span class="legend-item">&#9670; Cannon equivalent</span>`;
+        if (hasOregon)
+          html += `<span class="legend-item">&#9670; Oregon equivalent</span>`;
         html += `</div>`;
 
         // Sprocket table
@@ -962,6 +1020,7 @@
           html += `<th class="size-header" style="text-align:left;">${size}</th>`;
           html += `<th class="size-header">Pitch</th><th class="size-header">Gauge</th><th class="size-header">DL</th><th class="size-header">Stihl</th>`;
           if (hasCannon) html += `<th class="size-header">Cannon</th>`;
+          if (hasOregon) html += `<th class="size-header">Oregon</th>`;
           for (const t of usedTypes) {
             html += `<th class="size-header chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
           }
@@ -1018,6 +1077,26 @@
                   })
                   .join("<br>");
                 html += `<td class="bar-pn">${cLinks}</td>`;
+              } else {
+                html += `<td class="bar-info">–</td>`;
+              }
+            }
+            if (hasOregon) {
+              const oPNs = oregonForRow(row);
+              if (oPNs.length) {
+                const oLinks = oPNs
+                  .map((p) => {
+                    const oBar = BAR_INDEX[p];
+                    const oDL = oBar ? oBar.dl : null;
+                    const dlMismatch =
+                      oDL != null && row.dl != null && oDL !== row.dl;
+                    const dlNote = dlMismatch
+                      ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Oregon=${oDL}">⚠ ${oDL} DL</span>`
+                      : "";
+                    return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>${dlNote}`;
+                  })
+                  .join("<br>");
+                html += `<td class="bar-pn">${oLinks}</td>`;
               } else {
                 html += `<td class="bar-info">–</td>`;
               }
@@ -1321,7 +1400,9 @@
                       ? "STIHL (disc.)"
                       : s.brand === "cannon"
                         ? "Cannon"
-                        : s.brand;
+                        : s.brand === "oregon"
+                          ? "Oregon"
+                          : s.brand;
                 return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
               })
               .join(", ");
@@ -1439,6 +1520,7 @@
           CHAIN_LABELS = data.chainLabels;
           MODELS = data.models;
           CANNON = data.cannon || null;
+          OREGON = data.oregon || null;
           buildBarIndex();
           init();
         })

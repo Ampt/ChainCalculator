@@ -37737,5 +37737,1883 @@
       ]
     },
     "stihlSizeAliases": {}
+  },
+  "oregon": {
+    "mounts": {
+      "C1": {
+        "desc": "Stihl small mount (MS 170–260 era)",
+        "stihlBarPrefix": "3005"
+      },
+      "S1": {
+        "desc": "Stihl large mount (MS 261–651)",
+        "stihlBarPrefix": "3003"
+      },
+      "S2": {
+        "desc": "Stihl extra-large (MS 880/881)",
+        "stihlBarPrefix": "3002"
+      }
+    },
+    "bars": {
+      "C1": [
+        {
+          "pn": "160SDEA041",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "Oregon® 16in. Chainsaw Guide Bar, Fits Echo, Craftsman, Homelite, Poulan, Makita, Dolmar, Husqvarna and more (160SDEA041)"
+        },
+        {
+          "pn": "160SXEA041",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "164MLEA041",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 56,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 16\""
+        },
+        {
+          "pn": "180SDEA041",
+          "size": "18\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 62,
+          "barType": "SpeedCut",
+          "name": "Oregon® 18 in. Chainsaw Guide Bar, Fits Echo, Craftsman, Homelite, Poulan, makita, Dolmar, Husqvarna and more (180SDEA041)"
+        },
+        {
+          "pn": "080SDEA041",
+          "size": "8\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 33,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 8\""
+        },
+        {
+          "pn": "084MLEA041",
+          "size": "8\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 33,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 8\""
+        },
+        {
+          "pn": "120SDEA041",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 45,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "140SXEA041",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 52,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 14\""
+        },
+        {
+          "pn": "564284",
+          "size": "8\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 33,
+          "barType": "Guide Bar",
+          "name": "Guide Bar for PS250, 8\""
+        },
+        {
+          "pn": "160DGEA041",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 16\""
+        },
+        {
+          "pn": "160SPEA041",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ HD Bar, 91 Series, 16\""
+        },
+        {
+          "pn": "180DGEA041",
+          "size": "18\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 62,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 18\""
+        },
+        {
+          "pn": "100SDAA041",
+          "size": "10\"",
+          "pitch": "1/4\"",
+          "gauge": ".050",
+          "dl": 58,
+          "barType": "Guide Bar",
+          "name": "Single Rivet Guide Bar, 10\""
+        },
+        {
+          "pn": "100SDEA041",
+          "size": "10\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 40,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 10\""
+        },
+        {
+          "pn": "120SXEA041",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 45,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 12\""
+        },
+        {
+          "pn": "124MLEA041",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 45,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "140DGEA041",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 52,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "140SDAA041",
+          "size": "14\"",
+          "pitch": "1/4\"",
+          "gauge": ".050",
+          "dl": 76,
+          "barType": "Guide Bar",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "140SDEA041",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 52,
+          "barType": "SpeedCut",
+          "name": "Oregon® 14 in. Chainsaw Guide Bar, Fits Echo, Husqvarna, Craftsman, Homelite, Poulan, Makita, Ryobi and more (140SDEA041)"
+        },
+        {
+          "pn": "144MLEA041",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 52,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "100SXEA041",
+          "size": "10\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 40,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 10\""
+        },
+        {
+          "pn": "120DGEA041",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 45,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "164TXLNA041",
+          "size": "16\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 64,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 16\""
+        },
+        {
+          "pn": "144TXLNA041",
+          "size": "14\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 59,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 14\""
+        },
+        {
+          "pn": "124TXLNA041",
+          "size": "12\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 51,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 12\""
+        },
+        {
+          "pn": "104TXLNA041",
+          "size": "10\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 46,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 10\""
+        },
+        {
+          "pn": "160SDEA074",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 55,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 16\""
+        },
+        {
+          "pn": "160SXEA074",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 55,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "120SDEA074",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 44,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "124MLEA074",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 44,
+          "barType": "SpeedCut Mini",
+          "name": "AdvanceCut™ Bar, .90 Series, 12\""
+        },
+        {
+          "pn": "140SDEA074",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 50,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "140SXEA074",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 50,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 14\""
+        },
+        {
+          "pn": "144MLEA074",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 50,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "160PXLBA074",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 62,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "160SPEA074",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 55,
+          "barType": "SpeedCut",
+          "name": "Pro-Lite Bar, 91 Series, 16\""
+        },
+        {
+          "pn": "163PXBA074",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 62,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163PXLBA074",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 62,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163SLBA074",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 62,
+          "barType": "Guide Bar",
+          "name": "Pro-Lite Guide Bar, .325\" Series, 16\""
+        },
+        {
+          "pn": "164MLEA074",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 55,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 16\""
+        },
+        {
+          "pn": "180TXLBA074",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 68,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut™ Guide Bar, 95 Series 18\""
+        },
+        {
+          "pn": "183PXBA074",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 68,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183PXLBA074",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 68,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "120SPEA074",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 44,
+          "barType": "SpeedCut",
+          "name": "Guide Bar, Pro-Lite, 91 Series, 12\""
+        },
+        {
+          "pn": "120SXEA074",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 44,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 12\""
+        },
+        {
+          "pn": "140SPEA074",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 50,
+          "barType": "SpeedCut",
+          "name": "Pro-Lite Guide Bar, 91 Series, 14\""
+        },
+        {
+          "pn": "104TXLNA074",
+          "size": "10\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 46,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 10\""
+        },
+        {
+          "pn": "124TXLNA074",
+          "size": "12\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 51,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 12\""
+        },
+        {
+          "pn": "144TXLNA074",
+          "size": "14\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 59,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 14\""
+        },
+        {
+          "pn": "164TXLNA074",
+          "size": "16\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 64,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180SXEA074",
+          "size": "18\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 61,
+          "barType": "SpeedCut",
+          "name": "Oregon 18 in. Chainsaw Bar, Fits Stihl Models (180SXEA074)"
+        },
+        {
+          "pn": "160SDEA095",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 16\""
+        },
+        {
+          "pn": "160SXEA095",
+          "size": "16\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180SDEA095",
+          "size": "18\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 60,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 18\""
+        },
+        {
+          "pn": "120SDEA095",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 45,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "120SXEA095",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 45,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 12\""
+        },
+        {
+          "pn": "140SDEA095",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 52,
+          "barType": "SpeedCut",
+          "name": "Single Rivet Guide Bar, 14\""
+        },
+        {
+          "pn": "140SXEA095",
+          "size": "14\"",
+          "pitch": "3/8\" P",
+          "gauge": ".050",
+          "dl": 52,
+          "barType": "SpeedCut",
+          "name": "AdvanceCut™ Guide Bar, 14\""
+        },
+        {
+          "pn": "104TXLNA095",
+          "size": "10\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 46,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 10\""
+        },
+        {
+          "pn": "124TXLNA095",
+          "size": "12\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 51,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 12\""
+        },
+        {
+          "pn": "144TXLNA095",
+          "size": "14\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 59,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 14\""
+        },
+        {
+          "pn": "164TXLNA095",
+          "size": "16\"",
+          "pitch": ".325\" P",
+          "gauge": ".043",
+          "dl": 64,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut Nano™ Guide Bar, 16\""
+        },
+        {
+          "pn": "124MLEA095",
+          "size": "12\"",
+          "pitch": "3/8\" P",
+          "gauge": ".043",
+          "dl": 45,
+          "barType": "SpeedCut Mini",
+          "name": "Single Rivet Guide Bar, 12\""
+        },
+        {
+          "pn": "180VXLGK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "158PXLBK041",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "158VXLGK041",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "160MLBK041",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "160PXBK041",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168VXLGK041",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180GDBK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180MLBK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180PXBK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180RNBK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188VXLGK041",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "130MLBK041",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "150MLBK041",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 64,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "200PXBK041",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "248RNDK095",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 84,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "160MLBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "160RNBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "160RNDK095",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 60,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168RNBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168PXBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168RNDK095",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 60,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168VXLGK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180PXBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerMatch",
+          "name": "Oregon 18\"AdvanceCut™ Guide Bar, Fits Husqvarna, Dolmar, Poulan, Makita and others (180PXBK095)"
+        },
+        {
+          "pn": "180RNDK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 68,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180TXLBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut™ Guide Bar, 95 Series 18\""
+        },
+        {
+          "pn": "188PXLBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188PXBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188VXLGK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "138PXLBK095",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 56,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "150MPBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 64,
+          "barType": "PowerMatch",
+          "name": "Pro-Lite Bar, 95 Series, 15\""
+        },
+        {
+          "pn": "200TXLBK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "SpeedCut Nano",
+          "name": "Oregon 20\" SpeedCut™ Guide Bar Fits Husqvarna and others (200TXLBK095)"
+        },
+        {
+          "pn": "208RNBK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 78,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "208RNDK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "208VXLGK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 78,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "39450",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 68,
+          "barType": "Guide Bar",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "240RNDK095",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 84,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "280RNDK095",
+          "size": "28\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 93,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 28\""
+        },
+        {
+          "pn": "158PXBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "158RNBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "158PXLBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "158SLBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "Guide Bar",
+          "name": "Pro-Lite Bar® , .325\" Series, 15\""
+        },
+        {
+          "pn": "158SLGK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "VersaCut Slim",
+          "name": "Oregon 15 in. Chainsaw Guide Bar, Fits Husqvarna, Poulan, Makita, McCulloch, Partner, Dolmar and more (158SLGK095)"
+        },
+        {
+          "pn": "158VXLGK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "158VXLHK095",
+          "size": "15\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 56,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "160TXLBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut™ Bar, 95 Series, 16\""
+        },
+        {
+          "pn": "160VXLGK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168ATMK095",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 60,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168PXLBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "168SLBK095",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 66,
+          "barType": "Guide Bar",
+          "name": "Pro-Lite Guide Bar , .325\" Series, 16\""
+        },
+        {
+          "pn": "168VXLHK095",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 60,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180MPBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerMatch",
+          "name": "Pro-Lite Guide Bar, 95 Series, 18\""
+        },
+        {
+          "pn": "180MLBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180VXLGK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180VXLHK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 68,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188ATMK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 68,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188RNBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188RNDK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 68,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188SFGK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188SFHK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 68,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188SLBK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "Guide Bar",
+          "name": "Pro-Lite Guide Bar, .325\" Series, 18\""
+        },
+        {
+          "pn": "188SLGK095",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "VersaCut Slim",
+          "name": "Pro-Lite Guide Bar, .325\" Series, 18\""
+        },
+        {
+          "pn": "188SLHK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "VersaCut Slim",
+          "name": "Pro-Lite®Guide Bar, 3/8\" Series, 18\""
+        },
+        {
+          "pn": "188VXLHK095",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 64,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "130MLBK095",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "130TXLBK095",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 56,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "138RNBK095",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 56,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "138SLBK095",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 56,
+          "barType": "Guide Bar",
+          "name": "Pro-Lite Bar, .325 Series, 13\""
+        },
+        {
+          "pn": "150MLBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 64,
+          "barType": "PowerCut",
+          "name": "AdvanceCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "150TXLBK095",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 64,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "200TXLGK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "SpeedCut Nano",
+          "name": "SpeedCut 20 inch Guide Bar, Fits Husqvarna"
+        },
+        {
+          "pn": "200ATMK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200PXBK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200RNBK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200RNDK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200VXLGK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200VXLHK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "208ATMK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "208PXBK095",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 78,
+          "barType": "PowerMatch",
+          "name": "AdvanceCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "208VXLHK095",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "160VXLGK216",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180VXLGK216",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "188SLGK216",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "VersaCut Slim",
+          "name": "Pro-Lite Guide Bar, .325\" Series, 18\""
+        },
+        {
+          "pn": "200VXLGK216",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 78,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        }
+      ],
+      "S1": [
+        {
+          "pn": "363RNDD025",
+          "size": "36\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 114,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 36\""
+        },
+        {
+          "pn": "160RNDD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 60,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163SFGD025",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 67,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163RNBD025",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 67,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180RNDD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183SFGD025",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 74,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183RNDD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 66,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183SFHD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 66,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183VXLGD025",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 74,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "303RNDD025",
+          "size": "30\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 98,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 30\""
+        },
+        {
+          "pn": "320RNDD025",
+          "size": "32\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 105,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 32\""
+        },
+        {
+          "pn": "323RNDD025",
+          "size": "32\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 105,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 32\""
+        },
+        {
+          "pn": "323RNFD025",
+          "size": "32\"",
+          "pitch": ".404\"",
+          "gauge": ".063",
+          "dl": 95,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 32\""
+        },
+        {
+          "pn": "423RNDD025",
+          "size": "41/42\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 135,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 42\""
+        },
+        {
+          "pn": "343RNDD025",
+          "size": "34\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 110,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 34\""
+        },
+        {
+          "pn": "240ATMD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 84,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "240RNDD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 84,
+          "barType": "PowerCut",
+          "name": "Oregon PowerCut Guide Bar, 24\", Fits Various Stihl Models"
+        },
+        {
+          "pn": "240SFHD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 84,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "240VXLHD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 84,
+          "barType": "VersaCut",
+          "name": "Versacut Guide Bar, 24\""
+        },
+        {
+          "pn": "243ATMD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 84,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "243SFHD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 84,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "243RNDD025",
+          "size": "24/25\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 84,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 24\""
+        },
+        {
+          "pn": "280RNDD025",
+          "size": "28\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 91,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 28\""
+        },
+        {
+          "pn": "283RNDD025",
+          "size": "28\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 91,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 28\""
+        },
+        {
+          "pn": "300RNDD025",
+          "size": "30\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 98,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 30\""
+        },
+        {
+          "pn": "160VXLGD025",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 67,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "160VXLHD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 60,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163ATMD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 60,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163RNDD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 60,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163SFHD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 60,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163VXLGD025",
+          "size": "16\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 67,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "163SLHD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 60,
+          "barType": "VersaCut Slim",
+          "name": "AdvanceCut™ Guide Bar, 3/8\" Series, 16\""
+        },
+        {
+          "pn": "163VXLHD025",
+          "size": "16\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 60,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 16\""
+        },
+        {
+          "pn": "180ATMD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180PXLBA074",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 68,
+          "barType": "PowerMatch",
+          "name": "Oregon 25 in. Chainsaw Bar, Fits Stihl and Oleo-Mac Models (180PXLBA074)"
+        },
+        {
+          "pn": "180VXLGD025",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 74,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "180VXLHD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183ATMD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 66,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183RNBD025",
+          "size": "18\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 74,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "183SLHD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 66,
+          "barType": "VersaCut Slim",
+          "name": "Pro-Lite Guide Bar, 3/8\" Series, 18\""
+        },
+        {
+          "pn": "183VXLHD025",
+          "size": "18\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 66,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 18\""
+        },
+        {
+          "pn": "133PXLBD025",
+          "size": "13\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 56,
+          "barType": "PowerMatch",
+          "name": "ControlCut™ Guide Bar, 13\""
+        },
+        {
+          "pn": "200VXLGD025",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".050",
+          "dl": 81,
+          "barType": "VersaCut",
+          "name": "Oregon 20 in. Chainsaw Bar, Fits Stihl Models (200VXLGD025)"
+        },
+        {
+          "pn": "360RNDD025",
+          "size": "36\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 114,
+          "barType": "PowerCut",
+          "name": "Oregon 36 in. Chainsaw Bar, Fits Stihl Models (360RNDD025)"
+        },
+        {
+          "pn": "200ATMD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200RNDD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "200VXLHD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".050",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203RNDD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203ATMD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 72,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203VXLGD025",
+          "size": "20\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 81,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203SFHD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 72,
+          "barType": "AdvanceCut",
+          "name": "AdvanceCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203SLHD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 72,
+          "barType": "VersaCut Slim",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "203VXLHD025",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 72,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "223RNDD025",
+          "size": "22\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 77,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 22\""
+        },
+        {
+          "pn": "153RNDD025",
+          "size": "15\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 56,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "153VXLGD025",
+          "size": "15\"",
+          "pitch": ".325\"",
+          "gauge": ".063",
+          "dl": 62,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 15\""
+        },
+        {
+          "pn": "153VXLHD025",
+          "size": "15\"",
+          "pitch": "3/8\"",
+          "gauge": ".063",
+          "dl": 56,
+          "barType": "VersaCut",
+          "name": "VersaCut™ Guide Bar, 15\""
+        }
+      ],
+      "S2": [
+        {
+          "pn": "173ATMD033",
+          "size": "17\"",
+          "pitch": ".404\"",
+          "gauge": ".063",
+          "dl": 61,
+          "barType": "DuraCut",
+          "name": "DuraCut™ Guide Bar, 17\""
+        },
+        {
+          "pn": "208RNDD033",
+          "size": "20\"",
+          "pitch": "3/8\"",
+          "gauge": ".058",
+          "dl": 72,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 20\""
+        },
+        {
+          "pn": "253RNFE031",
+          "size": "25\"",
+          "pitch": ".404\"",
+          "gauge": ".063",
+          "dl": 80,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 25\""
+        },
+        {
+          "pn": "213RNFE031",
+          "size": "21\"",
+          "pitch": ".404\"",
+          "gauge": ".063",
+          "dl": 68,
+          "barType": "PowerCut",
+          "name": "PowerCut™ Guide Bar, 21\""
+        }
+      ]
+    }
   }
 }
