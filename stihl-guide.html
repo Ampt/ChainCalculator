@@ -1022,7 +1022,11 @@
 
         function cannonForRow(row) {
           if (CANNON_NO_MATCH.has(row.barType)) return [];
-          const sz = row.size; // e.g. "16\"", "24/25\"" — already normalized in data
+          // Apply mount-specific size aliases (e.g. S2 uses 25" not 24/25")
+          const mountAliases =
+            CANNON.mountSizeAliases &&
+            CANNON.mountSizeAliases[data.cannonMount];
+          const sz = (mountAliases && mountAliases[row.size]) || row.size;
           const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];

@@ -3316,7 +3316,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -3457,7 +3457,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
@@ -3474,7 +3474,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -34885,7 +34885,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -35026,7 +35026,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
@@ -35043,7 +35043,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -35169,7 +35169,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -35310,7 +35310,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
@@ -35327,7 +35327,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -35449,7 +35449,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -35590,7 +35590,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": "3/8\"",
             "gauge": ".063",
@@ -35607,7 +35607,7 @@
             }
           },
           {
-            "size": "41\"",
+            "size": "41/42\"",
             "barType": "Hard Nose",
             "pitch": ".404\"",
             "gauge": ".063",
@@ -37736,7 +37736,12 @@
         }
       ]
     },
-    "stihlSizeAliases": {}
+    "stihlSizeAliases": {},
+    "mountSizeAliases": {
+      "S2": {
+        "24/25\"": "25\""
+      }
+    }
   },
   "oregon": {
     "mounts": {
