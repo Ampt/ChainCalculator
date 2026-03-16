@@ -610,10 +610,10 @@
           //   CSM-{mount}-{size}-{gauge}-{pitch}          e.g. CSM-C1-16-50-2
           //   CCA/CCT/CCQ/CCD-{mount}-{size}-{gauge}      e.g. CCQ-S1-16-50
           const CANNON_GAUGE = {
-            43: '.043"',
-            50: '.050"',
-            58: '.058"',
-            63: '.063"',
+            43: ".043",
+            50: ".050",
+            58: ".058",
+            63: ".063",
           };
           const CANNON_PITCH = {
             2: '.325"',
@@ -670,7 +670,7 @@
               }
               const pitch = pitchCode ? CANNON_PITCH[pitchCode] : null;
               if (!pitch) continue; // skip hard nose — no pitch to work with
-              const gauge = CANNON_GAUGE[gaugeCode] || "." + gaugeCode + '"';
+              const gauge = CANNON_GAUGE[gaugeCode] || "." + gaugeCode;
               const size = sz.replace("-", "/") + '"'; // "16\"", "24/25\"", "41/42\""
               BAR_INDEX[pn] = {
                 pn,
