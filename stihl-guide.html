@@ -1687,13 +1687,14 @@
       }
 
       function jumpToBar(pn) {
-        switchView("bar");
+        // Clear filters BEFORE switchView so onBarFilterChange inside it sees clean state
         document.getElementById("bar-size-select").value = "";
         document.getElementById("bar-type-select").value = "";
         document.getElementById("bar-gauge-select").value = "";
         document.getElementById("bar-pitch-select").value = "";
         document.getElementById("bar-dl-select").value = "";
         document.getElementById("bar-pn-input").value = pn;
+        switchView("bar");
         const bar = BAR_INDEX[pn];
         if (bar) {
           renderBarResults([bar]);
