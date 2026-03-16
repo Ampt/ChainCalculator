@@ -1158,6 +1158,7 @@
               .filter(Boolean)
               .join("<br>");
             html += `<td class="bar-pn">${pnLinks || "–"}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            const hasStihlPN = !!(row.barPN && row.barPN.trim());
             if (hasCannon) {
               const cPNs = cannonForRow(row);
               if (cPNs.length) {
@@ -1165,7 +1166,6 @@
                   .map((p) => {
                     const cBar = BAR_INDEX[p];
                     const cDL = cBar ? cBar.dl : null;
-                    const hasStihlPN = row.barPN && row.barPN.trim();
                     const dlDiff =
                       hasStihlPN && cDL != null && row.dl != null
                         ? Math.abs(cDL - row.dl)
