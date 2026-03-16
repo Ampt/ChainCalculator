@@ -1161,11 +1161,16 @@
                   .map((p) => {
                     const cBar = BAR_INDEX[p];
                     const cDL = cBar ? cBar.dl : null;
-                    const dlMismatch =
-                      cDL != null && row.dl != null && cDL !== row.dl;
-                    const dlNote = dlMismatch
-                      ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Cannon=${cDL}">⚠ ${cDL} DL</span>`
-                      : "";
+                    const dlDiff =
+                      cDL != null && row.dl != null
+                        ? Math.abs(cDL - row.dl)
+                        : 0;
+                    const dlNote =
+                      dlDiff === 1
+                        ? ` <span style="color:#e0a040;" title="Drive links differ: Stihl=${row.dl}, Cannon=${cDL}">⚠ ${cDL} DL</span>`
+                        : dlDiff > 1
+                          ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Cannon=${cDL}">⚠ ${cDL} DL</span>`
+                          : "";
                     return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>${dlNote}`;
                   })
                   .join("<br>");
@@ -1181,11 +1186,16 @@
                   .map((p) => {
                     const oBar = BAR_INDEX[p];
                     const oDL = oBar ? oBar.dl : null;
-                    const dlMismatch =
-                      oDL != null && row.dl != null && oDL !== row.dl;
-                    const dlNote = dlMismatch
-                      ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Oregon=${oDL}">⚠ ${oDL} DL</span>`
-                      : "";
+                    const dlDiff =
+                      oDL != null && row.dl != null
+                        ? Math.abs(oDL - row.dl)
+                        : 0;
+                    const dlNote =
+                      dlDiff === 1
+                        ? ` <span style="color:#e0a040;" title="Drive links differ: Stihl=${row.dl}, Oregon=${oDL}">⚠ ${oDL} DL</span>`
+                        : dlDiff > 1
+                          ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Oregon=${oDL}">⚠ ${oDL} DL</span>`
+                          : "";
                     return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>${dlNote}`;
                   })
                   .join("<br>");
