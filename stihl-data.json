@@ -3619,6 +3619,40 @@
               "RS": "33 RS",
               "RSK": "33 RSK"
             }
+          },
+          {
+            "size": "47\"",
+            "barType": "Regular",
+            "pitch": ".404\"",
+            "gauge": ".063",
+            "dl": null,
+            "barPN": "",
+            "rec": false,
+            "chains": {
+              "RM": "46 RM",
+              "RMF": "46 RMF",
+              "RMH": "46 RMH",
+              "RMK": "46 RMK",
+              "RS": "46 RS",
+              "RSF": "46 RSF"
+            }
+          },
+          {
+            "size": "47\"",
+            "barType": "Regular",
+            "pitch": "3/8\"",
+            "gauge": ".063",
+            "dl": null,
+            "barPN": "",
+            "rec": false,
+            "chains": {
+              "RM3": "33 RM3",
+              "RS3": "33 RS3",
+              "RD3": "33 RD3",
+              "RM": "33 RM",
+              "RS": "33 RS",
+              "RSK": "33 RSK"
+            }
           }
         ],
         "cannonMount": "S2"
