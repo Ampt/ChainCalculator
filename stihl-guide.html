@@ -464,6 +464,7 @@
         <select id="brand-select" onchange="onBrandChange()">
           <option value="">Select brand...</option>
           <option value="stihl" selected>STIHL</option>
+          <option value="stihl discontinued">STIHL (Discontinued)</option>
         </select>
       </div>
       <div class="field search-field">
@@ -1144,7 +1145,12 @@
             html += `<div class="saw-list">`;
             html += bar.saws
               .map((s) => {
-                const brandLabel = s.brand === "stihl" ? "STIHL" : s.brand;
+                const brandLabel =
+                  s.brand === "stihl"
+                    ? "STIHL"
+                    : s.brand === "stihl discontinued"
+                      ? "STIHL (disc.)"
+                      : s.brand;
                 return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
               })
               .join(", ");
