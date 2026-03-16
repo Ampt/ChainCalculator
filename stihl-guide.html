@@ -1448,6 +1448,17 @@
           html += `<div class="bar-spec"><span class="bar-spec-label">Pitch</span><span class="bar-spec-value">${bar.pitch}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Gauge</span><span class="bar-spec-value">${bar.gauge}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Drive Links</span><span class="bar-spec-value">${bar.dl != null ? bar.dl : "–"}</span></div>`;
+          const mfrLabel =
+            bar.brand === "stihl"
+              ? "STIHL"
+              : bar.brand === "stihl discontinued"
+                ? "STIHL (disc.)"
+                : bar.brand === "cannon"
+                  ? "Cannon"
+                  : bar.brand === "oregon"
+                    ? "Oregon"
+                    : bar.brand || "";
+          html += `<div class="bar-spec"><span class="bar-spec-label">Manufacturer</span><span class="bar-spec-value">${mfrLabel}</span></div>`;
           html += `<div class="bar-spec"><span class="bar-spec-label">Part Number</span><span class="bar-spec-value">${bar.pn} <button class="copy-btn" onclick="event.stopPropagation();copyPN('${bar.pn}',this)">copy</button></span></div>`;
           html += `<div class="bar-toggle"></div>`;
           html += `</div>`;
