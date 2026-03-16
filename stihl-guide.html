@@ -1087,28 +1087,49 @@
           }
           html += `</tr>`;
 
-          // Calculate rowspans for bar type + pitch groups
-          const groups = [];
+          // Calculate rowspans: barType spans all its rows, pitch spans rows within same barType+pitch
+          const typeGroups = [];
           for (let i = 0; i < rows.length; i++) {
-            const key = rows[i].barType + "|" + rows[i].pitch;
-            if (groups.length && groups[groups.length - 1].key === key) {
-              groups[groups.length - 1].count++;
+            const t = rows[i].barType;
+            if (
+              typeGroups.length &&
+              typeGroups[typeGroups.length - 1].key === t
+            ) {
+              typeGroups[typeGroups.length - 1].count++;
             } else {
-              groups.push({ key, start: i, count: 1 });
+              typeGroups.push({ key: t, start: i, count: 1 });
             }
           }
-          const rowspanAt = {};
-          for (const g of groups) {
-            rowspanAt[g.start] = g.count;
+          const typeSpanAt = {};
+          for (const g of typeGroups) typeSpanAt[g.start] = g.count;
+
+          const pitchGroups = [];
+          for (let i = 0; i < rows.length; i++) {
+            const k = rows[i].barType + "|" + rows[i].pitch;
+            if (
+              pitchGroups.length &&
+              pitchGroups[pitchGroups.length - 1].key === k
+            ) {
+              pitchGroups[pitchGroups.length - 1].count++;
+            } else {
+              pitchGroups.push({ key: k, start: i, count: 1 });
+            }
           }
+          const pitchSpanAt = {};
+          for (const g of pitchGroups) pitchSpanAt[g.start] = g.count;
 
           for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
             const barPNs = row.barPN.split("\n");
             html += `<tr>`;
-            if (rowspanAt[i]) {
-              const span = rowspanAt[i] > 1 ? ` rowspan="${rowspanAt[i]}"` : "";
+            if (typeSpanAt[i] !== undefined) {
+              const span =
+                typeSpanAt[i] > 1 ? ` rowspan="${typeSpanAt[i]}"` : "";
               html += `<td class="bar-info"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}</td>`;
+            }
+            if (pitchSpanAt[i] !== undefined) {
+              const span =
+                pitchSpanAt[i] > 1 ? ` rowspan="${pitchSpanAt[i]}"` : "";
               html += `<td class="bar-info"${span} style="vertical-align:middle;">${row.pitch}</td>`;
             }
             html += `<td class="bar-info">${row.gauge}</td>`;
