@@ -652,20 +652,26 @@
               const isDL = parts.includes("DL");
               const base = parts[0]; // CSB, CSM, CCA, etc.
               const type = isDL ? "CSB-DL" : base;
+              // Detect compound size: if parts[3] is a plain number (not a gauge code),
+              // it's the second half of a size like "24-25" or "41-42"
+              const GAUGE_CODES = new Set(["43", "50", "58", "63"]);
+              const sizeIsCompound =
+                !GAUGE_CODES.has(parts[3]) && /^\d+$/.test(parts[3]);
+              const sizeOffset = sizeIsCompound ? 1 : 0;
               let sz, gaugeCode, pitchCode;
               if (isDL) {
-                sz = parts[2];
-                gaugeCode = parts[3];
-                pitchCode = parts[5];
+                sz = sizeIsCompound ? parts[2] + "-" + parts[3] : parts[2];
+                gaugeCode = parts[3 + sizeOffset];
+                pitchCode = parts[5 + sizeOffset];
               } else {
-                sz = parts[2];
-                gaugeCode = parts[3];
-                pitchCode = parts[4] || null;
+                sz = sizeIsCompound ? parts[2] + "-" + parts[3] : parts[2];
+                gaugeCode = parts[3 + sizeOffset];
+                pitchCode = parts[4 + sizeOffset] || null;
               }
               const pitch = pitchCode ? CANNON_PITCH[pitchCode] : null;
               if (!pitch) continue; // skip hard nose — no pitch to work with
               const gauge = CANNON_GAUGE[gaugeCode] || "." + gaugeCode + '"';
-              const size = sz.replace("-", "/") + '"'; // "16\"", "24/25\""
+              const size = sz.replace("-", "/") + '"'; // "16\"", "24/25\"", "41/42\""
               BAR_INDEX[pn] = {
                 pn,
                 brand: "cannon",
@@ -921,11 +927,15 @@
             const pn = entry.pn;
             const parts = pn.split("-");
             const isDL = parts.includes("DL");
-            // size segment may be "24-25" for merged bars — normalize to match row.size key
-            const szRaw = parts[2]; // e.g. "16", "24-25"
-            const sz = szRaw.replace("-", "/") + '"'; // "16\"", "24/25\""
-            const gauge = parts[3];
-            const pitch = isDL ? parts[5] : parts[4];
+            // Detect compound size: "24-25" or "41-42" — parts[3] is a number, not a gauge
+            const GAUGE_CODES = new Set(["43", "50", "58", "63"]);
+            const sizeIsCompound =
+              !GAUGE_CODES.has(parts[3]) && /^\d+$/.test(parts[3]);
+            const off = sizeIsCompound ? 1 : 0;
+            const szRaw = sizeIsCompound ? parts[2] + "-" + parts[3] : parts[2];
+            const sz = szRaw.replace("-", "/") + '"'; // "16\"", "24/25\"", "41/42\""
+            const gauge = parts[3 + off];
+            const pitch = isDL ? parts[5 + off] : parts[4 + off];
             if (!pitch || pitch === "H") continue;
             const key = `${sz}|${gauge}|${pitch}`;
             if (!cannonLookup[key]) cannonLookup[key] = [];
