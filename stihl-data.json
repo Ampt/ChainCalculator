@@ -3154,7 +3154,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".050",
-            "dl": 129,
+            "dl": null,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3173,7 +3173,7 @@
             "barType": "Regular",
             "pitch": "3/8\"",
             "gauge": ".063",
-            "dl": 129,
+            "dl": null,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3190,7 +3190,7 @@
             "barType": "Regular",
             "pitch": ".404\"",
             "gauge": ".063",
-            "dl": 117,
+            "dl": null,
             "barPN": "",
             "rec": false,
             "chains": {
@@ -3198,42 +3198,6 @@
               "RMF": "46 RMF",
               "RS": "46 RS",
               "RSF": "46 RSF"
-            }
-          },
-          {
-            "size": "41/42\"",
-            "barType": "Lightweight",
-            "pitch": "3/8\"",
-            "gauge": ".050",
-            "dl": 129,
-            "barPN": "",
-            "rec": false,
-            "chains": {
-              "RM3": "33 RM3",
-              "RS3": "33 RS3",
-              "RD3": "33 RD3",
-              "RM": "33 RM",
-              "RMF": "33 RMF",
-              "RS": "33 RS",
-              "RSF": "33 RSF",
-              "RSK": "33 RSK"
-            }
-          },
-          {
-            "size": "41/42\"",
-            "barType": "Lightweight",
-            "pitch": "3/8\"",
-            "gauge": ".063",
-            "dl": 129,
-            "barPN": "",
-            "rec": false,
-            "chains": {
-              "RM3": "36 RM3",
-              "RS3": "36 RS3",
-              "RD3": "36 RD3",
-              "RM": "36 RM",
-              "RS": "36 RS",
-              "RSK": "36 RSK"
             }
           }
         ],
