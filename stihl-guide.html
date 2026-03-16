@@ -1534,7 +1534,7 @@
 
         // Figure out which chain types are present across all filtered bars
         const usedTypes = CHAIN_TYPES.filter((t) =>
-          bars.some((b) => b.chains[t]),
+          bars.some((b) => b.chains && b.chains[t]),
         );
 
         let html = `<div class="bar-results-grid">`;
@@ -1552,9 +1552,9 @@
             '3/8"|.050': ["RM3", "RS3", "RD3", "RM", "RMF", "RS", "RSF", "RSK"],
             '3/8"|.063': ["RM3", "RS3", "RD3", "RM", "RMF", "RS", "RSF", "RSK"],
           };
-          let effectiveChains = bar.chains;
+          let effectiveChains = bar.chains || {};
           let chainsAreDerived = false;
-          if (!Object.keys(bar.chains).length) {
+          if (!Object.keys(effectiveChains).length) {
             const derivedTypes =
               CHAINS_BY_PITCH_GAUGE[`${bar.pitch}|${bar.gauge}`] || [];
             effectiveChains = {};
