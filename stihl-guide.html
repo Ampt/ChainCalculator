@@ -1540,7 +1540,30 @@
         let html = `<div class="bar-results-grid">`;
 
         for (const bar of bars) {
-          const barUsedTypes = usedTypes.filter((t) => bar.chains[t]);
+          // For third-party bars with no chain data, derive compatible types from pitch+gauge
+          const CHAINS_BY_PITCH_GAUGE = {
+            '.325"|.050': ["RM3", "RD3", "RM", "RS"],
+            '.325"|.063': ["RM3", "RD3", "RM", "RS"],
+            '.404"|.063': ["RM", "RMF", "RMH", "RMK", "RS", "RSF"],
+            '1/4" P|.043': ["PM3", "PS3"],
+            '1/4"|.050': ["RM", "RMS"],
+            '3/8" P|.043': ["PM3"],
+            '3/8" P|.050': ["PM3", "PS3", "PD3", "PM", "PS"],
+            '3/8"|.050': ["RM3", "RS3", "RD3", "RM", "RMF", "RS", "RSF", "RSK"],
+            '3/8"|.063': ["RM3", "RS3", "RD3", "RM", "RMF", "RS", "RSF", "RSK"],
+          };
+          let effectiveChains = bar.chains;
+          let chainsAreDerived = false;
+          if (!Object.keys(bar.chains).length) {
+            const derivedTypes =
+              CHAINS_BY_PITCH_GAUGE[`${bar.pitch}|${bar.gauge}`] || [];
+            effectiveChains = {};
+            for (const t of derivedTypes) effectiveChains[t] = null; // null = no Stihl designation
+            chainsAreDerived = true;
+          }
+          const barUsedTypes = CHAIN_TYPES.filter((t) =>
+            effectiveChains.hasOwnProperty(t),
+          );
 
           const autoOpen = bars.length === 1 ? " open" : "";
           html += `<div class="bar-result-card${autoOpen}">`;
@@ -1578,9 +1601,49 @@
               html += `<th class="chain-cell">${CHAIN_LABELS[t].replace("\n", "<br>")}</th>`;
             }
             html += `</tr></thead><tbody><tr>`;
+            // Map pitch+gauge → Stihl gauge code used by getOregonChainPN
+            const PITCH_GAUGE_TO_CODE = {
+              '3/8"|.050': "36",
+              '3/8"|.058': "33",
+              '3/8"|.063': "33",
+              '.325"|.050': "23",
+              '.325"|.063': "26",
+              '.404"|.063': "46",
+              '3/8" P|.050': "63",
+              '3/8" P|.043': "61",
+              '1/4" P|.043': "71",
+              '1/4"|.050': "13",
+            };
+            const pgCode = PITCH_GAUGE_TO_CODE[`${bar.pitch}|${bar.gauge}`];
+
             for (const t of barUsedTypes) {
-              const c = bar.chains[t];
-              html += `<td class="chain-cell has">${c || "–"}</td>`;
+              const stihlDesig = effectiveChains[t];
+              const stihlDisplay = stihlDesig
+                ? stihlDesig.replace(/^(\d+)\s+/, "$1")
+                : null;
+              // Oregon: use real designation if available, else synthesize from pitch+gauge+type
+              let oregonDisplay = null;
+              if (stihlDesig) {
+                oregonDisplay = getOregonChainPN(stihlDesig);
+              } else if (pgCode && OREGON_CHAINS) {
+                const scKey = `${pgCode}_${t}`;
+                const sc =
+                  OREGON_CHAINS.specialCases &&
+                  OREGON_CHAINS.specialCases[scKey];
+                if (sc !== undefined) {
+                  oregonDisplay = sc || null;
+                } else {
+                  const prefix = OREGON_CHAINS.gaugeToSeries[pgCode];
+                  const suffix = OREGON_CHAINS.typeToSuffix[t];
+                  if (prefix && suffix) oregonDisplay = prefix + suffix;
+                }
+              }
+              const cellContent = stihlDisplay
+                ? `${stihlDisplay}${oregonDisplay ? `<br><span style="color:#aaa;">${oregonDisplay}</span>` : ""}`
+                : oregonDisplay
+                  ? `<span style="color:#aaa;">${oregonDisplay}</span>`
+                  : "–";
+              html += `<td class="chain-cell has">${cellContent}</td>`;
             }
             html += `</tr></tbody></table>`;
           }
