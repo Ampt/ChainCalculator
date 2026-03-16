@@ -899,8 +899,8 @@
 
         // Oregon chain PN lookup: "{gaugeCode} {chainType}" + DL → Oregon PN
         // e.g. "33 RM3" + dl=60 → "73LPX060G"
-        function getOregonChainPN(chainDesig, dl) {
-          if (!OREGON_CHAINS || !chainDesig || !dl) return null;
+        function getOregonChainPN(chainDesig) {
+          if (!OREGON_CHAINS || !chainDesig) return null;
           const m = chainDesig.match(/^(\d+)\s+([A-Z0-9]+)$/);
           if (!m) return null;
           const [, gaugeCode, chainType] = m;
@@ -910,13 +910,13 @@
           if (sc && key in sc) {
             const series = sc[key];
             if (!series) return null;
-            return series + String(dl).padStart(3, "0") + "G";
+            return series;
           }
           const numPrefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
           if (!numPrefix) return null;
           const suffix = OREGON_CHAINS.typeToSuffix[chainType];
           if (!suffix) return null;
-          return numPrefix + suffix + String(dl).padStart(3, "0") + "G";
+          return numPrefix + suffix;
         }
 
         // Group rows by size, sorted numerically
@@ -1196,7 +1196,7 @@
             }
             for (const t of usedTypes) {
               const c = chainVal(row, t);
-              const oregonPN = c ? getOregonChainPN(c, row.dl) : null;
+              const oregonPN = c ? getOregonChainPN(c) : null;
               const oregonNote = oregonPN
                 ? `<br><span style="color:#aaa;font-size:.8em;">${oregonPN} <button class="copy-btn" style="font-size:.75em;" onclick="event.stopPropagation();copyPN('${oregonPN}',this)">copy</button></span>`
                 : "";
