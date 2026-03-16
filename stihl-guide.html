@@ -1277,12 +1277,30 @@
           return vals;
         }
 
+        const PITCH_ORDER_BAR = [
+          '1/4"',
+          '1/4" P',
+          '.325"',
+          '.325" P',
+          '3/8"',
+          '3/8" P',
+          '.404"',
+        ];
         function updateOpts(sel, opts, sort) {
           const val = sel.value;
           const label = sel.options[0].text;
           const sorted = [...opts];
           if (sort === "num")
             sorted.sort((a, b) => parseFloat(a) - parseFloat(b));
+          else if (sort === "pitch")
+            sorted.sort((a, b) => {
+              const ia = PITCH_ORDER_BAR.indexOf(a),
+                ib = PITCH_ORDER_BAR.indexOf(b);
+              if (ia >= 0 && ib >= 0) return ia - ib;
+              if (ia >= 0) return -1;
+              if (ib >= 0) return 1;
+              return a.localeCompare(b);
+            });
           else sorted.sort();
           sel.innerHTML = `<option value="">${label}</option>`;
           for (const o of sorted)
@@ -1294,7 +1312,7 @@
         updateOpts(sizeSel, optionsFor("size"), "num");
         updateOpts(typeSel, optionsFor("type"), "str");
         updateOpts(gaugeSel, optionsFor("gauge"), "str");
-        updateOpts(pitchSel, optionsFor("pitch"), "str");
+        updateOpts(pitchSel, optionsFor("pitch"), "pitch");
       }
 
       function onBarPNInput() {
