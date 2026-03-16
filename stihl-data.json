@@ -39615,5 +39615,44 @@
         }
       ]
     }
+  },
+  "oregonChains": {
+    "gaugeToSeries": {
+      "13": "25AP",
+      "23": "20LPX",
+      "26": "22",
+      "33": "73",
+      "36": "72",
+      "46": "68",
+      "61": "90",
+      "63": "91"
+    },
+    "typeToSuffix": {
+      "RS3": "LPX",
+      "RS": "EXL",
+      "RM3": "BPX",
+      "RM": "DPX",
+      "RSK": null,
+      "RSF": null,
+      "RMF": null,
+      "RD3": null,
+      "46_RS": "68LX",
+      "46_RSK": "27RX",
+      "PM3": "PX",
+      "PS3": "PX",
+      "PM": "PX",
+      "PS": "PX",
+      "PD3": null
+    },
+    "specialCases": {
+      "26_RS3": "22LPX",
+      "26_RS": "22LGX",
+      "26_RM3": "22BPX",
+      "26_RM": null,
+      "46_RS3": null,
+      "46_RS": "68LX",
+      "46_RM": null,
+      "46_RSK": "27RX"
+    }
   }
 }
