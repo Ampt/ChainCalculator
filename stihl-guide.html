@@ -510,6 +510,12 @@
           <option value="">All pitches...</option>
         </select>
       </div>
+      <div class="field">
+        <label>Drive Links</label>
+        <select id="bar-dl-select" onchange="onBarFilterChange()">
+          <option value="">All DL...</option>
+        </select>
+      </div>
       <div class="field search-field">
         <label>Part Number</label>
         <input
@@ -1245,6 +1251,13 @@
         const pitches = [
           ...new Set(Object.values(BAR_INDEX).map((b) => b.pitch)),
         ];
+        const dls = [
+          ...new Set(
+            Object.values(BAR_INDEX)
+              .map((b) => String(b.dl))
+              .filter((d) => d !== "null"),
+          ),
+        ];
 
         // Sort sizes numerically
         sizes.sort((a, b) => parseFloat(a) - parseFloat(b));
@@ -1294,6 +1307,9 @@
           if (opts.includes(val)) sel.value = val;
         }
 
+        const dlSel2 = document.getElementById("bar-dl-select");
+        dls.sort((a, b) => Number(a) - Number(b));
+        fill(dlSel2, dls);
         fill(sizeSel, sizes);
         fill(typeSel, types);
         fill(gaugeSel, gauges);
@@ -1305,12 +1321,14 @@
         const type = document.getElementById("bar-type-select").value;
         const gauge = document.getElementById("bar-gauge-select").value;
         const pitch = document.getElementById("bar-pitch-select").value;
+        const dl = document.getElementById("bar-dl-select").value;
 
         return Object.values(BAR_INDEX).filter((b) => {
           if (size && b.size !== size) return false;
           if (type && b.barType !== type) return false;
           if (gauge && b.gauge !== gauge) return false;
           if (pitch && b.pitch !== pitch) return false;
+          if (dl && String(b.dl) !== dl) return false;
           return true;
         });
       }
@@ -1333,6 +1351,7 @@
         const typeSel = document.getElementById("bar-type-select");
         const gaugeSel = document.getElementById("bar-gauge-select");
         const pitchSel = document.getElementById("bar-pitch-select");
+        const dlSel = document.getElementById("bar-dl-select");
 
         // For each filter, determine available options by relaxing just that filter
         function optionsFor(field) {
@@ -1340,13 +1359,21 @@
           const type = typeSel.value;
           const gauge = gaugeSel.value;
           const pitch = pitchSel.value;
+          const dl = dlSel.value;
           const vals = new Set();
           for (const b of Object.values(BAR_INDEX)) {
             if (field !== "size" && size && b.size !== size) continue;
             if (field !== "type" && type && b.barType !== type) continue;
             if (field !== "gauge" && gauge && b.gauge !== gauge) continue;
             if (field !== "pitch" && pitch && b.pitch !== pitch) continue;
-            vals.add(b[field === "type" ? "barType" : field]);
+            if (field !== "dl" && dl && String(b.dl) !== dl) continue;
+            vals.add(
+              field === "type"
+                ? b.barType
+                : field === "dl"
+                  ? String(b.dl)
+                  : b[field],
+            );
           }
           return vals;
         }
@@ -1387,6 +1414,7 @@
         updateOpts(typeSel, optionsFor("type"), "str");
         updateOpts(gaugeSel, optionsFor("gauge"), "str");
         updateOpts(pitchSel, optionsFor("pitch"), "pitch");
+        updateOpts(dlSel, optionsFor("dl"), "num");
       }
 
       function onBarPNInput() {
@@ -1429,6 +1457,7 @@
         document.getElementById("bar-type-select").value = "";
         document.getElementById("bar-gauge-select").value = "";
         document.getElementById("bar-pitch-select").value = "";
+        document.getElementById("bar-dl-select").value = "";
 
         const bar = BAR_INDEX[pn];
         if (bar) {
@@ -1599,6 +1628,7 @@
         document.getElementById("bar-type-select").value = "";
         document.getElementById("bar-gauge-select").value = "";
         document.getElementById("bar-pitch-select").value = "";
+        document.getElementById("bar-dl-select").value = "";
         document.getElementById("bar-pn-input").value = pn;
         const bar = BAR_INDEX[pn];
         if (bar) {
