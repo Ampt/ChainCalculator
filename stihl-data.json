@@ -41,7 +41,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -53,7 +53,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -105,7 +105,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -157,7 +157,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -263,7 +263,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -282,7 +282,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -390,7 +390,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -443,7 +443,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -542,7 +542,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -561,7 +561,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -578,7 +578,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -596,7 +596,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -613,7 +613,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -631,7 +631,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -648,7 +648,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -667,7 +667,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -1063,7 +1063,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -1075,7 +1075,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -1127,7 +1127,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -1144,7 +1144,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 75,
@@ -1194,7 +1194,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -1299,7 +1299,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -1318,7 +1318,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -1426,7 +1426,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -1479,7 +1479,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -1515,7 +1515,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -1587,7 +1587,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -1668,7 +1668,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -1680,7 +1680,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -1697,7 +1697,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -1714,7 +1714,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -1731,7 +1731,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -1750,7 +1750,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -1981,7 +1981,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -1998,7 +1998,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -2034,7 +2034,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -2051,7 +2051,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -2087,7 +2087,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -2104,7 +2104,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -2538,7 +2538,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -2555,7 +2555,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -2572,7 +2572,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -2589,7 +2589,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -2608,7 +2608,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -2835,7 +2835,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -2852,7 +2852,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -2888,7 +2888,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -2905,7 +2905,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -2939,7 +2939,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -2956,7 +2956,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -3852,7 +3852,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -3867,7 +3867,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -3886,7 +3886,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -3903,7 +3903,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -3922,7 +3922,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -3939,7 +3939,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -3958,7 +3958,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -4140,7 +4140,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -4155,7 +4155,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -4174,7 +4174,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -4191,7 +4191,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -4206,7 +4206,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -4225,7 +4225,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -4242,7 +4242,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -4257,7 +4257,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -4276,7 +4276,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -4593,7 +4593,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -4605,7 +4605,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -4657,7 +4657,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -4709,7 +4709,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -4814,7 +4814,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -4833,7 +4833,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -4941,7 +4941,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -4994,7 +4994,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -5030,7 +5030,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -5102,7 +5102,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -5169,7 +5169,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -5181,7 +5181,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -5233,7 +5233,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -5285,7 +5285,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -5390,7 +5390,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -5409,7 +5409,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -5517,7 +5517,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -5570,7 +5570,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -5606,7 +5606,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -5678,7 +5678,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -5752,7 +5752,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -5764,7 +5764,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -5781,7 +5781,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -5798,7 +5798,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -5815,7 +5815,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -5834,7 +5834,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -5853,7 +5853,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -6010,7 +6010,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -6065,7 +6065,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 91,
@@ -6082,7 +6082,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 92,
@@ -6099,7 +6099,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -6135,7 +6135,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -6171,7 +6171,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -6545,7 +6545,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -6560,7 +6560,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -6575,7 +6575,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"P",
             "gauge": ".050",
             "dl": 60,
@@ -6591,7 +6591,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -6610,7 +6610,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -6627,7 +6627,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -6639,7 +6639,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -6658,7 +6658,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -6675,7 +6675,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -6687,7 +6687,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -6706,7 +6706,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -7349,7 +7349,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -7364,7 +7364,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -7379,7 +7379,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -7398,7 +7398,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -7415,7 +7415,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -7427,7 +7427,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -7446,7 +7446,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -7463,7 +7463,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -7475,7 +7475,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -7494,7 +7494,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -7788,7 +7788,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -7807,7 +7807,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -7824,7 +7824,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -7843,7 +7843,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -7860,7 +7860,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -7879,7 +7879,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -7896,7 +7896,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -7915,7 +7915,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -8311,7 +8311,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -8323,7 +8323,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -8340,7 +8340,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -8357,7 +8357,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -8374,7 +8374,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -8393,7 +8393,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -8412,7 +8412,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -8586,7 +8586,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -8641,7 +8641,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 91,
@@ -8658,7 +8658,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 92,
@@ -8675,7 +8675,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -9611,7 +9611,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -9626,7 +9626,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -9645,7 +9645,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -9662,7 +9662,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -9681,7 +9681,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -9698,7 +9698,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -9717,7 +9717,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -9734,7 +9734,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -9753,7 +9753,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -11116,7 +11116,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -11131,7 +11131,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -11150,7 +11150,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -11167,7 +11167,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -11182,7 +11182,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -11201,7 +11201,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -11218,7 +11218,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -11233,7 +11233,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -11252,7 +11252,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -12310,7 +12310,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -12325,7 +12325,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -12344,7 +12344,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -12361,7 +12361,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -12376,7 +12376,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -12395,7 +12395,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -12412,7 +12412,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -12427,7 +12427,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -12446,7 +12446,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -12774,7 +12774,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -12786,7 +12786,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -12798,7 +12798,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -12810,7 +12810,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -12822,7 +12822,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -12841,7 +12841,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -12858,7 +12858,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -12877,7 +12877,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -12894,7 +12894,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -12913,7 +12913,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -12930,7 +12930,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -12949,7 +12949,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -13372,7 +13372,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -13384,7 +13384,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -13396,7 +13396,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -13408,7 +13408,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -13420,7 +13420,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -13439,7 +13439,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -13456,7 +13456,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -13475,7 +13475,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -13492,7 +13492,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -13511,7 +13511,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -13528,7 +13528,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -13547,7 +13547,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -13981,7 +13981,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -13993,7 +13993,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -14005,7 +14005,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -14017,7 +14017,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -14029,7 +14029,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -14048,7 +14048,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -14065,7 +14065,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -14084,7 +14084,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -14101,7 +14101,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -14120,7 +14120,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -14137,7 +14137,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -14156,7 +14156,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 85,
@@ -14175,7 +14175,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -14622,7 +14622,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -14635,7 +14635,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -14652,7 +14652,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -14669,7 +14669,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -14686,7 +14686,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -14703,7 +14703,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -14720,7 +14720,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -14917,7 +14917,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -14934,7 +14934,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -14970,7 +14970,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -15006,7 +15006,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -15351,7 +15351,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -15364,7 +15364,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -15381,7 +15381,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -15398,7 +15398,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -15415,7 +15415,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -15432,7 +15432,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -15449,7 +15449,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -15646,7 +15646,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -15663,7 +15663,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -15699,7 +15699,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -15735,7 +15735,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -16087,7 +16087,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -16099,7 +16099,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -16116,7 +16116,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -16133,7 +16133,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -16150,7 +16150,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -16169,7 +16169,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -16400,7 +16400,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -16417,7 +16417,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -16453,7 +16453,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -16470,7 +16470,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -16506,7 +16506,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -16523,7 +16523,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -18394,7 +18394,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -18409,7 +18409,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -18428,7 +18428,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -18445,7 +18445,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -18460,7 +18460,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -18479,7 +18479,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -18496,7 +18496,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -18511,7 +18511,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -18530,7 +18530,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -19101,7 +19101,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -19116,7 +19116,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -19135,7 +19135,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -19152,7 +19152,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -19167,7 +19167,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -19186,7 +19186,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -19203,7 +19203,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -19218,7 +19218,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -19237,7 +19237,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -19583,7 +19583,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -19598,7 +19598,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -19617,7 +19617,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -19634,7 +19634,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -19649,7 +19649,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -19668,7 +19668,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -19685,7 +19685,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -19700,7 +19700,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -19719,7 +19719,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -20065,7 +20065,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -20080,7 +20080,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -20095,7 +20095,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -20114,7 +20114,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -20131,7 +20131,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 74,
@@ -20143,7 +20143,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -20162,7 +20162,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -20179,7 +20179,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 81,
@@ -20191,7 +20191,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -20210,7 +20210,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -20518,7 +20518,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -20533,7 +20533,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -20552,7 +20552,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -20569,7 +20569,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -20588,7 +20588,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -20605,7 +20605,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -20624,7 +20624,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -20641,7 +20641,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -20660,7 +20660,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -21078,7 +21078,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".325\"",
             "gauge": ".063",
             "dl": 67,
@@ -21093,7 +21093,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -21112,7 +21112,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -21129,7 +21129,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -21148,7 +21148,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -21165,7 +21165,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -21184,7 +21184,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -21201,7 +21201,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -21220,7 +21220,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -21639,7 +21639,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -21658,7 +21658,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -21675,7 +21675,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -21693,7 +21693,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -21710,7 +21710,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -21728,7 +21728,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -21745,7 +21745,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -21764,7 +21764,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -22160,7 +22160,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -22172,7 +22172,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -22184,7 +22184,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -22196,7 +22196,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -22208,7 +22208,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -22227,7 +22227,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -22244,7 +22244,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -22263,7 +22263,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -22280,7 +22280,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -22299,7 +22299,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -22316,7 +22316,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -22335,7 +22335,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -22770,7 +22770,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -22782,7 +22782,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -22794,7 +22794,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -22806,7 +22806,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -22818,7 +22818,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -22837,7 +22837,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -22854,7 +22854,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -22873,7 +22873,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -22890,7 +22890,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -22909,7 +22909,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -22926,7 +22926,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -22945,7 +22945,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -23374,7 +23374,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -23387,7 +23387,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -23404,7 +23404,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -23421,7 +23421,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -23438,7 +23438,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -23455,7 +23455,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -23472,7 +23472,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -23669,7 +23669,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -23686,7 +23686,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -23722,7 +23722,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -23758,7 +23758,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -24096,7 +24096,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -24115,7 +24115,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -24132,7 +24132,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -24150,7 +24150,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -24167,7 +24167,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -24185,7 +24185,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -24202,7 +24202,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -24221,7 +24221,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -24610,7 +24610,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -24622,7 +24622,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -24634,7 +24634,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -24646,7 +24646,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -24658,7 +24658,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -24677,7 +24677,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -24694,7 +24694,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -24713,7 +24713,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -24730,7 +24730,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -24749,7 +24749,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -24766,7 +24766,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -24785,7 +24785,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -25213,7 +25213,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -25226,7 +25226,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -25243,7 +25243,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -25260,7 +25260,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -25277,7 +25277,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -25294,7 +25294,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -25311,7 +25311,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -25508,7 +25508,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -25525,7 +25525,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -25561,7 +25561,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -25597,7 +25597,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -25942,7 +25942,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -25955,7 +25955,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -25972,7 +25972,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -25989,7 +25989,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -26006,7 +26006,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -26023,7 +26023,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -26040,7 +26040,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -26237,7 +26237,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -26254,7 +26254,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -26290,7 +26290,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -26326,7 +26326,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -26669,7 +26669,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -26681,7 +26681,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -26698,7 +26698,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -26715,7 +26715,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -26732,7 +26732,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -26751,7 +26751,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -26982,7 +26982,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -26999,7 +26999,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -27035,7 +27035,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -27052,7 +27052,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -27088,7 +27088,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -27105,7 +27105,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -27532,7 +27532,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -27545,7 +27545,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -27562,7 +27562,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 66,
@@ -27579,7 +27579,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 72,
@@ -27596,7 +27596,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -27613,7 +27613,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 84,
@@ -27630,7 +27630,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 85,
@@ -27827,7 +27827,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 91,
@@ -27844,7 +27844,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 92,
@@ -27880,7 +27880,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 105,
@@ -27916,7 +27916,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 114,
@@ -28259,7 +28259,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -28271,7 +28271,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -28288,7 +28288,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -28305,7 +28305,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -28322,7 +28322,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -28341,7 +28341,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -28572,7 +28572,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -28589,7 +28589,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -28625,7 +28625,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -28642,7 +28642,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -28678,7 +28678,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -28695,7 +28695,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -29127,7 +29127,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -29139,7 +29139,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -29156,7 +29156,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -29173,7 +29173,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -29190,7 +29190,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -29209,7 +29209,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -29440,7 +29440,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -29457,7 +29457,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -29493,7 +29493,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -29510,7 +29510,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -29546,7 +29546,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -29563,7 +29563,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -29990,7 +29990,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -30002,7 +30002,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -30019,7 +30019,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -30036,7 +30036,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -30053,7 +30053,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -30072,7 +30072,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -30303,7 +30303,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -30320,7 +30320,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -30356,7 +30356,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -30373,7 +30373,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -30409,7 +30409,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -30426,7 +30426,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -30858,7 +30858,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -30870,7 +30870,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -30887,7 +30887,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -30904,7 +30904,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -30921,7 +30921,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -30940,7 +30940,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -31171,7 +31171,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -31188,7 +31188,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -31224,7 +31224,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -31241,7 +31241,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -31277,7 +31277,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -31294,7 +31294,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -31710,7 +31710,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -31722,7 +31722,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -31739,7 +31739,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -31756,7 +31756,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -31773,7 +31773,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -31792,7 +31792,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -32023,7 +32023,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -32040,7 +32040,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -32076,7 +32076,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -32093,7 +32093,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -32129,7 +32129,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -32146,7 +32146,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -32555,7 +32555,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -32567,7 +32567,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -32584,7 +32584,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -32601,7 +32601,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -32618,7 +32618,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -32637,7 +32637,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -32868,7 +32868,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -32885,7 +32885,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -32921,7 +32921,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -32938,7 +32938,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -32974,7 +32974,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -32991,7 +32991,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -33613,7 +33613,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -33649,7 +33649,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -33666,7 +33666,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -33702,7 +33702,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -33719,7 +33719,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,
@@ -33965,7 +33965,7 @@
         "rows": [
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": 60,
@@ -33977,7 +33977,7 @@
           },
           {
             "size": "16\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 60,
@@ -33994,7 +33994,7 @@
           },
           {
             "size": "18\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 66,
@@ -34011,7 +34011,7 @@
           },
           {
             "size": "20\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 72,
@@ -34028,7 +34028,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": "3/8\"",
             "gauge": ".050",
             "dl": "84/85",
@@ -34047,7 +34047,7 @@
           },
           {
             "size": "24/25\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 84,
@@ -34278,7 +34278,7 @@
           },
           {
             "size": "28\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": "91/92",
@@ -34295,7 +34295,7 @@
           },
           {
             "size": "30\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 98,
@@ -34331,7 +34331,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 105,
@@ -34348,7 +34348,7 @@
           },
           {
             "size": "32\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 95,
@@ -34384,7 +34384,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Lightweight",
             "pitch": "3/8\"",
             "gauge": ".063",
             "dl": 114,
@@ -34401,7 +34401,7 @@
           },
           {
             "size": "36\"",
-            "barType": "Regular",
+            "barType": "Fixed",
             "pitch": ".404\"",
             "gauge": ".063",
             "dl": 104,

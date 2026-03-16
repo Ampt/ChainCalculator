@@ -949,7 +949,12 @@
         // Cannon only makes replaceable-nose bars — no equivalent for fixed/hard nose types.
         // Since we've merged Fixed+Replaceable into "Regular", Cannon CSB maps to Regular.
         // The only no-match types are Hard Nose and Narrow Gauge (SuperMini has no Cannon match for fixed).
-        const CANNON_NO_MATCH = new Set(["Hard Nose"]);
+        const CANNON_NO_MATCH = new Set([
+          "Hard Nose",
+          "Fixed",
+          "Regular (Narrow Gauge)",
+          "Lightweight (Narrow Gauge)",
+        ]);
 
         function cannonForRow(row) {
           if (CANNON_NO_MATCH.has(row.barType)) return [];
@@ -968,6 +973,7 @@
         // Oregon: no equivalent for Hard Nose, Carving, or Narrow Gauge
         const OREGON_NO_MATCH = new Set([
           "Hard Nose",
+          "Fixed",
           "Carving",
           "Regular (Narrow Gauge)",
           "Lightweight (Narrow Gauge)",
@@ -1142,10 +1148,21 @@
         sizes.sort((a, b) => parseFloat(a) - parseFloat(b));
         // Sort bar types so Lightweight variants appear immediately after their base type
         types.sort((a, b) => {
-          const key = (t) =>
-            t.replace(/^Lightweight /, "") +
-            (t.startsWith("Lightweight") ? "~" : "");
-          return key(a).localeCompare(key(b));
+          const ORDER = [
+            "Fixed",
+            "Regular",
+            "Lightweight",
+            "Hard Nose",
+            "Carving",
+            "Regular (Narrow Gauge)",
+            "Lightweight (Narrow Gauge)",
+          ];
+          const ia = ORDER.indexOf(a),
+            ib = ORDER.indexOf(b);
+          if (ia >= 0 && ib >= 0) return ia - ib;
+          if (ia >= 0) return -1;
+          if (ib >= 0) return 1;
+          return a.localeCompare(b);
         });
         gauges.sort();
         pitches.sort();
