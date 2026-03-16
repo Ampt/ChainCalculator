@@ -664,7 +664,7 @@
               const pitch = pitchCode ? CANNON_PITCH[pitchCode] : null;
               if (!pitch) continue; // skip hard nose — no pitch to work with
               const gauge = CANNON_GAUGE[gaugeCode] || "." + gaugeCode + '"';
-              const size = sz + '"';
+              const size = sz.replace("-", "/") + '"'; // "16\"", "24/25\""
               BAR_INDEX[pn] = {
                 pn,
                 brand: "cannon",
@@ -891,7 +891,9 @@
             const pn = entry.pn;
             const parts = pn.split("-");
             const isDL = parts.includes("DL");
-            const sz = parts[2];
+            // size segment may be "24-25" for merged bars — normalize to match row.size key
+            const szRaw = parts[2]; // e.g. "16", "24-25"
+            const sz = szRaw.replace("-", "/") + '"'; // "16\"", "24/25\""
             const gauge = parts[3];
             const pitch = isDL ? parts[5] : parts[4];
             if (!pitch || pitch === "H") continue;
@@ -910,10 +912,8 @@
 
         function cannonForRow(row) {
           if (CANNON_NO_MATCH.has(row.barType)) return [];
-          const rawSz = String(parseFloat(row.size)); // "16\"" → "16"
-          const sz =
-            (CANNON.stihlSizeAliases && CANNON.stihlSizeAliases[rawSz]) ||
-            rawSz;
+          // Use row.size directly as key — Cannon PN size segment normalized to match
+          const sz = row.size; // e.g. "16\"", "24/25\""
           const gauge = STIHL_GAUGE_TO_CANNON[row.gauge];
           const pitch = STIHL_PITCH_TO_CANNON[row.pitch];
           if (!gauge || !pitch) return [];
