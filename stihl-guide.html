@@ -897,10 +897,27 @@
         }
 
         // Group rows by size, sorted numerically
+        const PITCH_ORDER = [
+          '1/4"',
+          '1/4" P',
+          '3/8" P',
+          '3/8"',
+          '.325"',
+          '.404"',
+        ];
         const sizeMap = {};
         for (const row of data.rows) {
           if (!sizeMap[row.size]) sizeMap[row.size] = [];
           sizeMap[row.size].push(row);
+        }
+        // Sort rows within each size: pitch order, then gauge ascending
+        for (const rows of Object.values(sizeMap)) {
+          rows.sort((a, b) => {
+            const ip =
+              PITCH_ORDER.indexOf(a.pitch) - PITCH_ORDER.indexOf(b.pitch);
+            if (ip !== 0) return ip;
+            return a.gauge.localeCompare(b.gauge);
+          });
         }
         const sizes = Object.keys(sizeMap).sort(
           (a, b) => parseFloat(a) - parseFloat(b),
@@ -1175,7 +1192,22 @@
           return a.localeCompare(b);
         });
         gauges.sort();
-        pitches.sort();
+        const PITCH_ORDER = [
+          '1/4"',
+          '1/4" P',
+          '3/8" P',
+          '3/8"',
+          '.325"',
+          '.404"',
+        ];
+        pitches.sort((a, b) => {
+          const ia = PITCH_ORDER.indexOf(a),
+            ib = PITCH_ORDER.indexOf(b);
+          if (ia >= 0 && ib >= 0) return ia - ib;
+          if (ia >= 0) return -1;
+          if (ib >= 0) return 1;
+          return a.localeCompare(b);
+        });
 
         function fill(sel, opts) {
           const val = sel.value;
