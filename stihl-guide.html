@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stihl Chain &amp; Bar Compatibility Guide</title>
+    <title>Chainsaw Compatibility Guide</title>
     <style>
       * {
         box-sizing: border-box;
@@ -39,6 +39,29 @@
       .subtitle a {
         color: #f5a623;
         text-decoration: none;
+      }
+      .site-nav {
+        display: flex;
+        gap: 0;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #333;
+      }
+      .site-nav a {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.85rem;
+        color: #888;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+        transition: color 0.15s;
+      }
+      .site-nav a:hover {
+        color: #ccc;
+      }
+      .site-nav a.active {
+        color: #f5a623;
+        border-bottom-color: #f5a623;
+        font-weight: 600;
       }
       .controls {
         display: flex;
@@ -439,11 +462,12 @@
     </style>
   </head>
   <body>
-    <h1>Stihl Chain &amp; Bar Compatibility Guide</h1>
-    <p class="subtitle">
-      Look up by chainsaw or by bar &nbsp;|&nbsp;
-      <a href="index.html">Back to Chain Calculator</a>
-    </p>
+    <nav class="site-nav">
+      <a href="index.html">Roll Optimizer</a>
+      <a href="stihl-guide.html" class="active">Compatibility Guide</a>
+    </nav>
+    <h1>Chain &amp; Bar Compatibility Guide</h1>
+    <p class="subtitle">Look up by chainsaw or by bar</p>
 
     <div class="view-toggle">
       <button
