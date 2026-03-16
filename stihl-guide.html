@@ -1008,10 +1008,16 @@
               const cPNs = cannonForRow(row);
               if (cPNs.length) {
                 const cLinks = cPNs
-                  .map(
-                    (p) =>
-                      `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>`,
-                  )
+                  .map((p) => {
+                    const cBar = BAR_INDEX[p];
+                    const cDL = cBar ? cBar.dl : null;
+                    const dlMismatch =
+                      cDL != null && row.dl != null && cDL !== row.dl;
+                    const dlNote = dlMismatch
+                      ? ` <span style="color:#e55;" title="Drive links differ: Stihl=${row.dl}, Cannon=${cDL}">⚠ ${cDL} DL</span>`
+                      : "";
+                    return `<a class="saw-link" onclick="jumpToBar('${p}')">${p}</a><button class="copy-btn" onclick="event.stopPropagation();copyPN('${p}',this)">copy</button>${dlNote}`;
+                  })
                   .join("<br>");
                 html += `<td class="bar-pn">${cLinks}</td>`;
               } else {
