@@ -38346,7 +38346,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 66,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 16\""
         },
         {
@@ -38373,7 +38373,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 72,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -38382,7 +38382,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 72,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -38418,7 +38418,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 56,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 13\""
         },
         {
@@ -38427,7 +38427,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 64,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 15\""
         },
         {
@@ -38454,7 +38454,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 66,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 16\""
         },
         {
@@ -38778,7 +38778,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 72,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -38832,7 +38832,7 @@
           "pitch": ".325\"",
           "gauge": ".058",
           "dl": 72,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -38841,7 +38841,7 @@
           "pitch": "3/8\"",
           "gauge": ".058",
           "dl": 68,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -38886,7 +38886,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 56,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 13\""
         },
         {
@@ -38922,7 +38922,7 @@
           "pitch": ".325\"",
           "gauge": ".050",
           "dl": 64,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 15\""
         },
         {
@@ -39086,7 +39086,7 @@
           "pitch": ".325\"",
           "gauge": ".063",
           "dl": 67,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 16\""
         },
         {
@@ -39113,7 +39113,7 @@
           "pitch": ".325\"",
           "gauge": ".063",
           "dl": 74,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -39131,7 +39131,7 @@
           "pitch": "3/8\"",
           "gauge": ".063",
           "dl": 66,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 18\""
         },
         {
@@ -39221,7 +39221,7 @@
           "pitch": "3/8\"",
           "gauge": ".050",
           "dl": 84,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 24\""
         },
         {
@@ -39248,7 +39248,7 @@
           "pitch": "3/8\"",
           "gauge": ".063",
           "dl": 84,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 24\""
         },
         {
@@ -39329,7 +39329,7 @@
           "pitch": "3/8\"",
           "gauge": ".063",
           "dl": 60,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 16\""
         },
         {
@@ -39518,7 +39518,7 @@
           "pitch": "3/8\"",
           "gauge": ".063",
           "dl": 72,
-          "barType": "Regular",
+          "barType": "Fixed",
           "name": "AdvanceCut™ Guide Bar, 20\""
         },
         {
