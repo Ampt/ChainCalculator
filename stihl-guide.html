@@ -189,6 +189,31 @@
         background: #243a24 !important;
       }
 
+      /* Bar rarity tiers */
+      .tier-gold td:first-child {
+        border-left: 3px solid #f5a623 !important;
+      }
+      .tier-purple td:first-child {
+        border-left: 3px solid #a855f7 !important;
+      }
+      .tier-blue td:first-child {
+        border-left: 3px solid #3b82f6 !important;
+      }
+      .tier-gold {
+        background: rgba(245, 166, 35, 0.06) !important;
+      }
+      .tier-purple {
+        background: rgba(168, 85, 247, 0.05) !important;
+      }
+      .tier-blue {
+        background: rgba(59, 130, 246, 0.04) !important;
+      }
+      .tier-gold:hover td,
+      .tier-purple:hover td,
+      .tier-blue:hover td {
+        filter: brightness(1.15);
+      }
+
       .legend {
         display: flex;
         gap: 1.5rem;
@@ -947,6 +972,32 @@
         // P-prefix and R-prefix chains share the same display label (e.g. PM3/RM3,
         // PS3/RS3, PD3/RD3, PM/RM, PS/RS). Merge them into a single column keyed
         // by the R-prefix code (or P-prefix if no R equivalent exists).
+        // ── Bar rarity tiers ────────────────────────────────────────────────
+        // Build lookup: pitch → Set of sizes that are rec=true on ANY Stihl saw
+        const recSizesByPitch = {}; // pitch → Set<size>
+        const allSizesByPitch = {}; // pitch → Set<size> (all sizes for that pitch)
+        for (const m of Object.values(MODELS.stihl || {})) {
+          for (const r of m.rows) {
+            if (!recSizesByPitch[r.pitch]) recSizesByPitch[r.pitch] = new Set();
+            if (!allSizesByPitch[r.pitch]) allSizesByPitch[r.pitch] = new Set();
+            allSizesByPitch[r.pitch].add(r.size);
+            if (r.rec) recSizesByPitch[r.pitch].add(r.size);
+          }
+        }
+        // Remove this model's own rec rows from the "other saws" set
+        for (const r of data.rows) {
+          if (r.rec) {
+            // Will be gold — don't count for purple
+          }
+        }
+        function rowTier(row) {
+          if (row.rec) return "gold";
+          const recSizes = recSizesByPitch[row.pitch] || new Set();
+          if (recSizes.has(row.size)) return "purple";
+          if (recSizes.size > 0) return "blue";
+          return "";
+        }
+
         const PICCO_MERGE = {
           PM3: "RM3",
           PS3: "RS3",
@@ -1121,6 +1172,9 @@
         let html = "";
         html += `<div class="legend">`;
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
+        html += `<span class="legend-item"><span style="color:#f5a623;">&#9646;</span> Ships with saw</span>`;
+        html += `<span class="legend-item"><span style="color:#a855f7;">&#9646;</span> Common fit (other saws)</span>`;
+        html += `<span class="legend-item"><span style="color:#3b82f6;">&#9646;</span> Less common</span>`;
         html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
         if (hasCannon)
           html += `<span class="legend-item">&#9670; Cannon equivalent</span>`;
@@ -1198,7 +1252,8 @@
           for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
             const barPNs = row.barPN.split("\n");
-            html += `<tr>`;
+            const tier = rowTier(row);
+            html += `<tr class="${tier ? "tier-" + tier : ""}">`;
             if (typeSpanAt[i] !== undefined) {
               const span =
                 typeSpanAt[i] > 1 ? ` rowspan="${typeSpanAt[i]}"` : "";
