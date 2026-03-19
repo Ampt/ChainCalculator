@@ -190,28 +190,14 @@
       }
 
       /* Bar rarity tiers */
-      .tier-gold td:first-child {
-        border-left: 3px solid #f5a623 !important;
-      }
-      .tier-purple td:first-child {
-        border-left: 3px solid #a855f7 !important;
-      }
-      .tier-blue td:first-child {
-        border-left: 3px solid #3b82f6 !important;
-      }
       .tier-gold {
-        background: rgba(245, 166, 35, 0.06) !important;
+        color: #f5a623;
       }
       .tier-purple {
-        background: rgba(168, 85, 247, 0.05) !important;
+        color: #a855f7;
       }
       .tier-blue {
-        background: rgba(59, 130, 246, 0.04) !important;
-      }
-      .tier-gold:hover td,
-      .tier-purple:hover td,
-      .tier-blue:hover td {
-        filter: brightness(1.15);
+        color: #3b82f6;
       }
 
       .legend {
@@ -1246,7 +1232,7 @@
             const row = rows[i];
             const barPNs = row.barPN.split("\n");
             const tier = rowTier(row);
-            html += `<tr class="${tier ? "tier-" + tier : ""}">`;
+            html += `<tr>`;
             if (typeSpanAt[i] !== undefined) {
               const span =
                 typeSpanAt[i] > 1 ? ` rowspan="${typeSpanAt[i]}"` : "";
@@ -1267,7 +1253,8 @@
               })
               .filter(Boolean)
               .join("<br>");
-            html += `<td class="bar-pn">${pnLinks || "–"}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            const tierClass = tier ? ` class="tier-${tier}"` : "";
+            html += `<td class="bar-pn"><span${tierClass}>${pnLinks || "–"}</span>${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             const hasStihlPN = !!(row.barPN && row.barPN.trim());
             if (hasCannon) {
               const cPNs = cannonForRow(row);
