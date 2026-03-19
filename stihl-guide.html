@@ -973,29 +973,22 @@
         // PS3/RS3, PD3/RD3, PM/RM, PS/RS). Merge them into a single column keyed
         // by the R-prefix code (or P-prefix if no R equivalent exists).
         // ── Bar rarity tiers ────────────────────────────────────────────────
-        // Build lookup: pitch → Set of sizes that are rec=true on ANY Stihl saw
-        const recSizesByPitch = {}; // pitch → Set<size>
-        const allSizesByPitch = {}; // pitch → Set<size> (all sizes for that pitch)
-        for (const m of Object.values(MODELS.stihl || {})) {
-          for (const r of m.rows) {
-            if (!recSizesByPitch[r.pitch]) recSizesByPitch[r.pitch] = new Set();
-            if (!allSizesByPitch[r.pitch]) allSizesByPitch[r.pitch] = new Set();
-            allSizesByPitch[r.pitch].add(r.size);
-            if (r.rec) recSizesByPitch[r.pitch].add(r.size);
-          }
-        }
-        // Remove this model's own rec rows from the "other saws" set
-        for (const r of data.rows) {
-          if (r.rec) {
-            // Will be gold — don't count for purple
-          }
-        }
+        // Count how many Stihl saws rec each size+pitch+gauge+barType combo
+        const recCounts = {};
+        for (const m of Object.values(MODELS.stihl || {}))
+          for (const r of m.rows)
+            if (r.rec) {
+              const k = `${r.size}|${r.pitch}|${r.gauge}|${r.barType}`;
+              recCounts[k] = (recCounts[k] || 0) + 1;
+            }
+
         function rowTier(row) {
           if (row.rec) return "gold";
-          const recSizes = recSizesByPitch[row.pitch] || new Set();
-          if (recSizes.has(row.size)) return "purple";
-          if (recSizes.size > 0) return "blue";
-          return "";
+          const k = `${row.size}|${row.pitch}|${row.gauge}|${row.barType}`;
+          const n = recCounts[k] || 0;
+          if (n >= 5) return "purple"; // ships with 5+ saws — very common
+          if (n >= 2) return "blue"; // ships with 2-4 saws — notable
+          return ""; // ships with 0-1 saws — uncommon
         }
 
         const PICCO_MERGE = {
@@ -1173,8 +1166,8 @@
         html += `<div class="legend">`;
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
         html += `<span class="legend-item"><span style="color:#f5a623;">&#9646;</span> Ships with saw</span>`;
-        html += `<span class="legend-item"><span style="color:#a855f7;">&#9646;</span> Common fit (other saws)</span>`;
-        html += `<span class="legend-item"><span style="color:#3b82f6;">&#9646;</span> Less common</span>`;
+        html += `<span class="legend-item"><span style="color:#a855f7;">&#9646;</span> Ships with 5+ saws</span>`;
+        html += `<span class="legend-item"><span style="color:#3b82f6;">&#9646;</span> Ships with 2–4 saws</span>`;
         html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
         if (hasCannon)
           html += `<span class="legend-item">&#9670; Cannon equivalent</span>`;
