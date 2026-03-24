@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chain Spare Parts</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        min-height: 100vh;
+        padding: 1rem;
+      }
+      @media (min-width: 600px) {
+        body {
+          padding: 2rem;
+        }
+      }
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #f5a623;
+        margin-bottom: 0.25rem;
+      }
+      .subtitle {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 1.5rem;
+      }
+      .site-nav {
+        display: flex;
+        gap: 0;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #333;
+      }
+      .site-nav a {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.85rem;
+        color: #888;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+        transition: color 0.15s;
+      }
+      .site-nav a:hover {
+        color: #ccc;
+      }
+      .site-nav a.active {
+        color: #f5a623;
+        border-bottom-color: #f5a623;
+        font-weight: 600;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin-bottom: 1.5rem;
+        max-width: 520px;
+      }
+      .field label {
+        font-size: 0.78rem;
+        color: #aaa;
+      }
+      .field input {
+        background: #252525;
+        border: 1px solid #444;
+        border-radius: 5px;
+        color: #e0e0e0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+        outline: none;
+        font-family: inherit;
+        width: 100%;
+      }
+      .field input:focus {
+        border-color: #f5a623;
+      }
+
+      /* Results card */
+      .parts-card {
+        background: #242424;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 1.25rem;
+        max-width: 520px;
+      }
+      .parts-header {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+      .stihl-code {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f5a623;
+        font-family: monospace;
+        letter-spacing: 0.02em;
+      }
+      .oregon-code {
+        font-size: 0.85rem;
+        color: #888;
+        font-family: monospace;
+      }
+
+      .parts-section {
+        margin-bottom: 0.85rem;
+      }
+      .parts-section:last-child {
+        margin-bottom: 0;
+      }
+      .parts-section-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #666;
+        margin-bottom: 0.4rem;
+      }
+      .parts-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.2rem 0;
+      }
+      .pn {
+        font-family: monospace;
+        font-size: 0.9rem;
+        color: #e0e0e0;
+        letter-spacing: 0.02em;
+      }
+
+      /* Copy button */
+      .copy-btn {
+        background: #333;
+        border: 1px solid #555;
+        border-radius: 3px;
+        color: #aaa;
+        font-size: 0.7rem;
+        padding: 2px 7px;
+        cursor: pointer;
+        transition:
+          background 0.12s,
+          color 0.12s,
+          border-color 0.12s;
+        line-height: 1.4;
+        font-family: inherit;
+      }
+      .copy-btn:hover {
+        background: #f5a623;
+        border-color: #f5a623;
+        color: #1a1a1a;
+      }
+      .copy-btn.copied {
+        background: #2a6a2a;
+        border-color: #4a4;
+        color: #6f6;
+      }
+
+      /* Empty / no-results state */
+      .empty-state {
+        color: #666;
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="index.html">Roll Optimizer</a>
+      <a href="stihl-guide.html">Compatibility Guide</a>
+      <a href="chain-parts.html" class="active">Chain Parts</a>
+    </nav>
+
+    <h1>Chain Spare Parts</h1>
+    <p class="subtitle">
+      Look up drive links, tie straps, and cutters by chain code
+    </p>
+
+    <div class="field">
+      <label for="chain-input">Chain code</label>
+      <input
+        type="text"
+        id="chain-input"
+        placeholder="e.g. 36RS or 72EXL"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+      let CHAIN_PARTS = null;
+      let OREGON_CHAINS = null;
+      let OREGON_TO_STIHL = {}; // "72EXL" -> "36 RS"
+
+      // ─── Oregon series lookup (copied from stihl-guide.html) ──────────────────────
+      function getOregonSeriesFromCode(gaugeCode, chainType) {
+        if (!OREGON_CHAINS) return null;
+        const scKey = `${gaugeCode}_${chainType}`;
+        const sc = OREGON_CHAINS.specialCases;
+        if (sc && scKey in sc) return sc[scKey] || null;
+        const prefix = OREGON_CHAINS.gaugeToSeries[gaugeCode];
+        const suffix = OREGON_CHAINS.typeToSuffix[chainType];
+        return prefix && suffix ? prefix + suffix : null;
+      }
+
+      // ─── Build reverse map: Oregon series → Stihl key ─────────────────────────────
+      function buildOregonToStihl() {
+        OREGON_TO_STIHL = {};
+        for (const stihlKey of Object.keys(CHAIN_PARTS)) {
+          const m = stihlKey.match(/^(\d+)\s+(.+)$/);
+          if (!m) continue;
+          const gaugeCode = m[1];
+          const chainType = m[2];
+          const oregonSeries = getOregonSeriesFromCode(gaugeCode, chainType);
+          if (oregonSeries) {
+            OREGON_TO_STIHL[oregonSeries.toUpperCase()] = stihlKey;
+          }
+        }
+      }
+
+      // ─── Copy button ──────────────────────────────────────────────────────────────
+      function copyPN(pn, btn) {
+        navigator.clipboard.writeText(pn).then(() => {
+          btn.textContent = "✓";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "copy";
+            btn.classList.remove("copied");
+          }, 1200);
+        });
+      }
+
+      // ─── Render results card ──────────────────────────────────────────────────────
+      function renderCard(stihlKey, oregonKey) {
+        const parts = CHAIN_PARTS[stihlKey];
+        const sections = [
+          { label: "Drive Links", data: parts.driveLink },
+          { label: "Tie Straps", data: parts.tieStrap },
+          { label: "Cutters", data: parts.cutter },
+        ];
+
+        let html = `<div class="parts-card">`;
+        html += `<div class="parts-header">`;
+        html += `<span class="stihl-code">${esc(stihlKey)}</span>`;
+        if (oregonKey) {
+          html += `<span class="oregon-code">= Oregon ${esc(oregonKey)}</span>`;
+        }
+        html += `</div>`;
+
+        for (const section of sections) {
+          if (!section.data || section.data.length === 0) continue;
+          html += `<div class="parts-section">`;
+          html += `<div class="parts-section-label">${esc(section.label)}</div>`;
+          for (const pn of section.data) {
+            html += `<div class="parts-row">`;
+            html += `<span class="pn">${esc(pn)}</span>`;
+            html += `<button class="copy-btn" onclick="copyPN(${JSON.stringify(pn)}, this)">copy</button>`;
+            html += `</div>`;
+          }
+          html += `</div>`;
+        }
+
+        html += `</div>`;
+        return html;
+      }
+
+      // ─── Escape HTML ──────────────────────────────────────────────────────────────
+      function esc(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      // ─── Search logic ─────────────────────────────────────────────────────────────
+      let debounceTimer = null;
+
+      function onInput() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(doSearch, 200);
+      }
+
+      function doSearch() {
+        const raw = document.getElementById("chain-input").value;
+        const resultsEl = document.getElementById("results");
+
+        if (!raw.trim()) {
+          resultsEl.innerHTML = "";
+          return;
+        }
+
+        // Normalize: strip spaces, uppercase
+        const normalized = raw.replace(/\s+/g, "").toUpperCase();
+
+        if (!CHAIN_PARTS) {
+          resultsEl.innerHTML = `<p class="empty-state">Loading data…</p>`;
+          return;
+        }
+
+        // Try direct Stihl match: compare normalized input against normalized keys
+        let matchedStihlKey = null;
+        let matchedOregonKey = null;
+
+        for (const key of Object.keys(CHAIN_PARTS)) {
+          if (key.replace(/\s+/g, "").toUpperCase() === normalized) {
+            matchedStihlKey = key;
+            break;
+          }
+        }
+
+        // If no Stihl match, try Oregon reverse lookup
+        if (!matchedStihlKey) {
+          const stihlFromOregon = OREGON_TO_STIHL[normalized];
+          if (stihlFromOregon) {
+            matchedStihlKey = stihlFromOregon;
+            // Find the original Oregon key that matched (preserve original case from map)
+            matchedOregonKey = normalized; // already uppercased
+          }
+        }
+
+        if (matchedStihlKey) {
+          resultsEl.innerHTML = renderCard(matchedStihlKey, matchedOregonKey);
+        } else if (normalized.length >= 2) {
+          resultsEl.innerHTML = `<p class="empty-state">No parts found for ${esc(raw.trim())}</p>`;
+        } else {
+          resultsEl.innerHTML = "";
+        }
+      }
+
+      // ─── Init ─────────────────────────────────────────────────────────────────────
+      document.getElementById("chain-input").addEventListener("input", onInput);
+
+      fetch("stihl-data.json")
+        .then((r) => r.json())
+        .then((data) => {
+          CHAIN_PARTS = data.chainParts;
+          OREGON_CHAINS = data.oregonChains;
+          buildOregonToStihl();
+        })
+        .catch((err) => {
+          console.error("Failed to load stihl-data.json:", err);
+          document.getElementById("results").innerHTML =
+            `<p class="empty-state">Failed to load data. Make sure stihl-data.json is available.</p>`;
+        });
+    </script>
+  </body>
+</html>
