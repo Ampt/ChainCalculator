@@ -203,8 +203,9 @@
       let CHAIN_PARTS = null;
       let OREGON_CHAINS = null;
       let OREGON_TO_STIHL = {}; // "72EXL" -> "36 RS"
+      let NORMALIZED_STIHL = {}; // "36RS"  -> "36 RS"
 
-      // ─── Oregon series lookup (copied from stihl-guide.html) ──────────────────────
+      // ─── Oregon series lookup ─────────────────────────────────────────────────────
       function getOregonSeriesFromCode(gaugeCode, chainType) {
         if (!OREGON_CHAINS) return null;
         const scKey = `${gaugeCode}_${chainType}`;
@@ -215,10 +216,14 @@
         return prefix && suffix ? prefix + suffix : null;
       }
 
-      // ─── Build reverse map: Oregon series → Stihl key ─────────────────────────────
+      // ─── Build lookup maps at init ────────────────────────────────────────────────
       function buildOregonToStihl() {
         OREGON_TO_STIHL = {};
+        NORMALIZED_STIHL = {};
         for (const stihlKey of Object.keys(CHAIN_PARTS)) {
+          // Pre-build normalized Stihl map to avoid rescanning on every search
+          NORMALIZED_STIHL[stihlKey.replace(/\s+/g, "").toUpperCase()] =
+            stihlKey;
           const m = stihlKey.match(/^(\d+)\s+(.+)$/);
           if (!m) continue;
           const gaugeCode = m[1];
@@ -232,14 +237,22 @@
 
       // ─── Copy button ──────────────────────────────────────────────────────────────
       function copyPN(pn, btn) {
-        navigator.clipboard.writeText(pn).then(() => {
-          btn.textContent = "✓";
-          btn.classList.add("copied");
-          setTimeout(() => {
-            btn.textContent = "copy";
-            btn.classList.remove("copied");
-          }, 1200);
-        });
+        navigator.clipboard
+          .writeText(pn)
+          .then(() => {
+            btn.textContent = "✓";
+            btn.classList.add("copied");
+            setTimeout(() => {
+              btn.textContent = "copy";
+              btn.classList.remove("copied");
+            }, 1200);
+          })
+          .catch(() => {
+            btn.textContent = "✗";
+            setTimeout(() => {
+              btn.textContent = "copy";
+            }, 1200);
+          });
       }
 
       // ─── Render results card ──────────────────────────────────────────────────────
@@ -310,16 +323,9 @@
           return;
         }
 
-        // Try direct Stihl match: compare normalized input against normalized keys
-        let matchedStihlKey = null;
+        // Try direct Stihl match via pre-built normalized map
+        let matchedStihlKey = NORMALIZED_STIHL[normalized] || null;
         let matchedOregonKey = null;
-
-        for (const key of Object.keys(CHAIN_PARTS)) {
-          if (key.replace(/\s+/g, "").toUpperCase() === normalized) {
-            matchedStihlKey = key;
-            break;
-          }
-        }
 
         // If no Stihl match, try Oregon reverse lookup
         if (!matchedStihlKey) {
@@ -334,6 +340,7 @@
         if (matchedStihlKey) {
           resultsEl.innerHTML = renderCard(matchedStihlKey, matchedOregonKey);
         } else if (normalized.length >= 2) {
+          // suppress flash while typing first char
           resultsEl.innerHTML = `<p class="empty-state">No parts found for ${esc(raw.trim())}</p>`;
         } else {
           resultsEl.innerHTML = "";
