@@ -190,14 +190,42 @@
       }
 
       /* Bar rarity tiers */
-      .tier-gold {
+      /* Tier colors: from gauge onward (skip rowspan barType/pitch/gauge cells) */
+      .tier-gold td:not(.no-tier) {
+        background: rgba(245, 166, 35, 0.12) !important;
+      }
+      .tier-purple td:not(.no-tier) {
+        background: rgba(168, 85, 247, 0.12) !important;
+      }
+      .tier-blue td:not(.no-tier) {
+        background: rgba(59, 130, 246, 0.12) !important;
+      }
+      .tier-none td:not(.no-tier) {
+        background: rgba(255, 255, 255, 0.02) !important;
+      }
+      .tier-gold:hover td:not(.no-tier) {
+        background: rgba(245, 166, 35, 0.22) !important;
+      }
+      .tier-purple:hover td:not(.no-tier) {
+        background: rgba(168, 85, 247, 0.22) !important;
+      }
+      .tier-blue:hover td:not(.no-tier) {
+        background: rgba(59, 130, 246, 0.22) !important;
+      }
+      .tier-none:hover td:not(.no-tier) {
+        background: rgba(255, 255, 255, 0.05) !important;
+      }
+      .tier-none .saw-link {
+        color: #666;
+      }
+      .tier-gold .saw-link {
         color: #f5a623;
       }
-      .tier-purple {
-        color: #a855f7;
+      .tier-purple .saw-link {
+        color: #c084fc;
       }
-      .tier-blue {
-        color: #3b82f6;
+      .tier-blue .saw-link {
+        color: #60a5fa;
       }
 
       .legend {
@@ -582,6 +610,7 @@
       // CHAIN_CATALOG: built at init from model data
       // Key: "{pitch}|{gauge}|{chainType}" → { stihl: "36RM3", oregon: "72LPX" }
       let CHAIN_CATALOG = {};
+      let REC_COUNTS = {}; // "{size}|{pitch}|{gauge}|{barType}" → count of saws where rec=true
 
       function buildChainCatalog() {
         CHAIN_CATALOG = {};
@@ -598,15 +627,23 @@
         if (OREGON_CHAINS) {
           for (const key of Object.keys(CHAIN_CATALOG)) {
             const [pitch, gauge, type] = key.split("|");
-            // Derive gauge code from Stihl designation (e.g. "36 RM3" → gaugeCode="36")
             const desig = CHAIN_CATALOG[key].stihl;
             const m = desig && desig.match(/^(\d+)\s+/);
             if (!m) continue;
-            const gaugeCode = m[1];
-            const oregon = getOregonSeriesFromCode(gaugeCode, type);
+            const oregon = getOregonSeriesFromCode(m[1], type);
             if (oregon) CHAIN_CATALOG[key].oregon = oregon;
           }
         }
+
+        // Build REC_COUNTS: how many Stihl saws rec each size+pitch+gauge+barType
+        REC_COUNTS = {};
+        for (const brand of Object.values(MODELS))
+          for (const model of Object.values(brand))
+            for (const row of model.rows)
+              if (row.rec) {
+                const k = `${row.size}|${row.pitch}|${row.gauge}|${row.barType}`;
+                REC_COUNTS[k] = (REC_COUNTS[k] || 0) + 1;
+              }
       }
 
       function getOregonSeriesFromCode(gaugeCode, chainType) {
@@ -958,23 +995,14 @@
         // P-prefix and R-prefix chains share the same display label (e.g. PM3/RM3,
         // PS3/RS3, PD3/RD3, PM/RM, PS/RS). Merge them into a single column keyed
         // by the R-prefix code (or P-prefix if no R equivalent exists).
-        // ── Bar rarity tiers ────────────────────────────────────────────────
-        // Count how many Stihl saws rec each size+pitch+gauge+barType combo
-        const recCounts = {};
-        for (const m of Object.values(MODELS.stihl || {}))
-          for (const r of m.rows)
-            if (r.rec) {
-              const k = `${r.size}|${r.pitch}|${r.gauge}|${r.barType}`;
-              recCounts[k] = (recCounts[k] || 0) + 1;
-            }
-
+        // ── Bar rarity tiers — uses global REC_COUNTS built at init ──────────
         function rowTier(row) {
           if (row.rec) return "gold";
           const k = `${row.size}|${row.pitch}|${row.gauge}|${row.barType}`;
-          const n = recCounts[k] || 0;
-          if (n >= 5) return "purple"; // ships with 5+ saws — very common
-          if (n >= 2) return "blue"; // ships with 2-4 saws — notable
-          return ""; // ships with 0-1 saws — uncommon
+          const n = REC_COUNTS[k] || 0;
+          if (n >= 5) return "purple";
+          if (n >= 2) return "blue";
+          return "";
         }
 
         const PICCO_MERGE = {
@@ -1151,10 +1179,9 @@
         let html = "";
         html += `<div class="legend">`;
         html += `<span style="color:#aaa;font-weight:600;">${name}</span>`;
-        html += `<span class="legend-item"><span style="color:#f5a623;">&#9646;</span> Ships with saw</span>`;
+        html += `<span class="legend-item"><span style="color:#f5a623;">&#9733;</span> Ships with saw</span>`;
         html += `<span class="legend-item"><span style="color:#a855f7;">&#9646;</span> Ships with 5+ saws</span>`;
         html += `<span class="legend-item"><span style="color:#3b82f6;">&#9646;</span> Ships with 2–4 saws</span>`;
-        html += `<span class="legend-item"><span class="legend-star">&#9733;</span> Stihl recommended</span>`;
         if (hasCannon)
           html += `<span class="legend-item">&#9670; Cannon equivalent</span>`;
         if (hasOregon)
@@ -1232,16 +1259,16 @@
             const row = rows[i];
             const barPNs = row.barPN.split("\n");
             const tier = rowTier(row);
-            html += `<tr>`;
+            html += `<tr class="tier-${tier || "none"}">`;
             if (typeSpanAt[i] !== undefined) {
               const span =
                 typeSpanAt[i] > 1 ? ` rowspan="${typeSpanAt[i]}"` : "";
-              html += `<td class="bar-info"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}</td>`;
+              html += `<td class="bar-info no-tier"${span} style="vertical-align:middle;border-right:1px solid #333;">${row.barType}</td>`;
             }
             if (pitchSpanAt[i] !== undefined) {
               const span =
                 pitchSpanAt[i] > 1 ? ` rowspan="${pitchSpanAt[i]}"` : "";
-              html += `<td class="bar-info"${span} style="vertical-align:middle;">${row.pitch}</td>`;
+              html += `<td class="bar-info no-tier"${span} style="vertical-align:middle;">${row.pitch}</td>`;
             }
             html += `<td class="bar-info">${row.gauge}</td>`;
             html += `<td class="bar-info">${row.dl != null ? row.dl : "–"}</td>`;
@@ -1253,8 +1280,7 @@
               })
               .filter(Boolean)
               .join("<br>");
-            const tierClass = tier ? ` class="tier-${tier}"` : "";
-            html += `<td class="bar-pn"><span${tierClass}>${pnLinks || "–"}</span>${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
+            html += `<td class="bar-pn">${pnLinks || "–"}${row.rec ? ' <span style="color:#f5a623">&#9733;</span>' : ""}</td>`;
             const hasStihlPN = !!(row.barPN && row.barPN.trim());
             if (hasCannon) {
               const cPNs = cannonForRow(row);
@@ -1689,26 +1715,103 @@
             html += `</tr></tbody></table>`;
           }
 
-          // Compatible saws
+          // Compatible saws — one row per brand, columns = series (100s, 200s, etc.)
           if (bar.saws.length) {
             html += `<div class="bar-section-title">Fits These Chainsaws</div>`;
-            html += `<div class="saw-list">`;
-            html += bar.saws
-              .map((s) => {
-                const brandLabel =
-                  s.brand === "stihl"
-                    ? "STIHL"
-                    : s.brand === "stihl discontinued"
-                      ? "STIHL (disc.)"
-                      : s.brand === "cannon"
-                        ? "Cannon"
-                        : s.brand === "oregon"
-                          ? "Oregon"
-                          : s.brand;
-                return `<a class="saw-link" onclick="jumpToSaw('${s.brand}','${s.model}')">${brandLabel} ${s.model}</a>`;
-              })
-              .join(", ");
-            html += `</div>`;
+
+            function sawNum(model) {
+              const m = model.match(/\d+/);
+              if (!m) return 9999;
+              const n = parseInt(m[0]);
+              // Old numeric models like 028, 038, 066 — leading zero means
+              // second digit is the series indicator (028 → 200s, 038 → 300s)
+              if (n < 100 && m[0].length >= 2)
+                return Math.floor((n % 100) / 10) * 100;
+              return n;
+            }
+            const BRAND_ORDER = [
+              "stihl",
+              "stihl discontinued",
+              "cannon",
+              "oregon",
+            ];
+            const BRAND_LABEL = {
+              stihl: "STIHL",
+              "stihl discontinued": "STIHL (disc.)",
+              cannon: "Cannon",
+              oregon: "Oregon",
+            };
+
+            // Group by brand
+            const byBrand = {};
+            for (const s of bar.saws) {
+              if (!byBrand[s.brand]) byBrand[s.brand] = [];
+              byBrand[s.brand].push(s);
+            }
+
+            // Collect all series buckets across all brands
+            const allBuckets = new Set();
+            for (const saws of Object.values(byBrand))
+              for (const s of saws) {
+                const n = sawNum(s.model);
+                allBuckets.add(n < 1000 ? Math.floor(n / 100) * 100 : 9999);
+              }
+            const buckets = [...allBuckets].sort((a, b) => a - b);
+
+            const presentBrands = BRAND_ORDER.filter((b) => byBrand[b]);
+            const bucketLabel = (b) =>
+              b === 9999 ? "Other" : b === 0 ? "<100" : `${b}s`;
+            const th = `text-align:left;padding:.3rem .6rem .15rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:#666;font-weight:600;`;
+            const tdStyle = `padding:.1rem .6rem;vertical-align:top;font-size:.78rem;`;
+
+            html += `<table style="width:100%;border-collapse:collapse;">`;
+            // Column headers
+            html += `<thead><tr>`;
+            html += `<th style="${th}min-width:70px;"></th>`;
+            for (const b of buckets)
+              html += `<th style="${th}">${bucketLabel(b)}</th>`;
+            html += `</tr></thead><tbody>`;
+
+            // Tier for this bar's spec
+            const barKey = `${bar.size}|${bar.pitch}|${bar.gauge}|${bar.barType}`;
+            const barRecCount = REC_COUNTS[barKey] || 0;
+            const TIER_COLORS = {
+              gold: "#f5a623",
+              purple: "#c084fc",
+              blue: "#60a5fa",
+            };
+            function sawTierColor(s) {
+              if (s.rec) return TIER_COLORS.gold;
+              if (barRecCount >= 5) return TIER_COLORS.purple;
+              if (barRecCount >= 2) return TIER_COLORS.blue;
+              return null;
+            }
+
+            for (const brand of presentBrands) {
+              const saws = byBrand[brand].sort(
+                (a, b) => sawNum(a.model) - sawNum(b.model),
+              );
+              const seriesMap = {};
+              for (const s of saws) {
+                const n = sawNum(s.model);
+                const bucket = n < 1000 ? Math.floor(n / 100) * 100 : 9999;
+                if (!seriesMap[bucket]) seriesMap[bucket] = [];
+                seriesMap[bucket].push(s);
+              }
+              html += `<tr style="border-top:1px solid #2a2a2a;">`;
+              html += `<td style="${tdStyle}font-weight:600;color:#888;white-space:nowrap;">${BRAND_LABEL[brand] || brand}</td>`;
+              for (const bucket of buckets) {
+                html += `<td style="${tdStyle}">`;
+                for (const s of seriesMap[bucket] || []) {
+                  const color = sawTierColor(s);
+                  const style = color ? ` style="color:${color}"` : "";
+                  html += `<div><a class="saw-link"${style} onclick="jumpToSaw('${s.brand}','${escAttr(s.model)}')">${s.model}</a></div>`;
+                }
+                html += `</td>`;
+              }
+              html += `</tr>`;
+            }
+            html += `</tbody></table>`;
           }
 
           html += `</div>`; // .bar-detail
